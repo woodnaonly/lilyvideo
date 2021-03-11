@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             android:layout_width="fill_parent"
+                                             android:layout_height="fill_parent">
+    <RelativeLayout android:id="@+id/search_empty_view" android:visibility="visible" android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+        <ImageView android:id="@+id/search_empty_image" android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_200"
+                   android:src="@drawable/empty_black" android:layout_centerHorizontal="true"
+                   android:layout_centerVertical="true"/>
+        <TextView android:textColor="@color/black" android:id="@+id/search_label_top2"
+                  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="没有数据哦～～～"
+                  android:layout_below="@id/search_empty_image" android:layout_centerHorizontal="true"/>
+        <TextView android:textColor="@color/color_e6e6e6" android:id="@+id/search_label_top"
+                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@id/search_label_top2" android:layout_centerHorizontal="true"/>
+        <TextView android:textColor="@color/color_bebebe" android:id="@+id/search_label_bottom"
+                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_marginLeft="@dimen/dp_100" android:layout_marginTop="@dimen/dp_50"
+                  android:layout_below="@id/search_label_top"/>
+        <TextView android:textColor="@color/color_d2B588" android:id="@+id/search_label_bottom_right"
+                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/dp_50" android:layout_toRightOf="@id/search_label_bottom"
+                  android:layout_below="@id/search_label_top"/>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

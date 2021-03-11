@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout android:id="@+id/search_bar"
+                                                 android:background="@color/color_323232"
+                                                 android:layout_width="fill_parent"
+                                                 android:layout_height="56dp"
+                                                 android:layout_alignParentStart="true">
+        <ImageView android:id="@+id/main_search" android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" android:layout_marginTop="8.0dip"
+                   android:layout_marginBottom="8.0dip" android:layout_marginStart="8.0dip"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintStart_toStartOf="@id/mian_search_text"
+                   app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/search"/>
+        <ImageView android:id="@+id/main_scan" android:layout_width="@dimen/dp_21"
+                   android:layout_height="@dimen/dp_21" android:layout_marginTop="8.0dip"
+                   android:layout_marginBottom="8.0dip" android:layout_marginEnd="@dimen/dp_15"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toStartOf="@id/main_download" app:layout_constraintTop_toTopOf="parent"
+                   app:srcCompat="@drawable/scan"/>
+        <ImageView android:id="@+id/main_history" android:layout_width="@dimen/dp_21"
+                   android:layout_height="wrap_content" android:layout_marginTop="8.0dip"
+                   android:layout_marginBottom="8.0dip" android:layout_marginEnd="@dimen/dp_15"
+                   app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/history"/>
+        <ImageView android:id="@+id/main_download" android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" android:layout_marginTop="8.0dip"
+                   android:layout_marginBottom="8.0dip" android:layout_marginEnd="15.0dip"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toStartOf="@id/main_history" app:layout_constraintTop_toTopOf="parent"
+                   app:srcCompat="@drawable/download"/>
+        <TextView android:textColor="@color/color_808080" android:gravity="center"
+                  android:id="@+id/mian_search_text" android:background="@drawable/back_search"
+                  android:layout_width="@dimen/dp_225" android:layout_height="@dimen/dp_30"
+                  android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:text="输入关键词查找片源"
+                  android:layout_marginStart="8.0dip" app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <include layout="@layout/common_layout_recyclerview"/>
+
+</LinearLayout>

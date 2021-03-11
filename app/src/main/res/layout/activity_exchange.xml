@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent"
+                  android:layout_height="fill_parent">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_44">
+            <ImageView android:id="@+id/exchange_back" android:layout_width="@dimen/dp_17"
+                       android:layout_height="@dimen/dp_17" android:layout_marginLeft="@dimen/dp_19"
+                       android:src="@drawable/exchange_back" android:layout_alignParentLeft="true"
+                       android:layout_centerVertical="true"/>
+            <TextView android:textSize="@dimen/sp_18" android:textColor="@color/color_323232"
+                      android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="@string/vip_exchange" android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        <View android:background="@color/color_f4f4f4" android:layout_width="fill_parent"
+              android:layout_height="@dimen/dp_1"/>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal"
+                      android:layout_width="fill_parent" android:layout_height="@dimen/dp_95">
+            <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/user_icon" android:layout_width="@dimen/dp_54"
+                       android:layout_height="@dimen/dp_54" android:layout_marginLeft="@dimen/dp_12"
+                       android:src="@drawable/ic_head_l"/>
+            <TextView android:textSize="@dimen/dp_16" android:textStyle="bold" android:textColor="@color/color_323232"
+                      android:id="@+id/user_name" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_12"
+                      android:text="小泽玛丽亚"/>
+        </LinearLayout>
+        <RelativeLayout android:background="@drawable/shape_simple" android:layout_width="@dimen/dp_336"
+                        android:layout_height="@dimen/dp_88" android:layout_marginLeft="@dimen/dp_12">
+            <TextView android:textSize="@dimen/dp_14" android:textColor="@color/white"
+                      android:gravity="center_horizontal" android:id="@+id/rule"
+                      android:background="@drawable/shape_rule_common" android:layout_width="@dimen/dp_75"
+                      android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="规则说明"/>
+            <TextView android:textSize="@dimen/dp_12" android:textColor="@color/color_646464"
+                      android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_marginLeft="@dimen/dp_16" android:layout_marginTop="@dimen/dp_55"
+                      android:text="兑换后，立即获得对应奖励"/>
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                      android:visibility="gone"
+                      android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_16">
+            <EditText android:textSize="@dimen/sp_14" android:textColor="@color/color_323232"
+                      android:textColorHint="@color/color_DBDBDB" android:id="@+id/confim_code_edit"
+                      android:background="@drawable/shape_exchange_edit" android:paddingLeft="@dimen/dp_16"
+                      android:paddingRight="@dimen/dp_4" android:layout_width="@dimen/dp_211"
+                      android:layout_height="@dimen/dp_40" android:layout_marginLeft="@dimen/dp_12"
+                      android:layout_marginBottom="@dimen/dp_5" android:hint="请输入右边验证码" android:singleLine="true"
+                      android:inputType="number"/>
+            <TextView android:textSize="@dimen/sp_18" android:textColor="@color/color_969696" android:gravity="center"
+                      android:id="@+id/confim_code_show" android:background="@color/color_f5f5f7"
+                      android:layout_width="@dimen/dp_110" android:layout_height="@dimen/dp_40"
+                      android:layout_marginLeft="@dimen/dp_10" android:text=""/>
+        </LinearLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View android:background="@drawable/shape_exchange_edit" android:layout_width="@dimen/dp_335"
+                  android:layout_height="@dimen/dp_42" android:layout_marginLeft="@dimen/dp_12"
+                  android:layout_marginTop="@dimen/dp_16"/>
+            <EditText android:textSize="@dimen/sp_14" android:textColor="@color/color_323232"
+                      android:textColorHint="@color/color_DBDBDB" android:id="@+id/activie_code_edit"
+                      android:background="@null" android:paddingLeft="@dimen/dp_16" android:paddingRight="@dimen/dp_4"
+                      android:layout_width="@dimen/dp_335" android:layout_height="@dimen/dp_40"
+                      android:layout_marginLeft="@dimen/dp_12" android:layout_marginTop="@dimen/dp_16"
+                      android:hint="请输入12位激活码" android:singleLine="true" android:maxLength="12"
+                      android:inputType="text"/>
+        </RelativeLayout>
+        <TextView android:textSize="@dimen/dp_16" android:textColor="@color/white" android:gravity="center"
+                  android:id="@+id/exchange_button" android:background="@color/color_ffdeb8"
+                  android:layout_width="@dimen/dp_336" android:layout_height="@dimen/dp_40"
+                  android:layout_marginLeft="@dimen/dp_12" android:layout_marginTop="@dimen/dp_24" android:text="立即兑换"/>
+    </LinearLayout>
+    <!--<include android:id="@+id/exchange_success" android:visibility="gone" android:layout_width="fill_parent"-->
+             <!--android:layout_height="fill_parent" layout="@layout/dialog_sigle_button"/>-->
+    <!--<include android:id="@+id/exchange_fail" android:visibility="gone" android:layout_width="fill_parent"-->
+             <!--android:layout_height="fill_parent" layout="@layout/dialog_two_button"/>-->
+</RelativeLayout>

@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/.idea
+/build
+/captures
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+.externalNativeBuild
+app/src/main/AndroidManifest_REMOTE_4184.xml
+app/src/main/AndroidManifest_LOCAL_4184.xml
+app/src/main/AndroidManifest_BASE_4184.xml
+app/src/main/AndroidManifest_BACKUP_4184.xml

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+                android:background="@color/app_white_bg" android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+    <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/mine_bg"
+               android:scaleType="centerCrop" android:layout_alignParentTop="true"/>
+    <ImageView android:id="@+id/right_iv" android:padding="@dimen/dimen_10" android:layout_width="wrap_content"
+               android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_25"
+               android:src="@drawable/ic_my_setting" android:scaleType="centerInside"
+               android:layout_alignParentRight="true"/>
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent"
+                android:layout_below="@id/right_iv">
+        <LinearLayout android:orientation="vertical" android:id="@+id/mine_set_i" android:paddingLeft="@dimen/dimen_10"
+                      android:paddingTop="@dimen/dimen_40" android:paddingRight="@dimen/dimen_10"
+                      android:paddingBottom="@dimen/dimen_50" android:layout_width="fill_parent"
+                      android:layout_height="wrap_content">
+            <RelativeLayout android:id="@+id/rl_person_info" android:layout_width="fill_parent"
+                            android:layout_height="wrap_content" android:elevation="5.0dip">
+                <RelativeLayout android:background="@drawable/common_shape_solid_white_corner5"
+                                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                android:layout_marginTop="40.0dip">
+                    <TextView android:textSize="@dimen/text_content" android:textColor="@color/text_brown"
+                              android:gravity="center" android:id="@+id/tv_exchange"
+                              android:background="@drawable/common_shape_stroke_brown_corner5"
+                              android:layout_width="@dimen/dp_110" android:layout_height="wrap_content"
+                              android:layout_marginLeft="@dimen/dimen_15" android:layout_marginTop="@dimen/dimen_20"
+                              android:text="激活码兑换" android:lines="1" android:layout_alignParentLeft="true"
+                              android:layout_alignParentTop="true"/>
+                    <TextView android:textSize="@dimen/text_content" android:textColor="@color/text_brown"
+                              android:gravity="center" android:id="@+id/tv_login"
+                              android:background="@drawable/common_shape_stroke_brown_corner5"
+                              android:layout_width="@dimen/dp_110" android:layout_height="wrap_content"
+                              android:layout_marginTop="@dimen/dimen_20" android:layout_marginRight="@dimen/dimen_15"
+                              android:text="登录注册" android:layout_alignParentTop="true"
+                              android:layout_alignParentRight="true"/>
+                    <TextView android:textSize="@dimen/text_title" android:textColor="@color/text_brown"
+                              android:id="@+id/tv_nick" android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_20"
+                              android:text="看官大人请登录" android:drawablePadding="@dimen/dimen_8"
+                              android:layout_below="@id/tv_login" android:layout_centerHorizontal="true"/>
+                    <TextView android:textSize="@dimen/text_sma" android:textColor="@color/text_middle"
+                              android:id="@+id/tv_promote_tip" android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_14"
+                              android:layout_marginBottom="@dimen/dimen_10" android:text="看广告、推广可增加更多次数哦~"
+                              android:layout_below="@id/tv_nick" android:layout_centerHorizontal="true"/>
+                    <View android:id="@+id/view_line" android:background="@color/app_divider"
+                          android:layout_width="fill_parent" android:layout_height="0.5dip"
+                          android:layout_marginTop="@dimen/dimen_5" android:layout_below="@id/tv_promote_tip"/>
+                    <LinearLayout android:orientation="horizontal" android:id="@+id/ll_middle_promo"
+                                  android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                  android:layout_below="@id/view_line">
+                        <RelativeLayout android:gravity="center_horizontal" android:paddingBottom="@dimen/dimen_10"
+                                        android:layout_width="0.0dip" android:layout_height="fill_parent"
+                                        android:layout_weight="1.0">
+                            <TextView android:textSize="30.0sp" android:textColor="@color/text_brown"
+                                      android:gravity="center" android:id="@+id/tv_browse_count"
+                                      android:layout_width="fill_parent" android:layout_height="40.0dip"
+                                      android:layout_marginTop="@dimen/dimen_15" android:text="@string/my_browse_num"/>
+                            <TextView android:textSize="@dimen/sp_12" android:textColor="@color/text_middle"
+                                      android:gravity="center" android:id="@+id/tv_browse_count_hint"
+                                      android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                      android:layout_marginTop="@dimen/dimen_12" android:text="今日剩余观影次数"
+                                      android:layout_below="@id/tv_browse_count"/>
+                        </RelativeLayout>
+                        <View android:background="@color/app_divider" android:layout_width="0.5dip"
+                              android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_10"
+                              android:layout_marginBottom="@dimen/dimen_10"/>
+                        <RelativeLayout android:id="@+id/rl_promote" android:paddingBottom="@dimen/dimen_10"
+                                        android:layout_width="0.0dip" android:layout_height="fill_parent"
+                                        android:layout_weight="1.0">
+                            <ImageView android:id="@+id/iv_promote_level" android:layout_width="fill_parent"
+                                       android:layout_height="40.0dip" android:layout_marginTop="@dimen/dimen_15"
+                                       android:src="@drawable/ic_level0" android:layout_centerHorizontal="true"/>
+                            <TextView android:textSize="30.0sp" android:textStyle="bold"
+                                      android:textColor="@color/text_brown" android:gravity="center"
+                                      android:id="@+id/tv_promote_level2" android:visibility="gone"
+                                      android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                      android:layout_marginTop="@dimen/dimen_15" android:text="97%"
+                                      android:layout_centerHorizontal="true"/>
+                            <ImageView android:id="@+id/iv_promote_arrow_right" android:layout_width="wrap_content"
+                                       android:layout_height="40.0dip" android:layout_marginRight="@dimen/dimen_10"
+                                       android:src="@drawable/ic_arrow_right_brown" android:scaleType="centerInside"
+                                       android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+                            <TextView android:textSize="@dimen/sp_12" android:textColor="@color/text_middle"
+                                      android:gravity="center" android:id="@+id/tv_promote_level"
+                                      android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                      android:layout_marginTop="@dimen/dimen_12" android:text="去推广升级吧"
+                                      android:layout_below="@id/iv_promote_level"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true">
+                    <RelativeLayout android:layout_width="82.0dip" android:layout_height="82.0dip"
+                                    android:layout_marginBottom="@dimen/dp_20" android:layout_alignParentTop="true">
+                        <ImageView android:id="@+id/iv_head_bg" android:layout_width="fill_parent"
+                                   android:layout_height="fill_parent" android:src="@drawable/ic_head_l_bg"
+                                   android:scaleType="centerCrop"/>
+                        <ImageView android:layout_width="80.0dip" android:layout_height="80.0dip"
+                                   android:id="@+id/iv_no_head"
+                                   android:src="@drawable/ic_head_l" android:scaleType="centerCrop"
+                                   android:layout_centerInParent="true"/>
+                        <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/iv_head"
+                                                                      android:layout_width="80.0dip"
+                                                                      android:layout_height="80.0dip"
+                                                                      android:scaleType="centerCrop"
+                                                                      android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+                    <LinearLayout android:gravity="center" android:layout_width="@dimen/dp_45"
+                                  android:layout_height="@dimen/dp_45" android:layout_alignParentBottom="true"
+                                  android:layout_centerHorizontal="true">
+                        <ImageView android:layout_gravity="center" android:id="@+id/iv_head_level"
+                                   android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                   android:src="@drawable/ic_level0" android:scaleType="centerCrop"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+            <LinearLayout android:orientation="vertical" android:background="@drawable/common_shape_solid_white_corner5"
+                          android:padding="@dimen/dimen_10" android:visibility="gone" android:layout_width="fill_parent"
+                          android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10">
+                <TextView android:textSize="@dimen/text_content" android:textStyle="bold"
+                          android:textColor="@color/text_brown" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:text="每日任务"/>
+                <TextView android:textSize="@dimen/text_sma" android:textColor="@color/text_middle"
+                          android:gravity="center" android:id="@+id/iv_default_watch_t"
+                          android:layout_width="fill_parent" android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/dp_6" android:text="每日点击广告，当日观看次数+5，次数不累计"/>
+            </LinearLayout>
+            <RelativeLayout android:orientation="horizontal"
+                            android:background="@drawable/common_shape_solid_white_corner5"
+                            android:padding="@dimen/dimen_12" android:layout_width="fill_parent"
+                            android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10"
+                            android:layout_weight="3.0">
+                <LinearLayout android:gravity="center_horizontal" android:orientation="vertical"
+                              android:id="@+id/ll_promote" android:layout_width="wrap_content"
+                              android:layout_height="fill_parent">
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/iv_promote" android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content" android:src="@drawable/ic_my_promote"
+                                   android:scaleType="centerInside" android:layout_centerInParent="true"/>
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                   android:src="@drawable/ic_my_promote_bg" android:scaleType="centerInside"
+                                   android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+                    <TextView android:textSize="@dimen/dp_12" android:textColor="@color/text_dark"
+                              android:layout_width="wrap_content" android:layout_height="fill_parent"
+                              android:layout_marginTop="@dimen/dimen_7" android:text="我要推广"/>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                              android:layout_height="fill_parent" android:layout_toLeftOf="@id/ll_potato"
+                              android:layout_toRightOf="@id/ll_promote">
+                    <TextView android:textSize="@dimen/text_sma" android:textStyle="bold"
+                              android:textColor="@color/text_dark" android:id="@+id/empty_text_view"
+                              android:visibility="invisible" android:layout_width="0.0dip"
+                              android:layout_height="fill_parent" android:text="占位图" android:layout_weight="1.0"/>
+                    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical"
+                                  android:id="@+id/ll_feedback" android:layout_width="wrap_content"
+                                  android:layout_height="fill_parent">
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                   android:src="@drawable/ic_my_feedback" android:scaleType="centerInside"/>
+                        <TextView android:textSize="@dimen/dp_12" android:textColor="@color/text_dark"
+                                  android:layout_width="wrap_content" android:layout_height="fill_parent"
+                                  android:layout_marginTop="@dimen/dimen_7" android:text="意见反馈"/>
+                    </LinearLayout>
+                    <TextView android:textSize="@dimen/text_sma" android:textStyle="bold"
+                              android:textColor="@color/text_dark" android:visibility="invisible"
+                              android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="占位图"
+                              android:layout_weight="1.0"/>
+                    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical"
+                                  android:id="@+id/ll_notice" android:layout_width="wrap_content"
+                                  android:layout_height="fill_parent">
+                        <RelativeLayout android:layout_width="@dimen/dp_50" android:layout_height="wrap_content"
+                                        android:scaleType="centerInside">
+                            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                       android:src="@drawable/ic_my_notice"/>
+                            <ImageView android:id="@+id/image_mine_red" android:background="@drawable/shape_user_notice"
+                                       android:visibility="gone" android:layout_width="@dimen/dp_8"
+                                       android:layout_height="@dimen/dp_8" android:layout_alignParentTop="true"
+                                       android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+                        <TextView android:textSize="@dimen/dp_12" android:textColor="@color/text_dark"
+                                  android:layout_width="wrap_content" android:layout_height="fill_parent"
+                                  android:layout_marginTop="@dimen/dimen_7" android:text="通知"/>
+                    </LinearLayout>
+                    <TextView android:textSize="@dimen/text_sma" android:textStyle="bold"
+                              android:textColor="@color/text_dark" android:visibility="invisible"
+                              android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="占位图"
+                              android:layout_weight="1.0"/>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_horizontal" android:orientation="vertical"
+                              android:id="@+id/ll_potato" android:layout_width="wrap_content"
+                              android:layout_height="fill_parent" android:layout_alignParentRight="true">
+                    <android.support.constraint.ConstraintLayout android:layout_width="wrap_content"
+                                                                 android:layout_height="wrap_content">
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                   android:src="@drawable/ic_potato" android:scaleType="centerInside"
+                                   app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
+                    </android.support.constraint.ConstraintLayout>
+                    <TextView android:textSize="@dimen/dp_12" android:textColor="@color/text_dark"
+                              android:layout_width="wrap_content" android:layout_height="fill_parent"
+                              android:layout_marginTop="@dimen/dimen_7" android:text="火爆交流群"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <ImageView android:id="@+id/mine_ad" android:visibility="gone" android:layout_width="@dimen/dp_345"
+                       android:layout_height="@dimen/dp_80" android:layout_marginTop="@dimen/dp_12"/>
+            <LinearLayout android:orientation="vertical" android:background="@drawable/common_shape_solid_white_corner5"
+                          android:layout_width="fill_parent" android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/dimen_12">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                              android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_12">
+                    <RelativeLayout android:id="@+id/rl_history" android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content" android:layout_marginLeft="@dimen/sp_12"
+                                    android:layout_marginTop="@dimen/dimen_12" android:layout_marginRight="@dimen/sp_12"
+                                    android:layout_marginBottom="@dimen/dimen_15">
+                        <ImageView android:id="@+id/iv_history" android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content" android:src="@drawable/ic_my_history"
+                                   android:scaleType="centerInside" android:layout_alignParentLeft="true"
+                                   android:layout_centerVertical="true"/>
+                        <TextView android:textSize="@dimen/text_sma" android:textStyle="bold"
+                                  android:textColor="@color/text_dark" android:id="@+id/tv_history_hint"
+                                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:layout_marginLeft="@dimen/dimen_10" android:text="历史记录"
+                                  android:layout_toRightOf="@id/iv_history"/>
+                        <TextView android:textSize="@dimen/text_sma" android:textColor="@color/text_light"
+                                  android:id="@+id/tv_history_num" android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5"
+                                  android:text="@string/my_history_num" android:layout_below="@id/tv_history_hint"
+                                  android:layout_alignLeft="@id/tv_history_hint"/>
+                        <ImageView android:layout_width="wrap_content" android:layout_height="40.0dip"
+                                   android:src="@drawable/ic_arrow_right_brown" android:scaleType="centerInside"
+                                   android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+                    <android.support.v7.widget.RecyclerView android:id="@+id/recyclerView_history"
+                                                            android:background="@color/white"
+                                                            android:layout_width="fill_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginBottom="@dimen/dimen_15"
+                                                            android:overScrollMode="never"/>
+                </LinearLayout>
+                <View android:background="@color/app_divider" android:layout_width="fill_parent"
+                      android:layout_height="0.5dip"/>
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                              android:layout_height="wrap_content">
+                    <RelativeLayout android:id="@+id/rl_download" android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_12"
+                                    android:layout_marginTop="@dimen/dimen_12"
+                                    android:layout_marginRight="@dimen/dimen_12"
+                                    android:layout_marginBottom="@dimen/dimen_12">
+                        <ImageView android:id="@+id/iv_my_download" android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content" android:src="@drawable/ic_my_download"
+                                   android:scaleType="centerInside" android:layout_alignParentLeft="true"
+                                   android:layout_centerVertical="true"/>
+                        <TextView android:textSize="@dimen/text_sma" android:textStyle="bold"
+                                  android:textColor="@color/text_dark" android:id="@+id/tv_download_hint"
+                                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:layout_marginLeft="@dimen/dimen_10" android:text="我的缓存"
+                                  android:layout_toRightOf="@id/iv_my_download"/>
+                        <TextView android:textSize="@dimen/text_sma" android:textColor="@color/text_light"
+                                  android:id="@+id/tv_download_num" android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5"
+                                  android:text="@string/my_download_num" android:layout_below="@id/tv_download_hint"
+                                  android:layout_alignLeft="@id/tv_download_hint"/>
+                        <ImageView android:layout_width="wrap_content" android:layout_height="40.0dip"
+                                   android:src="@drawable/ic_arrow_right_brown" android:scaleType="centerInside"
+                                   android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+                    <android.support.v7.widget.RecyclerView android:id="@+id/recyclerView_download"
+                                                            android:background="@color/white"
+                                                            android:layout_width="fill_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginBottom="@dimen/dimen_15"
+                                                            android:overScrollMode="never"/>
+                </LinearLayout>
+                <View android:background="@color/app_divider" android:layout_width="fill_parent"
+                      android:layout_height="0.5dip"/>
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                              android:layout_height="wrap_content">
+                    <RelativeLayout android:id="@+id/rl_my_favor" android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_12"
+                                    android:layout_marginTop="@dimen/dimen_12"
+                                    android:layout_marginRight="@dimen/dimen_12"
+                                    android:layout_marginBottom="@dimen/dimen_12">
+                        <ImageView android:id="@+id/iv_my_favor" android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content" android:src="@drawable/ic_my_favor"
+                                   android:scaleType="centerInside" android:layout_alignParentLeft="true"
+                                   android:layout_centerVertical="true"/>
+                        <TextView android:textSize="@dimen/text_sma" android:textStyle="bold"
+                                  android:textColor="@color/text_dark" android:id="@+id/tv_my_favor_hint"
+                                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:layout_marginLeft="@dimen/dimen_10" android:text="我的喜欢"
+                                  android:layout_toRightOf="@id/iv_my_favor"/>
+                        <TextView android:textSize="@dimen/text_sma" android:textColor="@color/text_light"
+                                  android:id="@+id/tv_my_favor_num" android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5"
+                                  android:text="@string/my_favor_num" android:layout_below="@id/tv_my_favor_hint"
+                                  android:layout_alignLeft="@id/tv_my_favor_hint"/>
+                        <ImageView android:layout_width="wrap_content" android:layout_height="40.0dip"
+                                   android:src="@drawable/ic_arrow_right_brown" android:scaleType="centerInside"
+                                   android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+                    <android.support.v7.widget.RecyclerView android:id="@+id/recyclerView_favor"
+                                                            android:background="@color/white"
+                                                            android:layout_width="fill_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginBottom="@dimen/dimen_15"
+                                                            android:overScrollMode="never"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <ImageView android:id="@+id/show_level_i" android:visibility="gone" android:layout_width="wrap_content"
+               android:layout_height="wrap_content" android:layout_margin="30.0dip" android:src="@drawable/my_level_1"
+               android:layout_centerInParent="true"/>
+</RelativeLayout>

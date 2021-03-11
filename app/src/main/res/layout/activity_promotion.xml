@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             android:background="@color/white"
+                                             android:layout_width="fill_parent"
+                                             android:layout_height="fill_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/linearLayout" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent">
+        <TextView android:textSize="@dimen/text_item_title" android:textColor="@color/color_ccb084"
+                  android:gravity="center" android:id="@+id/promot_put_t" android:background="@drawable/shape_put"
+                  android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:layout_margin="@dimen/dp_5" android:text="立即推广"/>
+    </LinearLayout>
+    <ImageView android:id="@+id/imageView" android:background="@drawable/icon_promotion_black"
+               android:layout_width="fill_parent" android:layout_height="wrap_content"
+               app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/relativeLayout"/>
+    <RelativeLayout android:orientation="horizontal" android:id="@+id/relativeLayout"
+                    android:background="@color/color_313233" android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:id="@+id/promotion_back" android:padding="@dimen/dp_8" android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10"
+                   android:layout_marginTop="@dimen/dp_10" android:layout_marginBottom="@dimen/dp_10"
+                   android:src="@drawable/ic_back_brown" android:layout_alignParentLeft="true"/>
+        <TextView android:textSize="@dimen/sp_18" android:textColor="@color/color_ccb084" android:gravity="center"
+                  android:id="@+id/promotion_title_t" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" android:text="推广"
+                  android:layout_centerInParent="true"/>
+        <TextView android:textColor="@color/color_ccb084" android:id="@+id/promotion_my_t"
+                  android:padding="@dimen/dimen_5" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10"
+                  android:layout_marginRight="@dimen/dp_10" android:layout_marginBottom="@dimen/dp_10"
+                  android:text="我的推广" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <android.support.v4.widget.NestedScrollView android:id="@+id/nestedScrollView" android:layout_width="0.0dip"
+                                                android:layout_height="0.0dip" android:fillViewport="true"
+                                                android:layout_marginStart="@dimen/dp_8"
+                                                android:layout_marginEnd="@dimen/dp_8"
+                                                app:layout_constraintBottom_toTopOf="@id/linearLayout"
+                                                app:layout_constraintEnd_toEndOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toBottomOf="@id/relativeLayout">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                      android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8">
+            <android.support.constraint.ConstraintLayout android:background="@drawable/icon_promotion_title"
+                                                         android:paddingBottom="@dimen/dp_17"
+                                                         android:layout_width="fill_parent"
+                                                         android:layout_height="wrap_content"
+                                                         android:layout_marginTop="@dimen/dimen_20">
+                <ImageView android:id="@+id/imageView3" android:background="@drawable/icon_promotion_title"
+                           android:visibility="gone" android:layout_width="fill_parent"
+                           android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp_4"
+                           app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintHorizontal_bias="0.0" app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.0"/>
+                <ImageView android:padding="@dimen/dp_1" android:layout_width="@dimen/dp_45"
+                           android:layout_height="@dimen/dp_45" android:layout_marginTop="@dimen/dimen_17"
+                           android:src="@drawable/ic_head_l" android:layout_marginStart="@dimen/dimen_17"
+                           app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+                <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/setting_size_pg_t" android:background="@drawable/ic_head_l_bg"
+                           android:padding="@dimen/dp_1" android:layout_width="@dimen/dp_45"
+                           android:layout_height="@dimen/dp_45" android:layout_marginTop="@dimen/dimen_17"
+                           android:layout_marginStart="@dimen/dimen_17" app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"/>
+                <TextView android:textStyle="bold" android:textColor="@color/app_brown_dark"
+                          android:layout_gravity="center_vertical" android:id="@+id/promot_name_t"
+                          android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="游客"
+                          android:drawablePadding="@dimen/dp_10" android:layout_marginStart="@dimen/dimen_8"
+                          app:layout_constraintStart_toEndOf="@id/setting_size_pg_t"
+                          app:layout_constraintTop_toTopOf="@id/setting_size_pg_t"/>
+                <TextView android:textColor="@color/app_brown_dark" android:id="@+id/promot_code_t"
+                          android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/dp_5" android:text="我的邀请码"
+                          android:layout_marginStart="@dimen/dimen_8"
+                          app:layout_constraintStart_toEndOf="@id/setting_size_pg_t"
+                          app:layout_constraintTop_toBottomOf="@id/promot_name_t"/>
+                <ImageView android:id="@+id/promot_code_i" android:layout_width="wrap_content"
+                           android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_20"
+                           android:layout_marginEnd="@dimen/dimen_10" app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/icon_er"/>
+                <ImageView android:id="@+id/imageView5" android:visibility="gone" android:layout_width="wrap_content"
+                           android:layout_height="wrap_content" android:layout_marginStart="@dimen/dimen_15"
+                           app:layout_constraintBottom_toBottomOf="@id/promot_name_t"
+                           app:layout_constraintStart_toEndOf="@id/promot_name_t"
+                           app:layout_constraintTop_toTopOf="@id/promot_name_t" app:srcCompat="@drawable/ic_woman"/>
+                <ImageView android:id="@+id/promot_level_i1" android:visibility="visible"
+                           android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:layout_marginTop="@dimen/dp_16" android:layout_marginStart="@dimen/dp_32"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/setting_size_pg_t"
+                           app:srcCompat="@drawable/ic_level0"/>
+                <ImageView android:id="@+id/promot_level_i2" android:visibility="visible"
+                           android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:layout_marginEnd="@dimen/dp_32"
+                           app:layout_constraintBottom_toBottomOf="@id/promot_level_i1"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="@id/promot_level_i1"
+                           app:srcCompat="@drawable/ic_level1_s"/>
+                <TextView android:textSize="@dimen/sp_10" android:textColor="@color/app_white_bg"
+                          android:id="@+id/promot_next_level_t" android:visibility="visible"
+                          android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/dp_2" android:layout_marginBottom="@dimen/dp_8"
+                          android:text="距离下一等级还差1人" android:layout_marginStart="@dimen/dp_8"
+                          android:layout_marginEnd="@dimen/dp_8"
+                          app:layout_constraintBottom_toBottomOf="@id/promot_level_t1"
+                          app:layout_constraintEnd_toStartOf="@id/promot_level_i2"
+                          app:layout_constraintStart_toEndOf="@id/promot_level_i1"
+                          app:layout_constraintTop_toBottomOf="@id/progressBar"/>
+                <TextView android:textSize="14.0sp" android:textColor="@color/app_brown_dark"
+                          android:id="@+id/promot_level_t1" android:visibility="visible"
+                          android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_marginBottom="16.0dip" android:text="L0小白"
+                          app:layout_constraintEnd_toEndOf="@id/promot_level_i1"
+                          app:layout_constraintStart_toStartOf="@id/promot_level_i1"
+                          app:layout_constraintTop_toBottomOf="@id/promot_next_level_t"/>
+                <TextView android:textSize="@dimen/sp_14" android:textColor="@color/app_white_bg"
+                          android:id="@+id/promot_level_t2" android:visibility="visible"
+                          android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_marginBottom="16.0dip" android:text="L1入门"
+                          app:layout_constraintEnd_toEndOf="@id/promot_level_i2"
+                          app:layout_constraintStart_toStartOf="@id/promot_level_i2"
+                          app:layout_constraintTop_toBottomOf="@id/promot_next_level_t"/>
+                <ProgressBar android:id="@+id/progressBar" android:layout_width="0.0dip"
+                             android:layout_height="@dimen/dp_3" android:progressDrawable="@drawable/barbgimg"
+                             android:layout_marginStart="@dimen/dp_16" android:layout_marginEnd="@dimen/dp_16"
+                             android:indeterminateTint="@color/white" android:indeterminateTintMode="src_atop"
+                             app:layout_constraintBottom_toBottomOf="@id/promot_level_i1"
+                             app:layout_constraintEnd_toStartOf="@id/promot_level_i2"
+                             app:layout_constraintHorizontal_bias="1.0"
+                             app:layout_constraintStart_toEndOf="@id/promot_level_i1"
+                             app:layout_constraintTop_toTopOf="@id/promot_level_i1"
+                             app:layout_constraintVertical_bias="0.36" style="?android:progressBarStyleHorizontal"/>
+                <TextView android:textSize="@dimen/sp_20" android:textStyle="bold"
+                          android:textColor="@color/color_ccb084" android:id="@+id/level_date" android:visibility="gone"
+                          android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="无限"
+                          app:layout_constraintBottom_toBottomOf="@id/progressBar"
+                          app:layout_constraintEnd_toEndOf="@id/promot_level_i2"
+                          app:layout_constraintStart_toStartOf="@id/promot_level_i2"
+                          app:layout_constraintTop_toTopOf="@id/progressBar"/>
+            </android.support.constraint.ConstraintLayout>
+            <ImageView android:layout_width="fill_parent" android:layout_height="@dimen/dp_20"
+                       android:src="@drawable/bg_shadow2" android:scaleType="fitXY"/>
+            <LinearLayout android:orientation="horizontal" android:background="@drawable/bg_shadows"
+                          android:layout_width="fill_parent" android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/dp_16">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                              android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:textSize="@dimen/sp_30" android:textStyle="bold" android:textColor="#ffe9bc56"
+                              android:gravity="center" android:id="@+id/promot_move_t1"
+                              android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="0"/>
+                    <TextView android:textSize="@dimen/dimen_14" android:textColor="#ff969696" android:gravity="center"
+                              android:layout_width="fill_parent" android:layout_height="wrap_content"
+                              android:layout_marginTop="@dimen/dimen_2" android:text="今日可观影次数"/>
+                </LinearLayout>
+                <View android:background="@color/black_20" android:layout_width="@dimen/dp_1"
+                      android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_10"
+                      android:layout_marginBottom="@dimen/dimen_10"/>
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                              android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:textSize="@dimen/sp_30" android:textStyle="bold"
+                              android:textColor="@color/text_f65758" android:gravity="center"
+                              android:id="@+id/promot_move_t2" android:layout_width="fill_parent"
+                              android:layout_height="wrap_content" android:text="0"/>
+                    <TextView android:textSize="@dimen/dimen_14" android:textColor="@color/text_969696"
+                              android:gravity="center" android:layout_width="fill_parent"
+                              android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_2"
+                              android:text="剩余观影次数"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:background="@drawable/bg_shadows"
+                          android:layout_width="fill_parent" android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/dp_8">
+                <TextView android:textSize="@dimen/dimen_14" android:textStyle="bold"
+                          android:textColor="@color/color_ccb084" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_5"
+                          android:text="每日任务"/>
+                <TextView android:textSize="@dimen/dimen_14" android:layout_gravity="center"
+                          android:id="@+id/promot_task_t" android:layout_width="fill_parent"
+                          android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_5"
+                          android:layout_marginTop="@dimen/dimen_5" android:layout_marginRight="@dimen/dimen_5"
+                          android:layout_marginBottom="@dimen/dimen_5" android:text="每日点击广告，当日观影次数+1，次数不累计"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:background="@drawable/bg_shadows"
+                          android:layout_width="fill_parent" android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/dp_8">
+                <TextView android:textSize="@dimen/dimen_14" android:textStyle="bold"
+                          android:textColor="@color/color_ccb084" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_5"
+                          android:text="推广任务"/>
+                <TextView android:textSize="@dimen/dimen_14" android:layout_width="fill_parent"
+                          android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_5"
+                          android:layout_marginRight="@dimen/dimen_5" android:layout_marginBottom="@dimen/dimen_10"
+                          android:text="推广给好友成功下载APP并打开或注册时好友填写你的邀请码，可以永久增加每日观影次数及缓存次数。每日缓存次数同推广人数。"
+                          android:lineSpacingMultiplier="1.2"/>
+                <android.support.v7.widget.RecyclerView android:id="@+id/promotion_r" android:background="@color/white"
+                                                        android:layout_width="fill_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginBottom="@dimen/dimen_20"
+                                                        android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:background="@drawable/bg_shadows"
+                          android:layout_width="fill_parent" android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/dp_8" android:layout_marginBottom="@dimen/dp_30">
+                <TextView android:textSize="@dimen/text_item_title" android:textColor="@color/app_brown_light"
+                          android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/dp_10" android:text="福利任务"/>
+                <include layout="@layout/item_task_layout_register"/>
+                <include layout="@layout/item_task_layout_register_phone"/>
+                <include layout="@layout/item_task_layout_innovation"/>
+                <include layout="@layout/item_task_layout_qr"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content"
+               android:src="@drawable/view_yinying" android:scaleType="fitXY"
+               app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintBottom_toTopOf="@id/linearLayout"
+               app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+</android.support.constraint.ConstraintLayout>

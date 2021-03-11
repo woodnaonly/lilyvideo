@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             android:orientation="vertical" android:background="@color/white"
+                                             android:layout_width="fill_parent"
+                                             android:layout_height="fill_parent">
+    <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/relativeLayout"
+                    android:background="@color/color_313233" android:paddingTop="@dimen/dp_5"
+                    android:paddingBottom="@dimen/dp_5" android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+        <ImageView android:id="@+id/his_info_back_i" android:padding="@dimen/dimen_10"
+                   android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:src="@drawable/ic_back_brown" android:layout_centerVertical="true"/>
+        <TextView android:textSize="@dimen/text_title" android:textColor="#ffd4b587" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:text="历史记录" android:layout_centerInParent="true"/>
+        <TextView android:textSize="@dimen/text_item_content" android:textColor="@color/color_ccb084"
+                  android:id="@+id/his_info_edit_t" android:padding="@dimen/dp_10" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:text="编辑" android:layout_alignParentRight="true"
+                  android:visibility="gone"
+                  android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <android.support.design.widget.TabLayout android:id="@+id/tabLayout" android:background="@color/white"
+                                             android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                             android:elevation="@dimen/dp_5"
+                                             app:layout_constraintTop_toBottomOf="@id/relativeLayout"
+                                             app:tabIndicatorColor="@color/color_b78952"
+                                             app:tabIndicatorHeight="@dimen/dimen_2"
+                                             app:tabSelectedTextColor="@color/color_b78952"
+                                             app:tabTextColor="@color/color_b78952"/>
+    <android.support.v4.view.ViewPager android:id="@+id/viewPager" android:background="#ffffffff"
+                                       android:layout_width="0.0dip" android:layout_height="0.0dip"
+                                       app:layout_constraintBottom_toTopOf="@id/his_info_bottom_root_l"
+                                       app:layout_constraintEnd_toEndOf="parent"
+                                       app:layout_constraintStart_toStartOf="parent"
+                                       app:layout_constraintTop_toBottomOf="@id/tabLayout"/>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/his_info_bottom_root_l" android:visibility="gone"
+                  android:layout_width="fill_parent" android:layout_height="@dimen/dp_55"
+                  app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent">
+        <TextView android:textSize="@dimen/sp_16" android:gravity="center" android:id="@+id/his_info_all_t"
+                  android:background="@color/white" android:layout_width="fill_parent"
+                  android:layout_height="fill_parent" android:text="全选" android:layout_weight="1.0"/>
+        <TextView android:textSize="@dimen/sp_16" android:textColor="@color/app_white_bg" android:gravity="center"
+                  android:id="@+id/his_info_clear_t" android:background="@color/text_f65758"
+                  android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="删除"
+                  android:layout_weight="1.0"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/layout_xuanfukuang_comment_input_switch"
+                android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent"
+                android:layout_height="@dimen/dp_60">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                  android:layout_height="@dimen/dp_40" android:layout_marginLeft="@dimen/dp_10"
+                  android:layout_marginRight="@dimen/dp_10" android:layout_centerVertical="true">
+        <ImageView android:id="@+id/image_xuanfu_comment_user" android:background="@drawable/ic_head_l"
+                   android:layout_width="@dimen/dp_40" android:layout_height="@dimen/dp_40"/>
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/text_969696" android:gravity="center"
+                  android:id="@+id/text_xuanfu_comment_input" android:background="@drawable/comment_bt_selector"
+                  android:layout_width="0.0dip" android:layout_height="@dimen/dp_40"
+                  android:layout_marginLeft="@dimen/dp_10" android:layout_marginRight="@dimen/dp_10"
+                  android:text="@string/comment_input_hint" android:layout_weight="1.0"/>
+        <ImageView android:layout_gravity="center_vertical" android:id="@+id/iv_nav"
+                   android:background="@drawable/comment_dialog_downmark" android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <View android:background="@color/color_e6e6e6" android:layout_width="fill_parent"
+          android:layout_height="@dimen/dp_1" android:layout_alignParentBottom="true"/>
+</RelativeLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_98"
+                  android:layout_marginLeft="@dimen/dp_10" android:layout_marginRight="@dimen/dp_10">
+        <RelativeLayout android:layout_gravity="center_vertical" android:layout_width="@dimen/dp_60"
+                        android:layout_height="@dimen/dp_60">
+            <ImageView android:background="@drawable/user_notice" android:layout_width="fill_parent"
+                       android:layout_height="fill_parent"/>
+            <ImageView android:id="@+id/image_user_message_red" android:background="@drawable/shape_user_notice"
+                       android:layout_width="@dimen/dp_8" android:layout_height="@dimen/dp_8"
+                       android:layout_marginRight="@dimen/dp_10" android:layout_alignParentTop="true"
+                       android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical"
+                      android:layout_width="fill_parent" android:layout_height="@dimen/dp_60"
+                      android:layout_marginLeft="10.0dip" android:layout_marginTop="@dimen/dp_5">
+            <RelativeLayout android:layout_gravity="center_vertical" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/sp_16" android:textColor="@color/color_323232"
+                          android:id="@+id/text_notification_title" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:text="今晚发布1.1版本"
+                          android:layout_alignParentTop="true" android:layout_alignParentStart="true"/>
+                <TextView android:textSize="@dimen/sp_12" android:textColor="@color/text_646464"
+                          android:id="@+id/text_notificaiton_date" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:text="2018/06/13"
+                          android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/sp_12" android:textColor="@color/text_646464" android:ellipsize="end"
+                      android:id="@+id/text_notification_content" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_8"
+                      android:text="推广给好友成功下载app并注册(注册时需要.....)" android:maxLines="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

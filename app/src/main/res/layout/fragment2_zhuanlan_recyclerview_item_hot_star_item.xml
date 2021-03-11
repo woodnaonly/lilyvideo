@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/girl_root_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+    <View android:id="@+id/view" android:background="@color/black" android:visibility="gone"
+          android:layout_width="fill_parent" android:layout_height="0.5dp"
+          android:layout_marginLeft="10dp"/>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="90dp" android:layout_height="26dp"
+                   android:src="@drawable/corner_background" android:layout_alignParentRight="true"/>
+        <TextView android:textSize="12dp" android:textColor="@color/white" android:gravity="center"
+                  android:id="@+id/mov_count" android:layout_width="90dp" android:layout_height="26dp"
+                  android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@+id/girl_info_area"
+                      android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:layout_marginTop="15dp">
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                          android:id="@+id/girl_img"
+                                                          android:layout_width="54dp"
+                                                          android:layout_height="54dp"
+                                                          android:layout_marginLeft="7dp"
+                                                          app:civ_border_color="@color/color_fedeab"
+                                                          app:civ_border_width="2.0dip"/>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:layout_marginLeft="10dp">
+                <TextView android:textSize="15dp" android:textStyle="bold" android:textColor="#ffeeeeee"
+                          android:id="@+id/girl_name" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"/>
+                <TextView android:textSize="12dp" android:textColor="#ffdbdbdb" android:ellipsize="end"
+                          android:id="@+id/girl_common" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:layout_marginTop="6dp"
+                          android:maxLines="2"/>
+            </LinearLayout>
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView android:id="@+id/mRecyclerView"
+                                                android:layout_width="fill_parent" android:layout_height="fill_parent"
+                                                android:layout_marginLeft="10.0dip"
+                                                android:layout_marginTop="17dp"
+                                                android:layout_marginRight="10.0dip" android:overScrollMode="never"/>
+    </LinearLayout>
+</RelativeLayout>

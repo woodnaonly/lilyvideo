@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+              android:id="@+id/layout_comment_switch"
+              android:background="@color/white" android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:layout_marginTop="@dimen/dp_10"
+              android:layout_marginBottom="@dimen/dp_20">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_40">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10"
+                      android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+            <TextView android:textSize="@dimen/sp_16" android:textStyle="bold" android:textColor="@color/color_323232"
+                      android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="@string/comment_all_title"/>
+            <TextView android:textSize="@dimen/sp_16" android:textColor="@color/text_969696"
+                      android:id="@+id/text_comment_comnum" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_13"
+                      android:text="@string/comment_all_number"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_marginRight="@dimen/dp_15" android:layout_alignParentRight="true"
+                      android:layout_centerVertical="true">
+            <TextView android:textSize="@dimen/sp_15" android:textColor="@color/color_646464"
+                      android:id="@+id/text_comment_redtitle" android:paddingLeft="@dimen/dp_14"
+                      android:paddingTop="@dimen/dp_3" android:paddingRight="@dimen/dp_14"
+                      android:paddingBottom="@dimen/dp_3" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_15"
+                      android:text="@string/comment_redhot_title"/>
+            <TextView android:textSize="@dimen/sp_15" android:textColor="@color/white"
+                      android:id="@+id/text_comment_newtitle" android:background="@drawable/shape_text_border"
+                      android:paddingLeft="@dimen/dp_14" android:paddingTop="@dimen/dp_3"
+                      android:paddingRight="@dimen/dp_14" android:paddingBottom="@dimen/dp_3"
+                      android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="@string/comment_new_title"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:id="@+id/layout_comment_input_switch" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10"
+                  android:layout_marginTop="@dimen/dp_15" android:layout_marginRight="@dimen/dp_10">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:layout_weight="0.88">
+            <ImageView android:id="@+id/image_comment_user" android:background="@drawable/ic_head_l"
+                       android:layout_width="@dimen/dp_40" android:layout_height="@dimen/dp_40"/>
+        </LinearLayout>
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/text_969696" android:gravity="center"
+                  android:id="@+id/text_comment_input" android:background="@drawable/comment_bt_selector"
+                  android:paddingLeft="@dimen/dp_20" android:layout_width="fill_parent"
+                  android:layout_height="@dimen/dp_40" android:layout_marginLeft="@dimen/dp_10"
+                  android:text="@string/comment_input_hint" android:layout_weight="0.12"/>
+    </LinearLayout>
+    <include layout="@layout/fragment_comment_index"/>
+</LinearLayout>

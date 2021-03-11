@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal"
+                    android:background="@color/color_313233" android:paddingTop="@dimen/dp_5"
+                    android:paddingBottom="@dimen/dp_5" android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+        <ImageView android:id="@id/his_info_back_i" android:padding="@dimen/dimen_10"
+                   android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:src="@drawable/ic_back_brown" android:layout_centerVertical="true"/>
+        <TextView android:textSize="@dimen/text_title" android:textColor="#ffd4b587" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:text="意见反馈" android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <ltd.android.coriander_video.view.ViewPagerIndicator_Fix android:orientation="horizontal"
+                                                             android:id="@+id/id_indication"
+                                                             android:background="@color/white"
+                                                             android:layout_width="fill_parent"
+                                                             android:layout_height="@dimen/dp_50"/>
+    <android.support.v4.view.ViewPager android:id="@id/viewPager" android:background="#ffffffff"
+                                       android:layout_width="fill_parent" android:layout_height="fill_parent"/>
+</LinearLayout>

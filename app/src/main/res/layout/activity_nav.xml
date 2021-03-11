@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@+id/mSmartRefreshLayout"
+                                                       android:layout_width="fill_parent"
+                                                       android:layout_height="fill_parent"
+                                                       app:srlEnableFooterFollowWhenLoadFinished="true">
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlFinishDuration="500"
+                app:srlEnableLastTime="true"
+                app:srlClassicsSpinnerStyle="FixedBehind"
+                app:srlTextSizeTitle="16sp"
+                app:srlTextSizeTime="10dp"
+                app:srlTextTimeMarginTop="2dp"
+                app:srlDrawableArrowSize="20dp"
+                app:srlDrawableProgressSize="20dp"
+                app:srlDrawableMarginRight="20dp"
+                app:srlDrawableProgress="@drawable/ic_progress_puzzle"/>
+        <ScrollView android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                          android:layout_height="wrap_content">
+                <RelativeLayout android:orientation="vertical" android:id="@+id/top" android:layout_width="fill_parent"
+                                android:layout_height="wrap_content">
+                    <ImageView android:id="@+id/nav_back" android:background="@color/colorPrimary"
+                               android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+                    <ImageView android:id="@+id/nav_back_top" android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"/>
+                    <ImageView android:id="@+id/nav_back_button" android:layout_width="@dimen/dp_30"
+                               android:layout_height="@dimen/dp_30" android:layout_marginLeft="@dimen/dp_10"
+                               android:layout_marginTop="@dimen/dp_20" android:src="@drawable/nav_back"
+                               android:layout_alignLeft="@id/nav_back" android:layout_alignTop="@id/nav_back"/>
+                    <TextView android:textSize="@dimen/text_subtitle" android:textStyle="bold"
+                              android:textColor="#ff323232" android:id="@+id/nav_name"
+                              android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:layout_marginLeft="@dimen/dp_10" android:layout_below="@id/nav_back"/>
+                    <ImageView android:id="@+id/iv_circle" android:layout_width="fill_parent"
+                               android:layout_height="wrap_content" android:src="@drawable/bg_img_circle"
+                               android:scaleType="fitXY" android:layout_alignBottom="@id/nav_back"/>
+                    <TextView android:ellipsize="end" android:id="@+id/nav_intro" android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10"
+                              android:layout_marginTop="@dimen/dp_8" android:layout_marginRight="@dimen/dp_10"
+                              android:layout_marginBottom="@dimen/dp_10" android:maxLines="4"
+                              android:layout_below="@id/nav_name"/>
+                    <LinearLayout android:orientation="horizontal" android:id="@+id/ll_more"
+                                  android:paddingLeft="@dimen/dp_5" android:paddingRight="@dimen/dp_5"
+                                  android:paddingBottom="@dimen/dp_10" android:visibility="gone"
+                                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:layout_below="@id/nav_intro" android:layout_centerHorizontal="true">
+                        <TextView android:textColor="@color/app_brown_light" android:background="@color/white"
+                                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:text="查看更多"/>
+                        <ImageView android:layout_width="@dimen/dp_16" android:layout_height="@dimen/dp_16"
+                                   android:src="@drawable/ic_av_more"/>
+                    </LinearLayout>
+                    <TextView android:id="@+id/nav_intro_more" android:visibility="gone"
+                              android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:layout_marginLeft="@dimen/dp_10" android:layout_marginTop="@dimen/dp_10"
+                              android:layout_marginRight="@dimen/dp_10" android:layout_marginBottom="@dimen/dp_10"
+                              android:layout_below="@id/nav_name"/>
+                    <LinearLayout android:orientation="horizontal" android:id="@+id/ll_less"
+                                  android:paddingLeft="@dimen/dp_5" android:paddingRight="@dimen/dp_5"
+                                  android:visibility="gone" android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content" android:layout_below="@id/nav_intro_more"
+                                  android:layout_centerHorizontal="true">
+                        <TextView android:textColor="@color/app_brown_light" android:background="@color/white"
+                                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:text="收起"/>
+                        <ImageView android:layout_width="@dimen/dp_16" android:layout_height="@dimen/dp_16"
+                                   android:src="@drawable/ic_av_less"/>
+                    </LinearLayout>
+                </RelativeLayout>
+                <android.support.v7.widget.RecyclerView android:id="@+id/mRecyclerView"
+                                                        android:layout_width="fill_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginLeft="@dimen/dp_10"
+                                                        android:layout_marginRight="@dimen/dp_10"/>
+            </LinearLayout>
+        </ScrollView>
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter android:id="@+id/footer"
+                                                              android:layout_width="fill_parent"
+                                                              android:layout_height="wrap_content"
+                                                              app:srlClassicsSpinnerStyle="Translate"/>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

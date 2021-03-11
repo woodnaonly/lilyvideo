@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools" package="ltd.android.coriander_video">
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:name=".app.App"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
+
+        <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="@string/providerName"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths_public"/>
+        </provider>
+
+        <activity android:name=".activity.MainActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+        >
+
+        </activity>
+        <activity android:name=".activity.SystemNoteActivity"/>
+        <activity android:name=".activity.StartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.ScanActivity"
+                  android:launchMode="singleTask"
+                  android:screenOrientation="behind"
+                  android:windowSoftInputMode="adjustResize"
+        >
+
+        </activity>
+        <activity android:name=".activity.SearchActivity"/>
+        <activity android:name=".activity.ChannelActivity"/>
+        <activity android:name=".activity.NavActivity"/>
+        <activity android:name=".activity.ClassifyActivity"/>
+        <activity android:name=".activity.VideoPlayActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+        />
+        <activity android:name=".activity.HistoryActivity"/>
+        <activity android:name=".activity.AVClassifyActivity"/>
+        <activity android:name=".activity.FavActivity"/>
+        <activity android:name=".activity.user.ExchangeActivity"/>
+        <activity android:name=".activity.user.PromotionActivity"/>
+        <activity android:name=".activity.user.MyCodeSharedActivity"/>
+        <activity android:name=".activity.user.FeedbackActivity"/>
+        <activity android:name=".activity.user.UserNotificationActivity"/>
+        <activity android:name=".activity.user.SettingActivity"/>
+        <activity android:name=".activity.user.LoginActivity"/>
+        <activity android:name=".activity.user.LoginJoinMemberActivity"/>
+        <activity android:name=".activity.user.XieYiActivity"/>
+        <activity android:name=".activity.user.ForgetPasswordActivity"/>
+        <activity android:name=".activity.user.UserManagerActivity"/>
+        <activity android:name=".activity.user.PurPromotionActivity"/>
+        <activity android:name=".activity.user.PlacardInfoActivity"/>
+    </application>
+
+</manifest>

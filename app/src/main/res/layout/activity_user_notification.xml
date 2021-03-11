@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              android:background="@color/app_white_bg"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <RelativeLayout android:background="@color/color_323232" android:layout_width="fill_parent"
+                    android:layout_height="@dimen/dp_44">
+        <ImageView android:id="@+id/image_user_back" android:background="@drawable/ic_back_brown"
+                   android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/dp_19" android:layout_alignParentLeft="true"
+                   android:layout_centerVertical="true"/>
+        <TextView android:textSize="@dimen/sp_18" android:textColor="@color/text_brown"
+                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="@string/notification_title" android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ltd.android.coriander_video.view.ViewPagerIndicator_Fix android:gravity="start|center"
+                                                                 android:orientation="horizontal"
+                                                                 android:id="@+id/id_indication"
+                                                                 android:background="@color/white"
+                                                                 android:layout_width="fill_parent"
+                                                                 android:layout_height="@dimen/dp_50"/>
+        <View android:background="@color/color_f9f9f9" android:layout_width="fill_parent"
+              android:layout_height="@dimen/dp_10" android:layout_marginTop="@dimen/dp_2"/>
+        <android.support.v4.view.ViewPager android:id="@+id/view_pager" android:layout_width="fill_parent"
+                                           android:layout_height="fill_parent"
+                                           app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    </LinearLayout>
+</LinearLayout>

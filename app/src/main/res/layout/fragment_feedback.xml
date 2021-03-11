@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                                            android:background="@color/white"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/ll" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+        <View android:background="@color/color_f9f9f9" android:layout_width="fill_parent"
+              android:layout_height="@dimen/dp_16"/>
+        <TextView android:textSize="@dimen/text_subtitle" android:padding="@dimen/dp_10"
+                  android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="我遇见的问题"/>
+        <android.support.v7.widget.RecyclerView android:id="@+id/recyclerview" android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_margin="@dimen/dp_5"/>
+        <TextView android:textSize="@dimen/text_subtitle" android:paddingLeft="@dimen/dp_16"
+                  android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/dp_16" android:text="详情描述(必填)"/>
+        <LinearLayout android:orientation="vertical" android:background="@drawable/dialog_custom_bg"
+                      android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:layout_margin="@dimen/dp_16">
+            <EditText android:textSize="@dimen/text_content" android:textColorHint="@color/text_light"
+                      android:gravity="top" android:id="@+id/et_feedback" android:background="@color/transparent"
+                      android:padding="@dimen/dimen_10" android:layout_width="fill_parent"
+                      android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_10"
+                      android:hint="请详尽描述遇到的问题,以使我们及时为您解决！(10-100字)" android:maxLength="100"/>
+            <android.support.v7.widget.RecyclerView android:id="@+id/rv_img" android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <Button android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center"
+                android:layout_gravity="center" android:id="@+id/bt_submit"
+                android:background="@drawable/login_loginbutton" android:layout_width="@dimen/dp_215"
+                android:layout_height="@dimen/dimen_44" android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginBottom="@dimen/dp_50" android:text="提交"/>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

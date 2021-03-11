@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="horizontal" android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+    <FrameLayout android:gravity="center" android:orientation="vertical" android:id="@+id/fl_time_line"
+                 android:layout_width="wrap_content" android:layout_height="fill_parent"
+                 android:layout_marginEnd="@dimen/dp_10">
+        <View android:layout_gravity="center" android:background="@color/text_task_bg"
+              android:layout_width="@dimen/dp_2" android:layout_height="fill_parent"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/dp_30" android:src="@drawable/ic_time_line"/>
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+                  android:layout_marginTop="@dimen/dp_20">
+        <TextView android:textSize="@dimen/text_item_title" android:textColor="@color/app_brown_light"
+                  android:id="@+id/tv_title" android:background="@drawable/shape_task_text_bg"
+                  android:padding="@dimen/dp_12" android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:text="4.保存二维码"/>
+        <TextView android:textSize="@dimen/text_sma" android:id="@+id/tv_sub_qr"
+                  android:background="@drawable/shape_task_text_bg2" android:padding="@dimen/dp_12"
+                  android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:text="@string/text_task_qr"/>
+    </LinearLayout>
+</LinearLayout>

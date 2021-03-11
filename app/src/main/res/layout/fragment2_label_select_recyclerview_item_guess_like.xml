@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:zhy="http://schemas.android.com/apk/res-auto" android:orientation="horizontal"
+              android:layout_width="fill_parent" android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/dp_5"
+              android:layout_marginBottom="@dimen/dp_5">
+    <android.support.v7.widget.CardView android:id="@id/cardView" android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" android:layout_marginTop="5.0dip"
+                                        android:foreground="?android:selectableItemBackground"
+                                        zhy:cardBackgroundColor="@color/white" zhy:cardCornerRadius="@dimen/dp_5"
+                                        zhy:cardElevation="@dimen/dp_1">
+        <ImageView android:id="@+id/guess_pic" android:background="@color/color_loading"
+                   android:layout_width="@dimen/dp_150" android:layout_height="@dimen/dp_100"
+                   android:scaleType="centerInside"/>
+        <TextView android:textColor="@color/white" android:gravity="right" android:layout_gravity="bottom"
+                  android:id="@id/tv_score" android:background="@drawable/shape_score_bg" android:padding="@dimen/dp_5"
+                  android:layout_width="@dimen/dp_150" android:layout_height="wrap_content" android:text="9.9"/>
+    </android.support.v7.widget.CardView>
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_14">
+        <TextView android:textColor="@color/black" android:ellipsize="end" android:id="@id/mov_name"
+                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_marginTop="5.0dip" android:maxLines="1"/>
+        <com.zhy.view.flowlayout.TagFlowLayout android:id="@+id/mov_label" android:layout_width="wrap_content"
+                                               android:layout_height="@dimen/dp_48" android:layout_marginTop="5.0dip"
+                                               zhy:max_select="-1"/>
+        <TextView android:id="@+id/mov_play_times" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10"/>
+    </LinearLayout>
+</LinearLayout>

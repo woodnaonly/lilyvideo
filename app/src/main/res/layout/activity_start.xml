@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:background="@color/transparent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+    <ImageView android:id="@+id/welcome_img" android:layout_width="fill_parent" android:layout_height="fill_parent"
+               android:scaleType="fitXY"/>
+    <ImageView android:id="@+id/start_img" android:layout_width="fill_parent" android:layout_height="fill_parent"
+               android:scaleType="fitXY"/>
+    <android.support.constraint.ConstraintLayout android:id="@+id/start_load_root" android:visibility="gone"
+                                                 android:layout_width="250.0dip" android:layout_height="wrap_content"
+                                                 android:layout_centerInParent="true">
+        <ImageView android:id="@+id/imageView7" android:background="@drawable/shape_start_progress"
+                   android:layout_width="0.0dip" android:layout_height="0.0dip" android:alpha="0.3"
+                   app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+        <ImageView android:id="@+id/start_load_icon" android:layout_width="@dimen/dp_40"
+                   android:layout_height="@dimen/dp_40" android:layout_marginTop="24.0dip"
+                   android:layout_marginBottom="24.0dip" android:layout_marginStart="8.0dip"
+                   android:layout_marginEnd="8.0dip" app:layout_constraintBottom_toTopOf="@+id/tv_server_tip"
+                   app:layout_constraintEnd_toEndOf="@+id/imageView7" app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/icon_start_loads"/>
+        <TextView android:textSize="15.0sp" android:textColor="@color/white" android:gravity="center"
+                  android:id="@+id/tv_server_tip" android:padding="@dimen/dp_10" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content" android:text="正在选择加速通道，请稍候..."
+                  app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+    <ImageView android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content"
+               android:layout_marginLeft="@dimen/dimen_50" android:layout_marginBottom="@dimen/dp_100"
+               android:src="@drawable/start_18" android:layout_alignParentBottom="true"/>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/ll_jump"
+                  android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/dp_20" android:layout_marginRight="@dimen/dp_20"
+                  android:layout_alignParentTop="true" android:layout_alignParentRight="true">
+        <TextView android:textSize="@dimen/text_content" android:textColor="@color/white" android:id="@+id/jump"
+                  android:background="@drawable/go_main" android:visibility="gone" android:layout_width="@dimen/dp_54"
+                  android:layout_height="@dimen/dp_54"/>
+        <TextView android:textSize="@dimen/sp_19" android:textColor="@color/white" android:gravity="center"
+                  android:id="@+id/tv_count_down" android:background="@drawable/count_num"
+                  android:paddingBottom="@dimen/dp_8" android:layout_width="@dimen/dp_54"
+                  android:layout_height="@dimen/dp_54"/>
+    </LinearLayout>
+</RelativeLayout>

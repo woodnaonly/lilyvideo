@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              android:id="@+id/ll" android:background="@color/app_black"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <android.support.v7.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                        app:cardCornerRadius="0.0dip" app:cardElevation="@dimen/dp_5">
+        <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal"
+                        android:background="@color/color_313233" android:paddingTop="@dimen/dp_5"
+                        android:paddingBottom="@dimen/dp_5" android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+            <ImageView android:id="@+id/iv_back" android:padding="@dimen/dp_10" android:layout_width="wrap_content"
+                       android:layout_height="wrap_content" android:src="@drawable/ic_back_brown"
+                       android:layout_centerVertical="true"/>
+            <TextView android:textSize="@dimen/text_title" android:textColor="#ffd4b587"
+                      android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="账户管理"
+                      android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v4.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                      android:layout_height="fill_parent">
+            <android.support.v7.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                                                android:layout_marginTop="@dimen/dimen_10"
+                                                android:layout_marginBottom="@dimen/dimen_10"
+                                                app:cardCornerRadius="0.0dip" app:cardElevation="@dimen/dp_5">
+                <LinearLayout android:gravity="center_vertical" android:id="@+id/ll_modify_head"
+                              android:background="@color/color_313233" android:padding="@dimen/dp_10"
+                              android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView android:layout_width="@dimen/dp_47" android:layout_height="@dimen/dp_47"
+                                   android:src="@drawable/ic_head_l"/>
+                        <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/civ_head"
+                                                                      android:layout_width="@dimen/dp_47"
+                                                                      android:layout_height="@dimen/dp_47"/>
+                    </FrameLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="horizontal"
+                                  android:layout_width="0.0dip" android:layout_height="wrap_content"
+                                  android:layout_weight="1.0">
+                        <View android:id="@+id/view_head" android:background="@drawable/shape_red_point"
+                              android:visibility="visible" android:layout_width="@dimen/dp_7"
+                              android:layout_height="@dimen/dp_7" android:layout_marginRight="@dimen/dimen_5"/>
+                        <TextView android:textColor="@color/text_999999" android:gravity="right"
+                                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:text="修改头像"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                               android:layout_marginLeft="@dimen/dp_10" android:src="@drawable/ic_arrow_right_brown"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                                                android:layout_marginBottom="@dimen/dimen_10"
+                                                app:cardCornerRadius="0.0dip" app:cardElevation="@dimen/dp_5">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                              android:layout_height="wrap_content">
+                    <LinearLayout android:gravity="center_vertical" android:id="@+id/ll_modify_nickname"
+                                  android:background="@color/color_313233" android:padding="@dimen/dp_10"
+                                  android:layout_width="fill_parent" android:layout_height="@dimen/dp_60">
+                        <TextView android:textColor="@color/white" android:gravity="right"
+                                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:text="昵称"/>
+                        <LinearLayout android:gravity="center|right" android:orientation="horizontal"
+                                      android:layout_width="0.0dip" android:layout_height="wrap_content"
+                                      android:layout_weight="1.0">
+                            <View android:id="@+id/view_nickname" android:background="@drawable/shape_red_point"
+                                  android:visibility="visible" android:layout_width="@dimen/dp_7"
+                                  android:layout_height="@dimen/dp_7" android:layout_marginRight="@dimen/dimen_5"/>
+                            <TextView android:textColor="@color/text_999999" android:gravity="right"
+                                      android:id="@+id/tv_modify_nick_name" android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content" android:text="未设定"/>
+                        </LinearLayout>
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                   android:layout_marginLeft="@dimen/dp_10"
+                                   android:src="@drawable/ic_arrow_right_brown"/>
+                    </LinearLayout>
+                    <View android:background="@drawable/shape_line" android:layout_width="fill_parent"
+                          android:layout_height="1.0dip"/>
+                    <LinearLayout android:gravity="center_vertical" android:id="@+id/ll_modify_sex"
+                                  android:background="@color/color_313233" android:padding="@dimen/dp_10"
+                                  android:layout_width="fill_parent" android:layout_height="@dimen/dp_60">
+                        <TextView android:textColor="@color/white" android:gravity="right"
+                                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:text="性别"/>
+                        <LinearLayout android:gravity="center|right" android:orientation="horizontal"
+                                      android:layout_width="0.0dip" android:layout_height="wrap_content"
+                                      android:layout_weight="1.0">
+                            <View android:id="@+id/view_sex" android:background="@drawable/shape_red_point"
+                                  android:visibility="visible" android:layout_width="@dimen/dp_7"
+                                  android:layout_height="@dimen/dp_7" android:layout_marginRight="@dimen/dimen_5"/>
+                            <TextView android:textColor="@color/text_999999" android:id="@+id/tv_modify_sex"
+                                      android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                      android:text="性别"/>
+                        </LinearLayout>
+                        <ImageView android:id="@+id/iv_sex" android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10"
+                                   android:src="@drawable/ic_arrow_right_brown"/>
+                    </LinearLayout>
+                    <View android:background="@drawable/shape_line" android:layout_width="fill_parent"
+                          android:layout_height="1.0dip"/>
+                    <LinearLayout android:gravity="center_vertical" android:id="@+id/ll_modify_phone"
+                                  android:background="@color/color_313233" android:padding="@dimen/dp_10"
+                                  android:layout_width="fill_parent" android:layout_height="@dimen/dp_60">
+                        <TextView android:textColor="@color/white" android:gravity="right"
+                                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:text="手机号"/>
+                        <LinearLayout android:gravity="center|right" android:orientation="horizontal"
+                                      android:layout_width="0.0dip" android:layout_height="wrap_content"
+                                      android:layout_weight="1.0">
+                            <View android:id="@+id/view_phone" android:background="@drawable/shape_red_point"
+                                  android:visibility="gone" android:layout_width="@dimen/dp_7"
+                                  android:layout_height="@dimen/dp_7" android:layout_marginRight="@dimen/dimen_5"/>
+                            <TextView android:textColor="@color/text_999999" android:gravity="right"
+                                      android:id="@+id/tv_modify_phone" android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content" android:text="可用手机号登陆或找回密码"/>
+                        </LinearLayout>
+                        <ImageView android:id="@+id/iv_phone" android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10"
+                                   android:src="@drawable/ic_arrow_right_brown"/>
+                    </LinearLayout>
+                    <View android:background="@drawable/shape_line" android:layout_width="fill_parent"
+                          android:layout_height="@dimen/dp_1"/>
+                    <LinearLayout android:gravity="center_vertical" android:id="@+id/ll_modify_pwd"
+                                  android:background="@color/color_313233" android:padding="@dimen/dp_10"
+                                  android:layout_width="fill_parent" android:layout_height="@dimen/dp_60">
+                        <TextView android:textColor="@color/white" android:gravity="right"
+                                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:text="修改密码"/>
+                        <LinearLayout android:gravity="center|right" android:orientation="horizontal"
+                                      android:layout_width="0.0dip" android:layout_height="wrap_content"
+                                      android:layout_weight="1.0">
+                            <View android:id="@+id/view_pwd" android:background="@drawable/shape_red_point"
+                                  android:visibility="gone" android:layout_width="@dimen/dp_7"
+                                  android:layout_height="@dimen/dp_7" android:layout_marginRight="@dimen/dimen_5"/>
+                            <TextView android:textColor="@color/text_999999" android:gravity="right"
+                                      android:id="@+id/tv_modify_pwd" android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content" android:text="绑定手机号后可修改密码"/>
+                        </LinearLayout>
+                        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                   android:layout_marginLeft="@dimen/dp_10"
+                                   android:src="@drawable/ic_arrow_right_brown"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <Button android:textSize="@dimen/sp_14" android:textColor="@color/white" android:gravity="center"
+                    android:layout_gravity="center" android:id="@+id/bt_logout"
+                    android:background="@drawable/login_loginbutton" android:layout_width="@dimen/dp_215"
+                    android:layout_height="@dimen/dimen_44" android:layout_marginTop="@dimen/dp_24" android:text="退出"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

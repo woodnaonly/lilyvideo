@@ -1,0 +1,43 @@
+<resources>
+
+    <style name="AppTheme" parent="QMUI.Compat.NoActionBar">
+        <item name="qmui_alpha_pressed">0.5</item>
+        <item name="qmui_alpha_disabled">0.5</item>
+        <item name="qmui_topbar_title_color">@color/topBarTitle</item>
+        <item name="qmui_topbar_subtitle_color">@color/topBarTitle</item>
+        <item name="qmui_topbar_text_btn_color_state_list">@color/qmui_top_text_color_state_list
+        </item>
+        <item name="QMUITopBarStyle">@style/QDTopBar</item>
+
+        <item name="android:buttonStyle">?android:attr/borderlessButtonStyle</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <item name="android:textViewStyle">@style/NopaddingTextView</item>
+    </style>
+
+    <style name="NopaddingTextView" parent="android:style/Widget.TextView">
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="QDTopBar" parent="QMUI.TopBar">
+        <item name="qmui_topbar_title_text_size">@dimen/topbar_title_size</item>
+        <item name="qmui_topbar_image_btn_width">@dimen/topbar_height</item>
+        <item name="qmui_topbar_image_btn_height">@dimen/topbar_height</item>
+        <item name="qmui_config_color_separator">@color/ecm_title_line_color</item>
+        <item name="qmui_topbar_bg_color">@color/colorAccent</item>
+        <item name="qmui_topbar_height">@dimen/topbar_height</item>
+        <item name="qmui_topbar_left_back_drawable_id">@drawable/ico_bg_back</item>
+
+        <item name="qmui_topbar_text_btn_text_size">16sp</item>
+        <item name="qmui_topbar_text_btn_padding_horizontal">4dp</item>
+        <item name="android:paddingLeft">-2dp</item>
+        <item name="android:paddingRight">-2dp</item>
+    </style>
+    <style name="text" parent="@android:style/Widget">
+        <item name="tabIndicatorColor">#ffffffff</item>
+        <item name="tabIndicatorHeight">0.0dip</item>
+    </style>
+</resources>

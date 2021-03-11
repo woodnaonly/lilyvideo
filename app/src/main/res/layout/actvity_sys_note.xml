@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             android:layout_width="fill_parent"
+                                             android:layout_height="fill_parent">
+    <ImageView android:id="@+id/gb" android:background="@color/app_black" android:visibility="visible"
+               android:layout_width="0.0dip" android:layout_height="0.0dip" android:alpha="0.5"
+               app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+    <android.support.constraint.ConstraintLayout android:layout_width="0.0dip" android:layout_height="0.0dip"
+                                                 android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip"
+                                                 android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip"
+                                                 app:layout_constraintBottom_toBottomOf="parent"
+                                                 app:layout_constraintEnd_toEndOf="@+id/gb"
+                                                 app:layout_constraintStart_toStartOf="@+id/gb"
+                                                 app:layout_constraintTop_toTopOf="@+id/gb">
+        <android.support.constraint.Guideline android:orientation="horizontal" android:id="@+id/guideline3"
+                                              android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                              app:layout_constraintGuide_percent="0.34"/>
+        <android.support.constraint.Guideline android:orientation="horizontal" android:id="@+id/guideline2"
+                                              android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                              app:layout_constraintGuide_percent="0.43920144"/>
+        <TextView android:id="@+id/textView4" android:background="@drawable/shape_top" android:layout_width="0.0dip"
+                  android:layout_height="60.0dip" android:layout_marginStart="32.0dip"
+                  android:layout_marginEnd="32.0dip" app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintHorizontal_bias="0.0" app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="@+id/guideline3"/>
+        <ImageView android:id="@+id/testview5" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_marginBottom="2.0dip" app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                   app:layout_constraintEnd_toEndOf="@+id/textView4" app:layout_constraintStart_toStartOf="@+id/textView4"
+                   app:srcCompat="@drawable/icon_sys_note"/>
+        <android.support.constraint.ConstraintLayout android:background="@drawable/shape_bottom"
+                                                     android:layout_width="0.0dip" android:layout_height="wrap_content"
+                                                     app:layout_constraintEnd_toEndOf="@+id/textView4"
+                                                     app:layout_constraintStart_toStartOf="@+id/textView4"
+                                                     app:layout_constraintTop_toBottomOf="@+id/textView4">
+            <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/app_black"
+                      android:id="@+id/sys_note_title_t" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:text="系统服务维护公告"
+                      android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip"
+                      app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toTopOf="parent"/>
+            <ScrollView android:orientation="vertical" android:id="@+id/sys_note_content_l" android:layout_width="0.0dip"
+                        android:layout_height="@dimen/dp_120" android:layout_marginTop="8.0dip"
+                        android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip"
+                        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sys_note_title_t">
+                <android.support.constraint.ConstraintLayout android:layout_width="fill_parent"
+                                                             android:layout_height="130.0dip">
+                    <WebView android:textSize="13.0sp" android:id="@+id/sys_note_content_t"
+                             android:paddingTop="@dimen/dp_20" android:paddingBottom="@dimen/dimen_35"
+                             android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+                </android.support.constraint.ConstraintLayout>
+            </ScrollView>
+            <TextView android:textSize="@dimen/sp_16" android:textColor="@color/white" android:gravity="center"
+                      android:id="@+id/sys_note_info_t" android:background="@drawable/shape_sys_info"
+                      android:layout_width="0.0dip" android:layout_height="wrap_content"
+                      android:layout_marginTop="24.0dip" android:layout_marginBottom="16.0dip" android:text="我知道了"
+                      android:layout_marginStart="48.0dip" android:layout_marginEnd="48.0dip"
+                      app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@+id/sys_note_content_l"/>
+            <ImageView android:id="@+id/imageView4" android:layout_width="0.0dip" android:layout_height="50.0dip"
+                       app:layout_constraintBottom_toBottomOf="@+id/sys_note_content_l"
+                       app:layout_constraintEnd_toEndOf="@+id/sys_note_content_l"
+                       app:layout_constraintStart_toStartOf="@+id/sys_note_content_l"
+                       app:srcCompat="@drawable/bg_gradient"/>
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

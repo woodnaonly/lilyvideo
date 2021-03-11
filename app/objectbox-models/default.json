@@ -1,0 +1,86 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:7961573678251215028",
+      "lastPropertyId": "15:2653975081055176601",
+      "name": "MovieDTO",
+      "properties": [
+        {
+          "id": "1:2599046751361046551",
+          "name": "dislikeCnt"
+        },
+        {
+          "id": "2:486729794985996983",
+          "name": "createDate"
+        },
+        {
+          "id": "3:571812188356621214",
+          "name": "lastTime"
+        },
+        {
+          "id": "4:9203242747142913951",
+          "name": "id"
+        },
+        {
+          "id": "5:55117898761678758",
+          "name": "movName"
+        },
+        {
+          "id": "6:356156662570541054",
+          "name": "movDesc"
+        },
+        {
+          "id": "7:8501144070452386958",
+          "name": "movScore"
+        },
+        {
+          "id": "8:1725934036876639477",
+          "name": "playCount"
+        },
+        {
+          "id": "9:8996693138869320103",
+          "name": "loveCnt"
+        },
+        {
+          "id": "10:8238128124850860625",
+          "name": "cover"
+        },
+        {
+          "id": "11:643404758351306751",
+          "name": "movCls"
+        },
+        {
+          "id": "12:7836768135364555284",
+          "name": "file"
+        },
+        {
+          "id": "13:2648919658607117626",
+          "name": "loveStatus"
+        },
+        {
+          "id": "14:4534815966364711669",
+          "name": "isFav"
+        },
+        {
+          "id": "15:2653975081055176601",
+          "name": "UserId"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:7961573678251215028",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

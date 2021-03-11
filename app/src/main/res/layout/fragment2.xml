@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+    <LinearLayout android:background="@color/colorPrimary" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+        <ltd.android.coriander_video.view.ViewPagerIndicator_Fix android:orientation="horizontal"
+                                                                 android:id="@+id/mViewPagerIndicator_Fix"
+                                                                 android:background="@color/colorPrimary"
+                                                                 android:layout_width="fill_parent"
+                                                                 android:layout_height="50dp"
+                                                                 android:layout_marginLeft="80dp"
+                                                                 android:layout_marginRight="80dp"/>
+    </LinearLayout>
+    <ltd.android.coriander_video.view.IndexViewPager android:layout_gravity="center" android:id="@+id/mIndexViewPager"
+                                                     android:background="#ff000000"
+                                                     android:persistentDrawingCache="animation"
+                                                     android:layout_width="fill_parent"
+                                                     android:layout_height="wrap_content"
+                                                     android:flipInterval="30" android:layout_weight="1.0"/>
+</LinearLayout>

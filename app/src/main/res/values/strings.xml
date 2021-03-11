@@ -1,0 +1,91 @@
+<resources>
+
+
+    <string name="app_name">百合视频</string>
+    <!--tab名称 bgein-->
+    <string name="main_fragment1">首页</string>
+    <string name="main_fragment2">频道</string>
+    <string name="main_fragment3">发现</string>
+    <string name="main_fragment4">我的</string>
+
+
+    <!--tab名称 end-->
+
+    <string name="favor">收藏</string>
+    <string name="visibility">发现</string>
+    <string name="different_style">不同的样式</string>
+    <string name="with_view_pager">配合ViewPager</string>
+    <string name="badge_view">带数字小红点</string>
+    <string name="face">表情</string>
+    <string name="lamp">灯</string>
+    <string name="weather">天气</string>
+    <string name="tips_badge_removed">Badge 被消除了</string>
+    <string name="center_fab">中间漂浮按钮</string>
+    <string name="more">更多</string>
+    <string name="my_history_num">目前历史观看过%1$d部</string>
+    <string name="my_browse_num">%1$d/%2$d</string>
+    <string name="my_download_num">目前本地大片有%1$d部</string>
+    <string name="my_favor_num">目前已有喜欢%1$d部</string>
+    <string name="input_login_phone_hint">请输入手机号</string>
+    <string name="input_login_username_hint">请输入用户名</string>
+    <string name="flash_open">开启闪光灯</string>
+    <string name="flash_close">关闭闪光灯</string>
+    <string name="tips_scan">将二维码/条码放入框内，即可自动扫描</string>
+    <string name="rationale_camera">需要相机权限</string>
+    <string name="cancel">取消</string>
+    <string name="comment_all_number">条</string>
+    <string name="comment_all_title">全部评论</string>
+    <string name="comment_checklook_title">查看全部%1$d条回复</string>
+    <string name="comment_content_message">评论内容不能为空</string>
+    <string name="comment_content_message_emoj">评论内容不能发送表情</string>
+    <string name="comment_content_message_reply_title">回复</string>
+    <string name="comment_content_message_state_one">发送中</string>
+    <string name="comment_content_message_state_two">刚刚</string>
+    <string name="comment_content_zannum_message">0.1万</string>
+    <string name="comment_details_dialog_btntext">发送</string>
+    <string name="comment_details_dialog_hint">我来说两句~</string>
+    <string name="comment_details_dialog_title">发评论</string>
+    <string name="comment_details_title">评论详情</string>
+    <string name="comment_input_hint">快来说说你的感想吧</string>
+    <string name="comment_input_sucess_message">评论成功</string>
+    <string name="comment_new_title">最新</string>
+    <string name="comment_newall_title">全部</string>
+    <string name="comment_redhot_title">热门</string>
+    <string name="comment_reply_message">回复</string>
+    <string name="actor">演员列表</string>
+    <string name="director">导演:</string>
+    <string name="discover">发现</string>
+    <string name="download">缓存</string>
+    <string name="play_time">播放:</string>
+    <string name="label">标签:</string>
+    <string name="menu">简介</string>
+    <string name="vip_exchange">激活码兑换</string>
+
+    <string name="storage_permission_tip">当前操作需要存储空间权限，是否去设置打开所需权限？</string>
+    <string name="str_skip">跳过</string>
+    <string name="style_hint">style为数字</string>
+    <string name="sure">确定</string>
+    <string name="tag_hint">Tag为大小写字母，数字，下划线,中文， 多个用以逗号分隔</string>
+    <string name="text_agreement">&lt;用户注册协议></string>
+    <string name="text_cup">罩杯:%1$s杯</string>
+    <string name="text_height">身高:%1$dcm</string>
+    <string name="text_label_date">上新时间:%1$s</string>
+    <string name="text_modify_pwd">将给手机%1$s发送验证码</string>
+    <string name="text_mov_num">%1$d部影片</string>
+    <string name="text_pwd_empty">请填写登陆密码</string>
+    <string name="text_pwd_less">密码不能少于6位</string>
+    <string name="text_send_ver">已向手机%1$s发送验证码</string>
+    <string name="text_task_innovation">注册并填写好友邀请码，每日观影次数%1$d</string>
+    <string name="text_task_qr">保存推广二维码，每日观影次数%1$d</string>
+    <string name="text_task_register">手机号注册，每日观影次数<font color="#dcb182">+%1$d</font>，（*为防止APP被封丢失您的推广信息，可通过注册账号绑定推广人数，强烈建议注册*）
+    </string>
+    <string name="text_task_register_user">用户名注册，每日观影次数
+        <font color="#dcb182">+%1$d</font>
+        <br></br>
+        用户名注册并绑定手机号，每日观影次数%2$d
+    </string>
+    <string name="notification_title">通知</string>
+
+    <string name="error_gif">长宽不小于 %1$dpx，且大小不超过 %2$sM。</string>
+    <string name="providerName">ltd.android.coriander_video.fileprovider</string>
+</resources>

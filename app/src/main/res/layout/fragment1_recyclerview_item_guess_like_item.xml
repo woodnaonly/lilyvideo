@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="@dimen/dp_10">
+    <android.support.v7.widget.CardView android:id="@id/cardView" android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:foreground="?android:selectableItemBackground"
+                                        app:cardBackgroundColor="@color/white" app:cardCornerRadius="0dp"
+                                        app:cardElevation="@dimen/dp_1">
+        <ImageView android:id="@id/mov_img" android:background="@color/color_loading"
+                   android:layout_width="match_parent" android:layout_height="@dimen/dp_152"
+                   android:scaleType="fitXY"/>
+        <TextView android:textColor="@color/white" android:gravity="right" android:layout_gravity="bottom"
+                  android:id="@id/tv_score" android:background="@drawable/shape_score_bg" android:padding="@dimen/dp_5"
+                  android:layout_width="match_parent" android:layout_height="wrap_content" android:text="9.9"/>
+    </android.support.v7.widget.CardView>
+    <TextView android:textColor="@color/color_bebebe" android:ellipsize="end" android:gravity="center"
+              android:id="@id/mov_name" android:layout_width="@dimen/dp_95" android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/dp_10" android:layout_marginBottom="@dimen/dp_15" android:maxLines="1"/>
+</LinearLayout>

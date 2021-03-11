@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <RelativeLayout android:orientation="horizontal" android:background="@color/color_323232"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:background="@drawable/back_search"
+                      android:layout_width="wrap_content" android:layout_height="@dimen/dp_35"
+                      android:layout_marginLeft="@dimen/dp_15" android:layout_marginTop="@dimen/dp_8">
+            <ImageView android:layout_gravity="center" android:id="@+id/search_image"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10"
+                       android:layout_marginBottom="@dimen/dp_3" android:src="@drawable/search"/>
+            <EditText android:textSize="14.0sp" android:textColor="@color/color_d2B588"
+                      android:textColorHint="@color/color_808080" android:gravity="top"
+                      android:id="@+id/mian_search_text" android:background="@null" android:layout_width="@dimen/dp_230"
+                      android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_5"
+                      android:layout_marginTop="@dimen/dp_6" android:hint="输入关键词查找片源" android:singleLine="true"
+                      android:imeOptions="actionSearch" android:textCursorDrawable="@null"/>
+            <ImageView android:layout_gravity="center" android:id="@+id/back_button" android:visibility="gone"
+                       android:layout_width="@dimen/dp_30" android:layout_height="@dimen/dp_30"
+                       android:src="@drawable/search_back" android:scaleType="centerInside"
+                       android:foregroundGravity="center_vertical"/>
+        </LinearLayout>
+        <TextView android:textColor="@color/color_ccb084" android:gravity="right" android:id="@+id/cancel_button"
+                  android:layout_width="@dimen/dp_40" android:layout_height="@dimen/dp_40"
+                  android:layout_marginTop="@dimen/dimen_13" android:layout_marginRight="@dimen/dp_15"
+                  android:text="@string/cancel" android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/mSmartRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlEnableLoadMore="true"
+            app:srlEnableAutoLoadMore="false">
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlFinishDuration="500"
+                app:srlEnableLastTime="true"
+                app:srlClassicsSpinnerStyle="FixedBehind"
+                app:srlTextSizeTitle="16sp"
+                app:srlTextSizeTime="10dp"
+                app:srlTextTimeMarginTop="2dp"
+                app:srlDrawableArrowSize="20dp"
+                app:srlDrawableProgressSize="20dp"
+                app:srlDrawableMarginRight="20dp"
+                app:srlDrawableProgress="@drawable/ic_progress_puzzle"/>
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/mRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:overScrollMode="never"
+        />
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>
