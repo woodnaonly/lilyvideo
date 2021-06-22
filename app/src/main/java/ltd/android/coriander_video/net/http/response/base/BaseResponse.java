@@ -20,7 +20,7 @@ public class BaseResponse<T> {
 
     public String msg;
     @SerializedName("success")
-    public boolean success;
+    public boolean success=false;
 
     @SerializedName("pageNum")
     public int pageNum;

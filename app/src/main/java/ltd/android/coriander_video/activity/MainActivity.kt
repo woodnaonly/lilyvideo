@@ -36,10 +36,10 @@ class MainActivity : BaseActivity<BaseViewModel>() {
 
     lateinit var mFragmentAdapter: FragmentAdapter
 
-    val mFragment1 by lazy { Fragment1.newInstance() }
-    val mFragment2 by lazy { Fragment2.newInstance() }
-    val mFragment3 by lazy { Fragment3.newInstance() }
-    val mFragment4 by lazy { Fragment4.newInstance() }
+//    val mFragment1 by lazy { Fragment1.newInstance() }
+//    val mFragment2 by lazy { Fragment2.newInstance() }
+//    val mFragment3 by lazy { Fragment3.newInstance() }
+//    val mFragment4 by lazy { Fragment4.newInstance() }
 
     val mFragments = ArrayList<Fragment>()
 
@@ -58,10 +58,10 @@ class MainActivity : BaseActivity<BaseViewModel>() {
         itemsId.put(R.id.i_tab4, 3)
 
 
-        mFragments.add(mFragment1)
-        mFragments.add(mFragment2)
-        mFragments.add(mFragment3)
-        mFragments.add(mFragment4)
+//        mFragments.add(mFragment1)
+//        mFragments.add(mFragment2)
+//        mFragments.add(mFragment3)
+//        mFragments.add(mFragment4)
 
         mFragmentAdapter = FragmentAdapter(supportFragmentManager, mFragments)
 
@@ -89,32 +89,25 @@ class MainActivity : BaseActivity<BaseViewModel>() {
 
     private fun initSystemNotice() {
         launch(Dispatchers.Main) {
-
-            //            try {
-//                val noticeResponse = withContext(Dispatchers.IO)
-//                {
-//                    NoticeAPi.instance.getAdAsync()
-//                }
-//            } catch (e: Throwable) {
-//
-//            }
-            val noticeResponse = withContext(Dispatchers.IO)
-            {
-                NoticeAPi.instance.getAdAsync().await()
-            }
-            if (noticeResponse.success) {
-
-                val data = noticeResponse.data
-                sys_note_title_t.text = data.title
-                sys_note_content_t.loadDataWithBaseURL(null, data.content, "text/html", "UTF-8", null)
-                sys_note_info_t.setOnClickListener {
-                    mRootSystemView.visibility = View.GONE
-                    mContentView.isEnabled = true
+            try {
+                val noticeResponse = withContext(Dispatchers.IO)
+                {
+                    NoticeAPi.instance.getAdAsync().await()
                 }
-                mContentView.isEnabled = false
-                mRootSystemView.visibility = View.VISIBLE
-                //设置点击事件，防止事件穿透
-                mRootSystemView.setOnClickListener { }
+                if (noticeResponse.success) {
+                    val data = noticeResponse.data
+                    sys_note_title_t.text = data.title
+                    sys_note_content_t.loadDataWithBaseURL(null, data.content, "text/html", "UTF-8", null)
+                    sys_note_info_t.setOnClickListener {
+                        mRootSystemView.visibility = View.GONE
+                        mContentView.isEnabled = true
+                    }
+                    mContentView.isEnabled = false
+                    mRootSystemView.visibility = View.VISIBLE
+                    //设置点击事件，防止事件穿透
+                    mRootSystemView.setOnClickListener { }
+                }
+            } catch (e: Exception) {
             }
 
         }
@@ -130,22 +123,6 @@ class MainActivity : BaseActivity<BaseViewModel>() {
 
     }
 
-    //    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-//        val map = mapOf("location" to "1")
-//
-//
-//        CoroutineScope(Dispatchers.Main).launch {
-//            val await = AdAPi.instance.GetAd(map).await()
-//            Log.d("=====", await.code.toString())
-//            Log.d("=====", await.data.size.toString())
-//            Log.d("=====", Thread.currentThread().name)
-//
-//        }
-//        disableAllAnimation(mBottomNavigationViewEx)
-//
-//    }
 
     private fun initBottomNavigationViewEx(bottomNavigationViewEx: BottomNavigationViewEx) {
 
@@ -173,9 +150,9 @@ class MainActivity : BaseActivity<BaseViewModel>() {
     }
 
     override fun onBackPressed() {
-        if (mFragment3.onBackPressed()) {
-            return
-        }
+//        if (mFragment3.onBackPressed()) {
+//            return
+//        }
         finish()
     }
 }

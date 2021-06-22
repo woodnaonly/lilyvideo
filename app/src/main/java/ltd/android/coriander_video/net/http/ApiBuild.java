@@ -2,17 +2,17 @@ package ltd.android.coriander_video.net.http;
 
 
 import com.google.gson.Gson;
+
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
 import ltd.android.coriander_video.app.App;
 import ltd.android.coriander_video.cofigure.AppConfigure;
-import ltd.android.coriander_video.net.http.interceptor.TokenInterceptor;
 import ltd.android.coriander_video.utils.GsonUtils;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
-import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 
 public class ApiBuild {
@@ -30,13 +30,13 @@ public class ApiBuild {
         okHttpClient = new OkHttpClient.Builder().readTimeout(TIME_UOT, TimeUnit.MILLISECONDS)
                 .connectTimeout(TIME_UOT, TimeUnit.MILLISECONDS)
                 .writeTimeout(TIME_UOT, TimeUnit.MILLISECONDS)
-                .addInterceptor(new TokenInterceptor())
+//                .addInterceptor(new TokenInterceptor())
                 .cache(cache).build();
 
         Gson gson = GsonUtils.getInstance();
         retrofit = new Retrofit.Builder().client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .addCallAdapterFactory(CoroutineCallAdapterFactoryFix.Companion.create())
+//                .addCallAdapterFactory(CoroutineCallAdapterFactory.Companion.create())
                 .baseUrl(AppConfigure.INSTANCE.getBASE_URL())
                 .build();
     }

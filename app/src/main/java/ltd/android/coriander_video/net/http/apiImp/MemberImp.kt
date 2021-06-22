@@ -12,52 +12,58 @@ import org.greenrobot.eventbus.EventBus
  */
 object MemberImp {
     fun getUserInfo(block: suspend CoroutineScope.() -> Unit) {
-        GlobalScope.launch {
-            /**
-             * 获取用户信息
-             */
+        try {
 
-            val userInfoResponseDeferred = withContext(Dispatchers.IO)
-            {
-                MemberAPi.instance.getUserInfoAsync()
-            }
+            GlobalScope.launch {
+                /**
+                 * 获取用户信息
+                 */
 
-            /**
-             * 推广链接
-             */
-            val linkDeferred = withContext(Dispatchers.IO)
-            {
-                PromotionAPi.instance.getLinkAsync()
-            }
-
-            /**
-             * 分享链接
-             */
-            val getGroupDeferred = withContext(Dispatchers.IO)
-            {
-                PromotionAPi.instance.getGroupAsync()
-            }
-
-            val userInfoResponse = userInfoResponseDeferred.await()
-            val linkResponse = linkDeferred.await()
-            val groupResponse = getGroupDeferred.await()
-
-            if (userInfoResponse.success &&
-                linkResponse.success &&
-                groupResponse.success
-            ) {
-                val userDTO = userInfoResponse.data
-                userDTO.link = linkResponse.data
-                userDTO.group = groupResponse.data
-                val userPrefsHelper = UserPrefsHelper.getInstance()
-                userPrefsHelper.setUserInfo(userDTO)
-                try {
-                    block()
-                } catch (exception: Exception) {
+                val userInfoResponseDeferred = withContext(Dispatchers.IO)
+                {
+                    MemberAPi.instance.getUserInfoAsync()
                 }
-                EventBus.getDefault().post(LoginEvent())
+
+                /**
+                 * 推广链接
+                 */
+                val linkDeferred = withContext(Dispatchers.IO)
+                {
+                    PromotionAPi.instance.getLinkAsync()
+                }
+
+                /**
+                 * 分享链接
+                 */
+                val getGroupDeferred = withContext(Dispatchers.IO)
+                {
+                    PromotionAPi.instance.getGroupAsync()
+                }
+
+                val userInfoResponse = userInfoResponseDeferred.await()
+                val linkResponse = linkDeferred.await()
+                val groupResponse = getGroupDeferred.await()
+
+                if (userInfoResponse.success &&
+                    linkResponse.success &&
+                    groupResponse.success
+                ) {
+                    val userDTO = userInfoResponse.data
+                    userDTO.link = linkResponse.data
+                    userDTO.group = groupResponse.data
+                    val userPrefsHelper = UserPrefsHelper.getInstance()
+                    userPrefsHelper.setUserInfo(userDTO)
+                    try {
+                        block()
+                    } catch (exception: Exception) {
+                    }
+                    EventBus.getDefault().post(LoginEvent())
+                }
             }
+        } catch (ex: Exception) {
+            ex.printStackTrace()
         }
+
     }
 }
 

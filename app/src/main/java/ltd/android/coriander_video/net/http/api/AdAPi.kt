@@ -16,9 +16,15 @@ object AdAPi {
 
         @GET(ModuleName + "ads")
         fun getAdAsync(@QueryMap map: Map<String, String>): Deferred<BaseResponse<List<Ad>>>
+
         companion object {
             const val ModuleName = "api/"
         }
 
     }
+
+    suspend fun getAdAsync(@QueryMap map: Map<String, String>): BaseResponse<List<Ad>> {
+        return instance.getAdAsync(map).await()
+    }
+
 }

@@ -40,10 +40,11 @@ import java.lang.reflect.Type
  * * Response wrapped body (e.g., `Deferred<Response<User>>`) returns a [Response] object for all
  * HTTP responses and throws [IOException][java.io.IOException] for network errors
  */
-class CoroutineCallAdapterFactoryFix private constructor() : CallAdapter.Factory() {
+class CoroutineCallAdapterFactory private constructor() : CallAdapter.Factory() {
     companion object {
-        @JvmStatic @JvmName("create")
-        operator fun invoke() = CoroutineCallAdapterFactoryFix()
+        @JvmStatic
+        @JvmName("create")
+        operator fun invoke() = CoroutineCallAdapterFactory()
     }
 
     override fun get(
@@ -56,7 +57,8 @@ class CoroutineCallAdapterFactoryFix private constructor() : CallAdapter.Factory
         }
         if (returnType !is ParameterizedType) {
             throw IllegalStateException(
-                "Deferred return type must be parameterized as Deferred<Foo> or Deferred<out Foo>")
+                "Deferred return type must be parameterized as Deferred<Foo> or Deferred<out Foo>"
+            )
         }
         val responseType = getParameterUpperBound(0, returnType)
 
@@ -64,7 +66,8 @@ class CoroutineCallAdapterFactoryFix private constructor() : CallAdapter.Factory
         return if (rawDeferredType == Response::class.java) {
             if (responseType !is ParameterizedType) {
                 throw IllegalStateException(
-                    "Response must be parameterized as Response<Foo> or Response<out Foo>")
+                    "Response must be parameterized as Response<Foo> or Response<out Foo>"
+                )
             }
             ResponseCallAdapter<Any>(getParameterUpperBound(0, responseType))
         } else {
@@ -74,12 +77,12 @@ class CoroutineCallAdapterFactoryFix private constructor() : CallAdapter.Factory
 
     private class BodyCallAdapter<T>(
         private val responseType: Type
-    ) : CallAdapter<T, Deferred<T>> {
+    ) : CallAdapter<T, Deferred<T?>> {
 
         override fun responseType() = responseType
 
-        override fun adapt(call: Call<T>): Deferred<T> {
-            val deferred = CompletableDeferred<T>()
+        override fun adapt(call: Call<T>): Deferred<T?> {
+            val deferred = CompletableDeferred<T?>()
 
             deferred.invokeOnCompletion {
                 if (deferred.isCancelled) {
@@ -93,7 +96,12 @@ class CoroutineCallAdapterFactoryFix private constructor() : CallAdapter.Factory
                 }
 
                 override fun onResponse(call: Call<T>, response: Response<T>) {
-                    deferred.complete(response.body()!!)
+                    if (response.isSuccessful) {
+                        deferred.complete(response.body())
+                    } else {
+                        val httpException = HttpException(response)
+                        deferred.completeExceptionally(httpException)
+                    }
                 }
             })
 

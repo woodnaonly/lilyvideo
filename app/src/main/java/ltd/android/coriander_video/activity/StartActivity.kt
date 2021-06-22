@@ -15,9 +15,11 @@ import kotlinx.coroutines.withContext
 import ltd.android.coriander_video.BuildConfig
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.base.BaseActivity
+import ltd.android.coriander_video.entity.Ad
 import ltd.android.coriander_video.net.http.api.AdAPi
 import ltd.android.coriander_video.net.http.api.AuthAPi
 import ltd.android.coriander_video.net.http.apiImp.MemberImp
+import ltd.android.coriander_video.net.http.response.base.BaseResponse
 import ltd.android.coriander_video.utils.SignUtils
 import ltd.android.coriander_video.utils.UUIDS
 import ltd.android.coriander_video.utils.glide.GlideUtils
@@ -45,14 +47,17 @@ class StartActivity : BaseActivity<BaseViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE) //去掉标题栏，只去掉这一行不行，还有信息栏
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN) //去掉信息栏，
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        ) //去掉信息栏，
         super.onCreate(savedInstanceState)
     }
 
     override fun initView() {
         super.initView()
 
-        val dir = getDir("cjq", Context.MODE_WORLD_WRITEABLE)
+        val dir = getDir("cjq", Context.MODE_PRIVATE)
 
         val cacheDir = getCacheDir()
         val tempFile = File(
@@ -71,37 +76,51 @@ class StartActivity : BaseActivity<BaseViewModel>() {
                     AuthAPi.instance.refreshTokenAsync().await()
                 }
             } else {
-                val visitorResponse = withContext(Dispatchers.IO)
+                try {
+                    val visitorResponse = withContext(Dispatchers.IO)
+                    {
+                        val uuid = UUIDS.getUUID()
+                        val sign = SignUtils.Sign(uuid)
+                        val map = mapOf(
+                            "key" to uuid,
+                            "sign" to sign
+                        )
+                        AuthAPi.instance.getVisitorAsync(map).await()
+                    }
+                    if (visitorResponse.success) {
+                        userPrefsHelper.token = visitorResponse.data
+                    }
+                } catch (ex: Exception) {
+                    ex.printStackTrace()
+                }
+            }
+//            MemberImp.getUserInfo { }
+
+            try {
+                val adResponse = withContext(Dispatchers.IO)
                 {
-                    val uuid = UUIDS.getUUID()
-                    val sign = SignUtils.Sign(uuid)
                     val map = mapOf(
-                        "key" to uuid,
-                        "sign" to sign
+                        "location" to "0"
                     )
-                    AuthAPi.instance.getVisitorAsync(map).await()
+                    var baseResponse: BaseResponse<List<Ad>>? = null
+                    try {
+                        baseResponse = AdAPi.instance.getAdAsync(map).await()
+                    } catch (ex: Exception) {
+                        Log.d("=====1", ex.message)
+                    }
+                    baseResponse
                 }
-                if (visitorResponse.success) {
-                    userPrefsHelper.token = visitorResponse.data
+                if (adResponse?.success!!) {
+                    val list = adResponse.data
+                    if (list.size > 0) {
+                        GlideUtils.loadImg(start_img, list[0].thumbnail)
+                    }
                 }
-            }
-            MemberImp.getUserInfo { }
-            val adResponse = withContext(Dispatchers.IO)
-            {
-                val map = mapOf(
-                    "location" to "0"
-                )
-                AdAPi.instance.getAdAsync(map).await()
+            } catch (ex: Exception) {
+                ex.printStackTrace()
             }
 
 
-
-            if (adResponse.success) {
-                val list = adResponse.data
-                if (list.size > 0) {
-                    GlideUtils.loadImg(start_img, list[0].thumbnail)
-                }
-            }
             ll_jump.visibility = View.VISIBLE
 
             jump.setOnClickListener {
@@ -114,7 +133,6 @@ class StartActivity : BaseActivity<BaseViewModel>() {
             if (BuildConfig.DEBUG) {
                 gotoMainActivity()
             }
-//            FeedbackActivity.start(this@StartActivity)
         }
 
 
