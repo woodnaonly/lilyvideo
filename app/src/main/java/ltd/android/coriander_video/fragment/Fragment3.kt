@@ -16,7 +16,7 @@ import ltd.android.coriander_video.view_model.MovieViewModel
 /**
  *
  *
- * @author by 梁馨 on 2019/2/28.
+ * @author by 黄梦 on 2019/2/28.
  */
 class Fragment3 : BaseFragment<MovieViewModel>() {
     override fun providerVMClass(): Class<MovieViewModel> = MovieViewModel::class.java

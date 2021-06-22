@@ -8,7 +8,7 @@ import ltd.android.coriander_video.utils.sharedpreference.UserPrefsHelper
 import org.greenrobot.eventbus.EventBus
 
 /**
- * @author by 梁馨 on 2019/3/27.
+ * @author by 黄梦 on 2019/3/27.
  */
 object MemberImp {
     fun getUserInfo(block: suspend CoroutineScope.() -> Unit) {

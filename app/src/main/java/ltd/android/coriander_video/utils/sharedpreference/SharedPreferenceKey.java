@@ -1,7 +1,7 @@
 package ltd.android.coriander_video.utils.sharedpreference;
 
 /**
- * @author by 梁馨 on 2018/1/29.
+ * @author by 黄梦 on 2018/1/29.
  */
 
 public class SharedPreferenceKey {

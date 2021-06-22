@@ -23,7 +23,7 @@ import ltd.android.coriander_video.video.SampleCoverVideo
 import ltd.android.coriander_video.video.callback.LocalGSYCallBack
 
 /**
- * @author by 梁馨 on 2018/3/1.
+ * @author by 黄梦 on 2018/3/1.
  */
 
 class Fragment3Adapter : BaseMultiItemQuickAdapter<Fragment3EntityBase, BaseViewHolder> {

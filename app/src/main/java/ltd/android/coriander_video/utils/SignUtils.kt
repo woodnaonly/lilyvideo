@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException
 /**
  *
  *
- * @author by 梁馨 on 2019/3/24.
+ * @author by 黄梦 on 2019/3/24.
  */
 object SignUtils {
     //写一个md5加密的方法

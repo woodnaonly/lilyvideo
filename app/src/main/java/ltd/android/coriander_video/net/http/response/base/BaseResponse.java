@@ -3,7 +3,7 @@ package ltd.android.coriander_video.net.http.response.base;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * @author by 梁馨 on 2019/2/26.
+ * @author by 黄梦 on 2019/2/26.
  */
 public class BaseResponse<T> {
     @SerializedName("code")

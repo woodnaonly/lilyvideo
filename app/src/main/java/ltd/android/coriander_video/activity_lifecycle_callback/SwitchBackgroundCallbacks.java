@@ -7,7 +7,7 @@ import android.os.Bundle;
 import java.util.Stack;
 
 /**
- * @author by 梁馨 on 2018/6/20.
+ * @author by 黄梦 on 2018/6/20.
  */
 public class SwitchBackgroundCallbacks implements Application.ActivityLifecycleCallbacks {
 

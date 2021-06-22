@@ -4,7 +4,7 @@ import android.os.CountDownTimer;
 import android.widget.TextView;
 
 /**
- * @author by 梁馨 on 2018/3/1.
+ * @author by 黄梦 on 2018/3/1.
  */
 
 public class TextViewTimeCountUtils1 extends CountDownTimer {

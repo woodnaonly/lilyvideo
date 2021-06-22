@@ -4,7 +4,7 @@ import java.io.Closeable;
 import java.io.IOException;
 
 /**
- * @author by 梁馨 on 2019/3/26.
+ * @author by 黄梦 on 2019/3/26.
  */
 public final class CloseUtils {
 

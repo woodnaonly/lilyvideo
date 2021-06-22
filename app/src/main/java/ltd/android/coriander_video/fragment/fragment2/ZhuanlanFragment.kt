@@ -17,7 +17,7 @@ import ltd.android.coriander_video.view_model.ZhuanLanViewModel
 /**
  *
  *
- * @author by 梁馨 on 2019/2/28.
+ * @author by 黄梦 on 2019/2/28.
  */
 class ZhuanlanFragment : BaseFragment<ZhuanLanViewModel>() {
 

@@ -4,7 +4,7 @@ import ltd.android.coriander_video.adapter.fragment3.entity.base.Fragment3Entity
 import ltd.android.coriander_video.dto.MovieDTO;
 
 /**
- * @author by 梁馨 on 2018/3/1.
+ * @author by 黄梦 on 2018/3/1.
  */
 public class Fragment3VideoEntity extends Fragment3EntityBase {
 

@@ -14,7 +14,7 @@ import java.util.Hashtable;
 import java.util.Map;
 
 /**
- * @author by 梁馨 on 2019/3/28.
+ * @author by 黄梦 on 2019/3/28.
  */
 public class ZXingUtils {
 

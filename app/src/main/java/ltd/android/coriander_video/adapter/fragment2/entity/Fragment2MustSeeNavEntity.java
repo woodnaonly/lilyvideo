@@ -4,7 +4,7 @@ import ltd.android.coriander_video.adapter.fragment2.entity.base.Fragment2Entity
 import ltd.android.coriander_video.dto.ColumnNavDTO;
 
 /**
- * @author by 梁馨 on 2018/3/1.
+ * @author by 黄梦 on 2018/3/1.
  */
 public class Fragment2MustSeeNavEntity extends Fragment2EntityBase {
 

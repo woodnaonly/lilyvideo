@@ -4,7 +4,7 @@ import ltd.android.coriander_video.adapter.fragment1.entity.base.Fragment1Entity
 import ltd.android.coriander_video.dto.ColumnMovieDTO;
 
 /**
- * @author by 梁馨 on 2018/3/1.
+ * @author by 黄梦 on 2018/3/1.
  */
 public class Fragment1ColumnsMoiveEntity extends Fragment1EntityBase {
 

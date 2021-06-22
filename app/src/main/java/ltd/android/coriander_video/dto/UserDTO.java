@@ -5,7 +5,7 @@ import ltd.android.coriander_video.R;
 import ltd.android.coriander_video.dto.promotion.PromotionBase;
 
 /**
- * @author by 梁馨 on 2019/3/24.
+ * @author by 黄梦 on 2019/3/24.
  */
 public class UserDTO {
     public String registerTime;

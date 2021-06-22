@@ -5,7 +5,7 @@ import android.os.Environment;
 import java.io.File;
 
 /**
- * @author by 梁馨 on 2019/3/26.
+ * @author by 黄梦 on 2019/3/26.
  */
 public class FileManage {
     public static final String appName = "coriander_video";

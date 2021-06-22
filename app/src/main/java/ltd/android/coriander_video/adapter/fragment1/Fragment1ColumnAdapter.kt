@@ -10,7 +10,7 @@ import ltd.android.coriander_video.dto.MovieDTO
 import ltd.android.coriander_video.utils.glide.GlideUtils
 
 /**
- * @author by 梁馨 on 2018/4/24.
+ * @author by 黄梦 on 2018/4/24.
  */
 class Fragment1ColumnAdapter(mColumnMovieDTO: ColumnMovieDTO) :
     BaseQuickAdapter<MovieDTO, BaseViewHolder>(

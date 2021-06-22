@@ -6,7 +6,7 @@ import ltd.android.coriander_video.R
 import ltd.android.coriander_video.dto.TagDTO
 
 /**
- * @author by 梁馨 on 2018/4/24.
+ * @author by 黄梦 on 2018/4/24.
  */
 class Fragment2LabelAdapter(private val DataList: List<TagDTO>) :
 

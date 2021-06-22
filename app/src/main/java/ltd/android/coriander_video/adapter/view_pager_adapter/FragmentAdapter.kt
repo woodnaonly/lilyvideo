@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter
 import java.util.*
 
 /**
- * @author by 梁馨 on 2019/2/28.
+ * @author by 黄梦 on 2019/2/28.
  */
 class FragmentAdapter(fm: FragmentManager, private val data: List<Fragment>) : FragmentPagerAdapter(fm) {
 

@@ -11,9 +11,7 @@ import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 
 import java.security.MessageDigest;
 
-/**
- * 作者：woodnaonly on 2017/3/9 10:50 邮箱：497917264@qq.com 内容：将图片转化为圆形 备注：
- */
+
 public class GlideBorderTransform extends BitmapTransformation {
 
   private static final int VERSION = 1;

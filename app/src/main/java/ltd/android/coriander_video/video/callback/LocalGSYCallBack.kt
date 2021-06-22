@@ -12,7 +12,7 @@ import ltd.android.coriander_video.video.SampleCoverVideo
 /**
  *
  *
- * @author by 梁馨 on 2019/3/19.
+ * @author by 黄梦 on 2019/3/19.
  */
 class LocalGSYCallBack(private val videoPlayerView: SampleCoverVideo, private val movieDTO: MovieDTO) :
     GSYSampleCallBack() {

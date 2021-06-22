@@ -24,7 +24,7 @@ import ltd.android.coriander_video.fragment.Fragment2
 import ltd.android.coriander_video.utils.glide.GlideUtils
 
 /**
- * @author by 梁馨 on 2018/3/1.
+ * @author by 黄梦 on 2018/3/1.
  */
 
 class Fragment2ZhuanLanAdapter : BaseMultiItemQuickAdapter<Fragment2EntityBase, BaseViewHolder> {

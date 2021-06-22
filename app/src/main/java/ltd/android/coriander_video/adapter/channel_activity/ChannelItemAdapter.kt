@@ -10,7 +10,7 @@ import ltd.android.coriander_video.utils.glide.GlideUtils
 import java.util.*
 
 /**
- * @author by 梁馨 on 2018/4/24.
+ * @author by 黄梦 on 2018/4/24.
  */
 class ChannelItemAdapter(val DataList: ArrayList<ColumnNavDTO.Nav>) :
     BaseQuickAdapter<ColumnNavDTO.Nav, BaseViewHolder>(

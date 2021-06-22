@@ -8,7 +8,7 @@ import android.support.v4.content.ContextCompat;
 import ltd.android.coriander_video.app.App;
 
 /**
- * @author by 梁馨 on 2018/1/31.
+ * @author by 黄梦 on 2018/1/31.
  */
 
 public class ResourcesUtils {

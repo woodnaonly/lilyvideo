@@ -15,7 +15,7 @@ import ltd.android.coriander_video.view_model.base.BaseViewModel
 /**
  *
  *
- * @author by 梁馨 on 2019/2/28.
+ * @author by 黄梦 on 2019/2/28.
  */
 class UserNotificationFragment : BaseFragment<BaseViewModel>() {
     override fun layoutId(): Int {

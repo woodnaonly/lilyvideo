@@ -8,7 +8,7 @@ import ltd.android.coriander_video.entity.MovieClass;
 import java.util.List;
 
 /**
- * @author by 梁馨 on 2019/3/2.
+ * @author by 黄梦 on 2019/3/2.
  */
 public class HomeRespone {
     public List<Ad> adList;
