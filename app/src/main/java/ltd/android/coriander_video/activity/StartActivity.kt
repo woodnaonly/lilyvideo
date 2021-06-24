@@ -15,6 +15,7 @@ import kotlinx.coroutines.withContext
 import ltd.android.coriander_video.BuildConfig
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.base.BaseActivity
+import ltd.android.coriander_video.activity.user.LoginActivity
 import ltd.android.coriander_video.entity.Ad
 import ltd.android.coriander_video.net.http.api.AdAPi
 import ltd.android.coriander_video.net.http.api.AuthAPi
@@ -131,7 +132,9 @@ class StartActivity : BaseActivity<BaseViewModel>() {
 
 
             if (BuildConfig.DEBUG) {
-                gotoMainActivity()
+//                gotoMainActivity()
+                LoginActivity.start(this@StartActivity)
+
             }
         }
 

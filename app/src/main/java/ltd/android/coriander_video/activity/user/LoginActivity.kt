@@ -45,7 +45,7 @@ class LoginActivity : BaseActivity<BaseViewModel>() {
     }
 
     override fun layoutId(): Int {
-        return R.layout.activity_login_two
+        return R.layout.activity_login_three
     }
 
     override fun isApplyEventBus(): Boolean {
@@ -59,81 +59,7 @@ class LoginActivity : BaseActivity<BaseViewModel>() {
 
     override fun initView() {
         super.initView()
-        back.setOnClickListener {
-            finish()
-        }
 
-        //跳转到注册
-        JoinMember.setOnClickListener {
-            LoginJoinMemberActivity.start(this)
-        }
-
-        //跳转到找回密码
-        GetPassword.setOnClickListener {
-            ForgetPasswordActivity.start(this)
-//            XieYiActivity.start(this)
-        }
-
-        login_phone.setOnClickListener {
-            loginPhone(true)
-        }
-        login_username.setOnClickListener {
-            loginPhone(false)
-        }
-
-
-        ShowPassword.setOnClickListener {
-            val transformationMethod = EnterPassword.transformationMethod
-            if (transformationMethod is HideReturnsTransformationMethod) {
-                //显示为明文
-                EnterPassword.transformationMethod = PasswordTransformationMethod.getInstance()
-            } else {
-                //显示为密文
-                EnterPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
-            }
-        }
-
-        EnterAccount.addTextChangedListener(textWatcher())
-        EnterPassword.addTextChangedListener(textWatcher())
-
-
-        Enter_Login.setOnClickListener {
-            launch {
-                val response = withContext(Dispatchers.IO)
-                {
-                    val mobile = EnterAccount.text.toString()
-                    val password = EnterPassword.text.toString()
-                    val map = mapOf(
-                        "mobile" to mobile,
-                        "password" to password
-                    )
-                    AuthAPi.instance.signinAsync(map).await()
-                }
-
-                if (response.success) {
-                    val token = response.data
-                    val userPrefsHelper = UserPrefsHelper.getInstance()
-                    userPrefsHelper.clearToken();
-                    userPrefsHelper.token = token
-                    /**
-                     * 获取用户信息
-                     */
-                    runBlocking {
-                        val userInfoResponse = withContext(Dispatchers.IO)
-                        {
-                            MemberAPi.instance.getUserInfoAsync().await()
-                        }
-                        if (userInfoResponse.success) {
-                            userPrefsHelper.setUserInfo(userInfoResponse.data)
-                            EventBus.getDefault().post(LoginEvent())
-                            finish()
-                        }
-                    }
-                } else {
-                    toastUtil.showToast(response.msg)
-                }
-            }
-        }
 
 
     }
