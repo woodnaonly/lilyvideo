@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.os.StrictMode;
+
 import ltd.android.coriander_video.activity_lifecycle_callback.SwitchBackgroundCallbacks;
 import ltd.android.coriander_video.utils.ObjectBox;
 
@@ -19,6 +20,11 @@ public class App extends Application {
 
     public static App getAppContext() {
         return app;
+    }
+
+
+    public  SwitchBackgroundCallbacks getSwitchBackgroundCallbacks() {
+        return mSwitchBackgroundCallbacks;
     }
 
     @Override
@@ -54,6 +60,21 @@ public class App extends Application {
     public void stopActivity(Class... classes) {
         mSwitchBackgroundCallbacks.stopActivity(classes);
     }
+
+    /***
+     * 关闭注册
+     */
+    public void stopSigin() {
+
+    }
+
+    /***
+     * 关闭登录
+     */
+    public void stopLogin() {
+//        stopActivity()
+    }
+
 
     public void stopAllActivity() {
         mSwitchBackgroundCallbacks.stopAllActivity();

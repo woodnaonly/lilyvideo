@@ -48,6 +48,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/tvTitleRight"
             android:layout_width="wrap_content"
             android:layout_height="17dp"
             android:layout_marginEnd="@dimen/dp_16"
@@ -98,7 +99,7 @@
 
 
     <TextView
-        android:id="@+id/tv_86"
+        android:id="@+id/tvPhone"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/dp_10"
@@ -110,7 +111,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_phone" />
 
     <EditText
-        android:id="@+id/et_phone"
+        android:id="@+id/etPhone"
         android:layout_width="0dp"
         android:layout_height="@dimen/dp_35"
         android:layout_marginTop="@dimen/dp_20"
@@ -128,7 +129,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_phone" />
 
     <TextView
-        android:id="@+id/tv_password"
+        android:id="@+id/tvPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_72"
@@ -137,10 +138,10 @@
         android:textColor="#ffffffff"
         android:textSize="@dimen/dp_14"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/etPhone" />
 
     <EditText
-        android:id="@+id/et_password"
+        android:id="@+id/etPassword"
         android:layout_width="0dp"
         android:layout_height="@dimen/dp_35"
         android:layout_marginTop="@dimen/dp_20"
@@ -152,8 +153,8 @@
         android:textColorHint="#7FFFFFFF"
         android:textSize="@dimen/dp_14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tv_password"
-        app:layout_constraintTop_toBottomOf="@+id/tv_password" />
+        app:layout_constraintStart_toStartOf="@+id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
     <TextView
         android:id="@+id/btnGetCode"
@@ -164,9 +165,9 @@
         android:text="获取验证码"
         android:textColor="#fffe423c"
         android:textSize="@dimen/dp_12"
-        app:layout_constraintBottom_toBottomOf="@id/et_password"
-        app:layout_constraintEnd_toEndOf="@id/et_password"
-        app:layout_constraintTop_toTopOf="@id/et_password"
+        app:layout_constraintBottom_toBottomOf="@id/etPassword"
+        app:layout_constraintEnd_toEndOf="@id/etPassword"
+        app:layout_constraintTop_toTopOf="@id/etPassword"
 
         />
 
@@ -183,11 +184,11 @@
         android:textColor="#ffffffff"
         android:textSize="@dimen/dp_18"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tv_password"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintStart_toStartOf="@+id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <TextView
-        android:id="@+id/btnLoginPassWord"
+        android:id="@+id/btnPasswordLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_71"
@@ -206,10 +207,10 @@
         android:textColor="#ffffffff"
         android:textSize="@dimen/dp_12"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/btnLoginPassWord"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPasswordLogin"
         app:layout_constraintEnd_toStartOf="@+id/btn_forget_the_password"
-        app:layout_constraintStart_toEndOf="@+id/btnLoginPassWord"
-        app:layout_constraintTop_toTopOf="@+id/btnLoginPassWord" />
+        app:layout_constraintStart_toEndOf="@+id/btnPasswordLogin"
+        app:layout_constraintTop_toTopOf="@+id/btnPasswordLogin" />
 
     <TextView
         android:id="@+id/btn_forget_the_password"

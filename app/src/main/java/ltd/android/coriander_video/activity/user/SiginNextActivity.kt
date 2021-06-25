@@ -3,25 +3,46 @@ package ltd.android.coriander_video.activity.user
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
-import kotlinx.android.synthetic.main.activity_login_three.*
+import android.view.View
+import kotlinx.android.synthetic.main.activity_sigup_next.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.base.BaseActivity
-import ltd.android.coriander_video.app.App
 import ltd.android.coriander_video.event.LoginEvent
 import ltd.android.coriander_video.utils.ResourcesUtils
 import ltd.android.coriander_video.view_model.base.BaseViewModel
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
+/**
+ * 注册 下一步ACT
+ */
+class SiginNextActivity : BaseActivity<BaseViewModel>() {
 
-class LoginActivity : BaseActivity<BaseViewModel>() {
+    private var mTextViewTimeCountUtils = object : CountDownTimer(60000, 1000) {
+        override fun onFinish() {
+            tvCodeCount.visibility = View.GONE
+            btnGetCode.visibility = View.VISIBLE
+        }
+
+        override fun onTick(millisUntilFinished: Long) {
+            tvCodeCount.visibility = View.VISIBLE
+            btnGetCode.visibility = View.GONE
+            tvCodeCount.text = "${(millisUntilFinished / 1000)}s"
+
+        }
+
+    }
 
 
     companion object {
-        fun start(context: Context?) {
-            val intent = Intent(context, LoginActivity::class.java)
+        val phoneKey = "key_phone"
+
+        fun start(context: Context?, phone: String) {
+            val intent = Intent(context, SiginNextActivity::class.java)
+            intent.putExtra(phoneKey, phone)
             context?.startActivity(intent)
         }
     }
@@ -29,14 +50,16 @@ class LoginActivity : BaseActivity<BaseViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
 //        requestWindowFeature(Window.FEATURE_NO_TITLE) //去掉标题栏，只去掉这一行不行，还有信息栏
 //        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN) //去掉信息栏，
-        //关闭快速登录，只允许存在一个登录
-        App.getInstance().getSwitchBackgroundCallbacks().stopActivity(FastLoginActivity::class.java)
-        App.getInstance().getSwitchBackgroundCallbacks().stopActivity(LoginActivity::class.java)
         super.onCreate(savedInstanceState)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        mTextViewTimeCountUtils.cancel()
+    }
+
     override fun layoutId(): Int {
-        return R.layout.activity_login_three
+        return R.layout.activity_sigup_next
     }
 
     override fun isApplyEventBus(): Boolean {
@@ -50,18 +73,23 @@ class LoginActivity : BaseActivity<BaseViewModel>() {
 
     override fun initView() {
         super.initView()
+
+        val phone = intent.getStringExtra(phoneKey)
+        tvPhone.text = "86 ${phone}"
+
+        etPhone.setText(phone)
+
         back.setOnClickListener {
             finish()
         }
 
-        //注册按钮
-        tvTitleRight.setOnClickListener {
-            SiginActivity.start(this@LoginActivity)
+        btnGetCode.setOnClickListener {
+            //todo 请求获取验证码接口
+            mTextViewTimeCountUtils.start()
         }
 
-        //快速登录
-        btnFastLogin.setOnClickListener {
-            FastLoginActivity.start(this@LoginActivity)
+        tvTitleRight.setOnClickListener {
+            LoginActivity.start(this@SiginNextActivity)
             finish()
         }
 

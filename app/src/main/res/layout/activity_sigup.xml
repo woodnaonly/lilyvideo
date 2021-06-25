@@ -48,10 +48,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/tvTitleRight"
             android:layout_width="wrap_content"
             android:layout_height="17dp"
             android:layout_marginEnd="@dimen/dp_16"
-            android:text="注册"
+            android:text="登录"
             android:textColor="#ffffffff"
             android:textSize="@dimen/dp_14"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -98,7 +99,7 @@
 
 
     <TextView
-        android:id="@+id/tv_86"
+        android:id="@+id/tvPhone"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/dp_10"
@@ -110,7 +111,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_phone" />
 
     <EditText
-        android:id="@+id/et_phone"
+        android:id="@+id/etPhone"
         android:layout_width="0dp"
         android:layout_height="@dimen/dp_35"
         android:layout_marginTop="@dimen/dp_20"
@@ -139,8 +140,8 @@
         android:textColor="#ffffffff"
         android:textSize="@dimen/dp_18"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/et_phone"
-        app:layout_constraintTop_toBottomOf="@+id/et_phone" />
+        app:layout_constraintStart_toStartOf="@+id/etPhone"
+        app:layout_constraintTop_toBottomOf="@+id/etPhone" />
 
     <TextView
         android:id="@+id/tvTips"
