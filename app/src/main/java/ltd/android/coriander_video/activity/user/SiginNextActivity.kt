@@ -7,7 +7,7 @@ import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import kotlinx.android.synthetic.main.activity_sigup_next.*
+import kotlinx.android.synthetic.main.activity_sigup_two.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.base.BaseActivity
 import ltd.android.coriander_video.event.LoginEvent
@@ -59,7 +59,7 @@ class SiginNextActivity : BaseActivity<BaseViewModel>() {
     }
 
     override fun layoutId(): Int {
-        return R.layout.activity_sigup_next
+        return R.layout.activity_sigup_two
     }
 
     override fun isApplyEventBus(): Boolean {

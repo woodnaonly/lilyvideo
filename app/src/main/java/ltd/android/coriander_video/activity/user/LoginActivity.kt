@@ -65,6 +65,11 @@ class LoginActivity : BaseActivity<BaseViewModel>() {
             finish()
         }
 
+        btnForgetThePassword.setOnClickListener {
+            ForgetPasswordOneActivity.start(this@LoginActivity)
+//            finish()
+        }
+
     }
 
     private fun textWatcher(): TextWatcher {

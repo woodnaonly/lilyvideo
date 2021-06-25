@@ -3,9 +3,16 @@ package ltd.android.coriander_video.activity.user
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import kotlinx.android.synthetic.main.activity_fast_login.*
+import kotlinx.android.synthetic.main.activity_fast_login.back
+import kotlinx.android.synthetic.main.activity_fast_login.btnGetCode
+import kotlinx.android.synthetic.main.activity_fast_login.tvTitleRight
+import kotlinx.android.synthetic.main.activity_sigup_two.*
+import kotlinx.android.synthetic.main.activity_sigup_two.tvCodeCount
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.base.BaseActivity
 import ltd.android.coriander_video.app.App
@@ -18,6 +25,20 @@ import org.greenrobot.eventbus.ThreadMode
 
 class FastLoginActivity : BaseActivity<BaseViewModel>() {
 
+    private var mTextViewTimeCountUtils = object : CountDownTimer(60000, 1000) {
+        override fun onFinish() {
+            tvCodeCount.visibility = View.GONE
+            btnGetCode.visibility = View.VISIBLE
+        }
+
+        override fun onTick(millisUntilFinished: Long) {
+            tvCodeCount.visibility = View.VISIBLE
+            btnGetCode.visibility = View.GONE
+            tvCodeCount.text = "${(millisUntilFinished / 1000)}s"
+
+        }
+
+    }
 
     companion object {
         fun start(context: Context?) {
@@ -25,12 +46,20 @@ class FastLoginActivity : BaseActivity<BaseViewModel>() {
             context?.startActivity(intent)
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         //关闭登录，只允许存在一个登录
         App.getInstance().switchBackgroundCallbacks.stopActivity(LoginActivity::class.java)
         App.getInstance().switchBackgroundCallbacks.stopActivity(FastLoginActivity::class.java)
         super.onCreate(savedInstanceState)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mTextViewTimeCountUtils.cancel()
+    }
+
+
     override fun layoutId(): Int {
         return R.layout.activity_fast_login
     }
@@ -62,7 +91,12 @@ class FastLoginActivity : BaseActivity<BaseViewModel>() {
             finish()
         }
 
+        btnGetCode.setOnClickListener {
+            //todo 请求获取验证码接口
+            mTextViewTimeCountUtils.start()
+        }
 
+        btnLogin.setOnClickListener { finish() }
     }
 
     private fun textWatcher(): TextWatcher {

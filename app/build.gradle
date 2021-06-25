@@ -61,6 +61,28 @@ android {
         // but continue the build even when errors are found:
         abortOnError false
     }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+//            def date = new Date().format("yyyyMMddHHmm", TimeZone.getTimeZone("GMT+08"))
+            if (outputFileName != null && outputFileName.endsWith('.apk')) {
+
+                def createTime = new Date().format("YYYYMMdd_HHmm", TimeZone.getTimeZone("GMT+08:00"))
+                def fileName;
+
+                if (variant.buildType.name != 'release') {
+//                    fileName = "斗鱼_" + "debug_v${defaultConfig.versionName}_${createTime}.apk"
+                    fileName = "斗鱼_" + "debug_v${defaultConfig.versionName}.apk"
+                    outputFileName = fileName
+                } else {
+                    //release 版本只有版本号
+                    fileName = "斗鱼_" + "v${defaultConfig.versionName}.apk"
+                    outputFileName = fileName
+                }
+                outputFileName = fileName
+            }
+        }
+    }
 }
 
 dependencies {

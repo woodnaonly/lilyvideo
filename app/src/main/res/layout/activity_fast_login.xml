@@ -168,12 +168,25 @@
         app:layout_constraintBottom_toBottomOf="@id/etPassword"
         app:layout_constraintEnd_toEndOf="@id/etPassword"
         app:layout_constraintTop_toTopOf="@id/etPassword"
-
         />
+
+    <TextView
+        android:id="@+id/tvCodeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:text="59s"
+        android:textColor="#58FE423C"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintBottom_toBottomOf="@id/etPassword"
+        app:layout_constraintEnd_toEndOf="@id/etPassword"
+        app:layout_constraintTop_toTopOf="@id/etPassword" />
 
 
     <TextView
-        android:id="@+id/btn_login"
+        android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_35"
         android:layout_marginTop="@dimen/dp_72"
@@ -197,7 +210,7 @@
         android:textColor="#ffffffff"
         android:textSize="@dimen/dp_12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <TextView
         android:id="@+id/btn_id_card_login"

@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import kotlinx.android.synthetic.main.activity_sigup_one.*
+import kotlinx.android.synthetic.main.activity_forget_the_password_one.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.base.BaseActivity
 import ltd.android.coriander_video.event.LoginEvent
@@ -15,14 +15,14 @@ import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
 /**
- * 注册ACT
+ * 忘记密码 步骤一 ACT
  */
-class SiginActivity : BaseActivity<BaseViewModel>() {
+class ForgetPasswordOneActivity : BaseActivity<BaseViewModel>() {
 
 
     companion object {
         fun start(context: Context?) {
-            val intent = Intent(context, SiginActivity::class.java)
+            val intent = Intent(context, ForgetPasswordOneActivity::class.java)
             context?.startActivity(intent)
         }
     }
@@ -34,7 +34,7 @@ class SiginActivity : BaseActivity<BaseViewModel>() {
     }
 
     override fun layoutId(): Int {
-        return R.layout.activity_sigup_one
+        return R.layout.activity_forget_the_password_one
     }
 
     override fun isApplyEventBus(): Boolean {
@@ -53,13 +53,13 @@ class SiginActivity : BaseActivity<BaseViewModel>() {
         }
 
         tvTitleRight.setOnClickListener {
-            LoginActivity.start(this@SiginActivity)
+            LoginActivity.start(this@ForgetPasswordOneActivity)
             finish()
         }
 
         btnNext.setOnClickListener {
             val phone = etPhone.text.toString()
-            SiginNextActivity.start(this, phone)
+            ForgetPasswordTwoActivity.start(this, phone)
             finish()
         }
 

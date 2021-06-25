@@ -71,6 +71,8 @@
         <activity android:name=".activity.user.SiginActivity" />
         <activity android:name=".activity.user.FastLoginActivity" />
         <activity android:name=".activity.user.SiginNextActivity" />
+        <activity android:name=".activity.user.ForgetPasswordOneActivity" />
+        <activity android:name=".activity.user.ForgetPasswordTwoActivity" />
     </application>
 
 </manifest>
