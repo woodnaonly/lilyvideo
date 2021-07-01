@@ -116,4 +116,5 @@
     <color name="color_link">#FFDDA4</color>
     <color name="gray_translucent">#80888888</color>
     <color name="color_FF0041">#ff2c54</color>
+    <color name="color_bg_theme">#ff2c54</color>
 </resources>
