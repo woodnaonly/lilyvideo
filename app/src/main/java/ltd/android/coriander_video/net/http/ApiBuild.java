@@ -36,7 +36,6 @@ public class ApiBuild {
         Gson gson = GsonUtils.getInstance();
         retrofit = new Retrofit.Builder().client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
-//                .addCallAdapterFactory(CoroutineCallAdapterFactory.Companion.create())
                 .baseUrl(AppConfigure.INSTANCE.getBASE_URL())
                 .build();
     }

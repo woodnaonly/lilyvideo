@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.fragment1.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.adapter.view_pager_adapter.CommPagerAdapter
 import ltd.android.coriander_video.fragment.base.BaseFragment
-import ltd.android.coriander_video.fragment.fragment1.ChildrenFragment1
+import ltd.android.coriander_video.fragment.fragment1.HomeChildrenFragment1
 import ltd.android.coriander_video.view_model.HomeViewModel
 import java.util.*
 
@@ -46,17 +46,17 @@ class Fragment1 : BaseFragment<HomeViewModel>() {
     private fun setFragments() {
 //        currentLocationFragment = CurrentLocationFragment()
 //        recommendFragment = RecommendFragment()
-        fragments.add(ChildrenFragment1())
-        fragments.add(ChildrenFragment1())
-        fragments.add(ChildrenFragment1())
-        fragments.add(ChildrenFragment1())
+        fragments.add(HomeChildrenFragment1())
+        fragments.add(HomeChildrenFragment1())
+        fragments.add(HomeChildrenFragment1())
+        fragments.add(HomeChildrenFragment1())
 //        fragments.add(recommendFragment!!)
-        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("同城"))
-        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("关注"))
-        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("热门"))
-        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("推荐"))
+//        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("同城"))
+//        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("关注"))
+//        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("热门"))
+//        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("推荐"))
         pagerAdapter =
-            CommPagerAdapter(childFragmentManager, fragments, arrayOf("海淀", "推荐", "关注", "推荐"))
+            CommPagerAdapter(childFragmentManager, fragments, arrayOf("同城", "推荐", "关注", "推荐"))
         viewPager!!.adapter = pagerAdapter
         mXTabLayout!!.setupWithViewPager(viewPager)
 //        mXTabLayout!!.getTabAt(1)!!.select()

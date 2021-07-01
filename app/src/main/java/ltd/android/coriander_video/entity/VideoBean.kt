@@ -14,6 +14,8 @@ class VideoBean {
     /** 封面图片资源  */
     var coverRes = 0
 
+    var videoURL = ""
+
     /** 视频文案内容  */
     var content: String? = null
         get() = if (field == null) "" else field
@@ -44,7 +46,7 @@ class VideoBean {
         var nickName: String? = null
             get() = if (field == null) "" else field
         var head = 0
-
+        var headUrl = ""
         /** 座右铭  */
         var sign: String? = null
             get() = if (field == null) "" else field

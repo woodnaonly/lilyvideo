@@ -7,8 +7,7 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="48dp" />
+        android:layout_height="match_parent" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,11 +18,8 @@
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dimen_23"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="12dp"
-            android:padding="10dp"
-            android:src="@drawable/iv_fragment1_zhibo"
-            android:textColor="#cccccc"
-            android:textSize="14sp" />
+            android:layout_marginLeft="@dimen/dp_12"
+            android:src="@drawable/iv_fragment1_zhibo" />
 
         <com.androidkun.xtablayout.XTabLayout
             android:id="@+id/mXTabLayout"
@@ -38,11 +34,11 @@
             app:xTabTextSize="18sp" />
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="@dimen/dp_20"
             android:background="@drawable/iv_fragment1_search" />
     </RelativeLayout>
 

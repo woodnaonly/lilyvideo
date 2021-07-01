@@ -13,6 +13,7 @@ import ltd.android.coriander_video.R
 import ltd.android.coriander_video.entity.VideoBean
 import ltd.android.coriander_video.utils.AutoLinkHerfManager
 import ltd.android.coriander_video.utils.NumUtils
+import ltd.android.coriander_video.utils.glide.GlideUtils
 import ltd.android.coriander_video.view.OnVideoControllerListener
 
 /**
@@ -20,7 +21,8 @@ import ltd.android.coriander_video.view.OnVideoControllerListener
  * create on 2020-05-20
  * description
  */
-class ControllerView(context: Context?, attrs: AttributeSet?) : RelativeLayout(context, attrs), View.OnClickListener {
+class ControllerView(context: Context?, attrs: AttributeSet?) : RelativeLayout(context, attrs),
+    View.OnClickListener {
     private var listener: OnVideoControllerListener? = null
     private var videoData: VideoBean? = null
 
@@ -36,14 +38,16 @@ class ControllerView(context: Context?, attrs: AttributeSet?) : RelativeLayout(c
 
     fun setVideoData(videoData: VideoBean) {
         this.videoData = videoData
-        ivHead!!.setImageResource(videoData.userBean!!.head)
+//        ivHead!!.setImageResource(videoData.userBean!!.head)
         tvNickname!!.text = "@" + videoData.userBean!!.nickName
         AutoLinkHerfManager.setContent(videoData.content, autoLinkTextView)
-        ivHeadAnim!!.setImageResource(videoData.userBean!!.head)
+//        ivHeadAnim!!.setImageResource(videoData.userBean!!.head)
         tvLikecount!!.text = NumUtils.numberFilter(videoData.likeCount)
         tvCommentcount!!.text = NumUtils.numberFilter(videoData.commentCount)
         tvSharecount!!.text = NumUtils.numberFilter(videoData.shareCount)
         animationView!!.setAnimation("like.json")
+
+        GlideUtils.loadImg(ivHead, videoData.userBean?.headUrl)
 
         //点赞状态
         if (videoData.isLiked) {
@@ -104,8 +108,10 @@ class ControllerView(context: Context?, attrs: AttributeSet?) : RelativeLayout(c
      * 循环旋转动画
      */
     private fun setRotateAnim() {
-        val rotateAnimation = RotateAnimation(0f, 359f,
-                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+        val rotateAnimation = RotateAnimation(
+            0f, 359f,
+            Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f
+        )
         rotateAnimation.repeatCount = Animation.INFINITE
         rotateAnimation.duration = 8000
         rotateAnimation.interpolator = LinearInterpolator()

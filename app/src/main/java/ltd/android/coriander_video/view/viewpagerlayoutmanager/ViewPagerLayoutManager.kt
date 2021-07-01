@@ -1,4 +1,4 @@
-package com.bytedance.tiktok.view.viewpagerlayoutmanager
+package ltd.android.coriander_video.view.viewpagerlayoutmanager
 
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
@@ -144,7 +144,10 @@ class ViewPagerLayoutManager : LinearLayoutManager {
                         getPosition(view)
                     )
                 }
-                mOnViewPagerListener!!.onPageRelease(true, getPosition(view))
+
+                mOnViewPagerListener?.onPageRelease(true, getPosition(view))
+
+//                mOnViewPagerListener!!.onPageRelease(true, getPosition(view))
             }
         }
 }
