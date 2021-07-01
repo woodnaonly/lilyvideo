@@ -2,7 +2,7 @@ package ltd.android.coriander_video.activity.user
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_pur_promotion.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -50,7 +50,8 @@ class PurPromotionActivity : BaseActivity<BaseViewModel>() {
 
                 val adapter = PurPromotionAdapter(list)
 
-                child_promotion_r.layoutManager = LinearLayoutManager(this@PurPromotionActivity)
+                child_promotion_r.layoutManager =
+                    androidx.recyclerview.widget.LinearLayoutManager(this@PurPromotionActivity)
                 child_promotion_r.adapter = adapter
             }
 

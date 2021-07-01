@@ -1,9 +1,9 @@
 package ltd.android.coriander_video.fragment.fragment2
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.os.Bundle
-import android.support.design.widget.AppBarLayout
-import android.support.v7.widget.GridLayoutManager
+import com.google.android.material.appbar.AppBarLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.common_layout_recyclerview.*
@@ -94,16 +94,20 @@ class LabelSelectFragment : BaseFragment<LabelSelectViewModel>() {
 
 
         rv_top.adapter = mLabelAdapter
-        rv_top.layoutManager = GridLayoutManager(activity, 4)
+        rv_top.layoutManager =
+            androidx.recyclerview.widget.GridLayoutManager(activity, 4)
 
         rv_top2.adapter = mLabelAdapter
-        rv_top2.layoutManager = GridLayoutManager(activity, 4)
+        rv_top2.layoutManager =
+            androidx.recyclerview.widget.GridLayoutManager(activity, 4)
 
         mRecyclerViewRvChild.adapter = mLabelChildAdapter
-        mRecyclerViewRvChild.layoutManager = GridLayoutManager(activity, 2)
+        mRecyclerViewRvChild.layoutManager =
+            androidx.recyclerview.widget.GridLayoutManager(activity, 2)
 
         recyclerView.adapter = mGuessLikeAdapter
-        recyclerView.layoutManager = GridLayoutManager(activity, 1)
+        recyclerView.layoutManager =
+            androidx.recyclerview.widget.GridLayoutManager(activity, 1)
 
 
         mViewModel?.getTabList(

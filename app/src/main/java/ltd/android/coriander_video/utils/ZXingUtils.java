@@ -2,7 +2,7 @@ package ltd.android.coriander_video.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
-import android.support.v4.view.ViewCompat;
+import androidx.core.view.ViewCompat;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;

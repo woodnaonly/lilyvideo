@@ -2,8 +2,8 @@ package ltd.android.coriander_video.activity.user
 
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentPagerAdapter
 import kotlinx.android.synthetic.main.activity_user_notification.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.base.BaseActivity
@@ -13,7 +13,7 @@ import java.util.*
 
 
 class UserNotificationActivity : BaseActivity<BaseViewModel>() {
-    private val mFragmentList = ArrayList<Fragment>()
+    private val mFragmentList = ArrayList<androidx.fragment.app.Fragment>()
     private val mTitleList = ArrayList<String>()
 
     companion object {
@@ -36,8 +36,8 @@ class UserNotificationActivity : BaseActivity<BaseViewModel>() {
         id_indication.setTabTitle(mTitleList)
         id_indication.setViewPager(view_pager)
 
-        this.view_pager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
-            override fun getItem(p0: Int): Fragment {
+        this.view_pager.adapter = object : androidx.fragment.app.FragmentPagerAdapter(supportFragmentManager) {
+            override fun getItem(p0: Int): androidx.fragment.app.Fragment {
                 return mFragmentList.get(p0)
             }
 

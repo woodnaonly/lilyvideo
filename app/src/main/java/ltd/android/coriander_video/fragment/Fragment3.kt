@@ -1,8 +1,8 @@
 package ltd.android.coriander_video.fragment
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.shuyu.gsyvideoplayer.GSYVideoManager
 import kotlinx.android.synthetic.main.fragment3.*
 import ltd.android.coriander_video.R
@@ -23,7 +23,8 @@ class Fragment3 : BaseFragment<MovieViewModel>() {
 
     private val mListEntity = ArrayList<Fragment3EntityBase>()
     private val mAdapter = Fragment3Adapter(mListEntity)
-    private val mLinearLayoutManager = LinearLayoutManager(context)
+    private val mLinearLayoutManager =
+        androidx.recyclerview.widget.LinearLayoutManager(context)
 
 
     override fun layoutId(): Int {

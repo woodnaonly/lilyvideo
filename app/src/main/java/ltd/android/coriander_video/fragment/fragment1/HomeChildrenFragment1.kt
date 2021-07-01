@@ -1,6 +1,6 @@
 package ltd.android.coriander_video.fragment.fragment1
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle

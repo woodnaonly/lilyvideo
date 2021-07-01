@@ -23,7 +23,7 @@
                                                                  android:layout_height="@dimen/dp_50"/>
         <View android:background="@color/color_f9f9f9" android:layout_width="fill_parent"
               android:layout_height="@dimen/dp_10" android:layout_marginTop="@dimen/dp_2"/>
-        <android.support.v4.view.ViewPager android:id="@+id/view_pager" android:layout_width="fill_parent"
+        <androidx.viewpager.widget.ViewPager android:id="@+id/view_pager" android:layout_width="fill_parent"
                                            android:layout_height="fill_parent"
                                            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
     </LinearLayout>

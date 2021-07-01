@@ -1,9 +1,9 @@
 package ltd.android.coriander_video.view.viewpagerlayoutmanager
 
 import android.content.Context
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.PagerSnapHelper
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
 import ltd.android.coriander_video.view.viewpagerlayoutmanager.OnViewPagerListener
@@ -12,10 +12,10 @@ import ltd.android.coriander_video.view.viewpagerlayoutmanager.OnViewPagerListen
  * create on 2018/11/23
  * description  ViewPager页面切换类型LayoutManager，监听了item的进入和退出并回调
  */
-class ViewPagerLayoutManager : LinearLayoutManager {
-    private var mPagerSnapHelper: PagerSnapHelper? = null
+class ViewPagerLayoutManager : androidx.recyclerview.widget.LinearLayoutManager {
+    private var mPagerSnapHelper: androidx.recyclerview.widget.PagerSnapHelper? = null
     private var mOnViewPagerListener: OnViewPagerListener? = null
-    private var mRecyclerView: RecyclerView? = null
+    private var mRecyclerView: androidx.recyclerview.widget.RecyclerView? = null
 
     /**
      * 位移，用来判断移动方向
@@ -35,17 +35,17 @@ class ViewPagerLayoutManager : LinearLayoutManager {
     }
 
     private fun init() {
-        mPagerSnapHelper = PagerSnapHelper()
+        mPagerSnapHelper = androidx.recyclerview.widget.PagerSnapHelper()
     }
 
-    override fun onAttachedToWindow(view: RecyclerView) {
+    override fun onAttachedToWindow(view: androidx.recyclerview.widget.RecyclerView) {
         super.onAttachedToWindow(view)
         mPagerSnapHelper!!.attachToRecyclerView(view)
         this.mRecyclerView = view
         mRecyclerView!!.addOnChildAttachStateChangeListener(mChildAttachStateChangeListener)
     }
 
-    override fun onLayoutChildren(recycler: RecyclerView.Recycler, state: RecyclerView.State) {
+    override fun onLayoutChildren(recycler: androidx.recyclerview.widget.RecyclerView.Recycler, state: androidx.recyclerview.widget.RecyclerView.State) {
         super.onLayoutChildren(recycler, state)
     }
 
@@ -56,7 +56,7 @@ class ViewPagerLayoutManager : LinearLayoutManager {
      */
     override fun onScrollStateChanged(state: Int) {
         when (state) {
-            RecyclerView.SCROLL_STATE_IDLE -> {
+            androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE -> {
                 val viewIdle = mPagerSnapHelper!!.findSnapView(this) ?: return
                 val positionIdle = getPosition(viewIdle)
                 if (mOnViewPagerListener != null && childCount == 1) {
@@ -66,13 +66,13 @@ class ViewPagerLayoutManager : LinearLayoutManager {
                     )
                 }
             }
-            RecyclerView.SCROLL_STATE_DRAGGING -> {
+            androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_DRAGGING -> {
                 val viewDrag = mPagerSnapHelper!!.findSnapView(this)
                 if (viewDrag != null) {
                     val positionDrag = getPosition(viewDrag)
                 }
             }
-            RecyclerView.SCROLL_STATE_SETTLING -> {
+            androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_SETTLING -> {
                 val viewSettling = mPagerSnapHelper!!.findSnapView(this)
                 if (viewSettling != null) {
                     val positionSettling = getPosition(viewSettling)
@@ -91,8 +91,8 @@ class ViewPagerLayoutManager : LinearLayoutManager {
      */
     override fun scrollVerticallyBy(
         dy: Int,
-        recycler: RecyclerView.Recycler,
-        state: RecyclerView.State
+        recycler: androidx.recyclerview.widget.RecyclerView.Recycler,
+        state: androidx.recyclerview.widget.RecyclerView.State
     ): Int {
         mDrift = dy
         return super.scrollVerticallyBy(dy, recycler, state)
@@ -108,8 +108,8 @@ class ViewPagerLayoutManager : LinearLayoutManager {
      */
     override fun scrollHorizontallyBy(
         dx: Int,
-        recycler: RecyclerView.Recycler,
-        state: RecyclerView.State
+        recycler: androidx.recyclerview.widget.RecyclerView.Recycler,
+        state: androidx.recyclerview.widget.RecyclerView.State
     ): Int {
         mDrift = dx
         return super.scrollHorizontallyBy(dx, recycler, state)
@@ -124,8 +124,8 @@ class ViewPagerLayoutManager : LinearLayoutManager {
         mOnViewPagerListener = listener
     }
 
-    private val mChildAttachStateChangeListener: RecyclerView.OnChildAttachStateChangeListener =
-        object : RecyclerView.OnChildAttachStateChangeListener {
+    private val mChildAttachStateChangeListener: androidx.recyclerview.widget.RecyclerView.OnChildAttachStateChangeListener =
+        object : androidx.recyclerview.widget.RecyclerView.OnChildAttachStateChangeListener {
             override fun onChildViewAttachedToWindow(view: View) {
                 if (mOnViewPagerListener != null && childCount == 1) {
                     mOnViewPagerListener!!.onInitComplete()

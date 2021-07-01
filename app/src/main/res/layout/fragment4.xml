@@ -191,12 +191,12 @@
                 <LinearLayout android:gravity="center_horizontal" android:orientation="vertical"
                               android:id="@+id/ll_potato" android:layout_width="wrap_content"
                               android:layout_height="fill_parent" android:layout_alignParentRight="true">
-                    <android.support.constraint.ConstraintLayout android:layout_width="wrap_content"
+                    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content"
                                                                  android:layout_height="wrap_content">
                         <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
                                    android:src="@drawable/ic_potato" android:scaleType="centerInside"
                                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
-                    </android.support.constraint.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                     <TextView android:textSize="@dimen/dp_12" android:textColor="@color/text_dark"
                               android:layout_width="wrap_content" android:layout_height="fill_parent"
                               android:layout_marginTop="@dimen/dimen_7" android:text="火爆交流群"/>
@@ -231,7 +231,7 @@
                                    android:src="@drawable/ic_arrow_right_brown" android:scaleType="centerInside"
                                    android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
                     </RelativeLayout>
-                    <android.support.v7.widget.RecyclerView android:id="@+id/recyclerView_history"
+                    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerView_history"
                                                             android:background="@color/white"
                                                             android:layout_width="fill_parent"
                                                             android:layout_height="wrap_content"
@@ -265,7 +265,7 @@
                                    android:src="@drawable/ic_arrow_right_brown" android:scaleType="centerInside"
                                    android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
                     </RelativeLayout>
-                    <android.support.v7.widget.RecyclerView android:id="@+id/recyclerView_download"
+                    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerView_download"
                                                             android:background="@color/white"
                                                             android:layout_width="fill_parent"
                                                             android:layout_height="wrap_content"
@@ -299,7 +299,7 @@
                                    android:src="@drawable/ic_arrow_right_brown" android:scaleType="centerInside"
                                    android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
                     </RelativeLayout>
-                    <android.support.v7.widget.RecyclerView android:id="@+id/recyclerView_favor"
+                    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerView_favor"
                                                             android:background="@color/white"
                                                             android:layout_width="fill_parent"
                                                             android:layout_height="wrap_content"

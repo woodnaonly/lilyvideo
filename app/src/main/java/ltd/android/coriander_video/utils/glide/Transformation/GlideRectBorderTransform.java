@@ -3,7 +3,7 @@ package ltd.android.coriander_video.utils.glide.Transformation;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.*;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import jp.wasabeef.glide.transformations.BitmapTransformation;
 

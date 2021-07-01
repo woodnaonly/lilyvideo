@@ -2,8 +2,8 @@ package ltd.android.coriander_video.utils.sharedpreference;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import com.google.gson.Gson;
 import ltd.android.coriander_video.app.App;

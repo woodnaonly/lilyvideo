@@ -1,8 +1,8 @@
 package ltd.android.coriander_video.fragment.fragment2
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment2_zhuanlan.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.adapter.fragment2.Fragment2ZhuanLanAdapter
@@ -29,7 +29,8 @@ class ZhuanlanFragment : BaseFragment<ZhuanLanViewModel>() {
 
     private val mListEntity = ArrayList<Fragment2EntityBase>()
     private val mAdapter = Fragment2ZhuanLanAdapter(mListEntity)
-    private val mLinearLayoutManager = LinearLayoutManager(context)
+    private val mLinearLayoutManager =
+        androidx.recyclerview.widget.LinearLayoutManager(context)
 
 
     companion object {

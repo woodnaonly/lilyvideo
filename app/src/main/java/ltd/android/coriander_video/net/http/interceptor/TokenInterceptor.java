@@ -1,7 +1,7 @@
 package ltd.android.coriander_video.net.http.interceptor;
 
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import ltd.android.coriander_video.app.App;
 import ltd.android.coriander_video.utils.NetWorkUtil;
 import ltd.android.coriander_video.utils.sharedpreference.UserPrefsHelper;

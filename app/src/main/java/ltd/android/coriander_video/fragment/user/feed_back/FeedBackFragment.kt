@@ -1,7 +1,7 @@
 package ltd.android.coriander_video.fragment.user.feed_back
 
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_feedback.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -38,7 +38,8 @@ class FeedBackFragment : BaseFragment<BaseViewModel>() {
     override fun initView() {
         super.initView()
         initList();
-        recyclerview.layoutManager = GridLayoutManager(activity, 3);
+        recyclerview.layoutManager =
+            androidx.recyclerview.widget.GridLayoutManager(activity, 3);
         recyclerview.adapter = mAdapter
 
 

@@ -3,7 +3,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content">
-    <android.support.v7.widget.CardView android:layout_width="match_parent"
+    <androidx.cardview.widget.CardView android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="@dimen/dp_10"
                                         android:foreground="?android:selectableItemBackground"
@@ -11,9 +11,9 @@
                                         app:cardElevation="@dimen/dp_1"
     >
 
-        <android.support.v7.widget.RecyclerView android:orientation="vertical" android:id="@+id/mRecyclerView"
+        <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@+id/mRecyclerView"
                                                 android:layout_width="fill_parent"
                                                 android:layout_margin="@dimen/dp_10"
                                                 android:layout_height="wrap_content"/>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

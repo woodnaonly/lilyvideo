@@ -2,9 +2,9 @@ package ltd.android.coriander_video.activity
 
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import kotlinx.android.synthetic.main.activity_history.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.base.BaseActivity
@@ -21,16 +21,16 @@ class HistoryActivity : BaseActivity<BaseViewModel>() {
     }
 
     private val mViewPagerTitle = arrayOf("今日", "七日", "更早")
-    private val mFragmentList = ArrayList<Fragment>()
+    private val mFragmentList = ArrayList<androidx.fragment.app.Fragment>()
 
-    internal inner class HistoryFragmentPagerAdapter(fragmentManager: FragmentManager) :
-        FragmentPagerAdapter(fragmentManager) {
+    internal inner class HistoryFragmentPagerAdapter(fragmentManager: androidx.fragment.app.FragmentManager) :
+        androidx.fragment.app.FragmentPagerAdapter(fragmentManager) {
         override fun getCount(): Int {
             return this@HistoryActivity.mViewPagerTitle.size
         }
 
 
-        override fun getItem(i: Int): Fragment {
+        override fun getItem(i: Int): androidx.fragment.app.Fragment {
             return this@HistoryActivity.mFragmentList[i]
         }
 

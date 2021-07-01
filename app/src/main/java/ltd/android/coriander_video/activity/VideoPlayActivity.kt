@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -173,7 +173,8 @@ class VideoPlayActivity : BaseActivity<BaseViewModel>() {
             if (baseResponse.success) {
                 val mMovieList = ArrayList<MovieDTO>()
                 val mAdapter = SearchAdapter(mMovieList)
-                val mLinearLayoutManager = LinearLayoutManager(this@VideoPlayActivity)
+                val mLinearLayoutManager =
+                    androidx.recyclerview.widget.LinearLayoutManager(this@VideoPlayActivity)
                 recyclerView.adapter = mAdapter
                 recyclerView.layoutManager = mLinearLayoutManager
                 mMovieList.addAll(baseResponse.data)

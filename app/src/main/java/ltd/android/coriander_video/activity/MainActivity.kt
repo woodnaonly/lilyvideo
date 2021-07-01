@@ -1,8 +1,8 @@
 package ltd.android.coriander_video.activity
 
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import android.support.v4.view.ViewPager
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import android.util.Log
 import android.util.SparseIntArray
 import android.view.MenuItem
@@ -41,7 +41,7 @@ class MainActivity : BaseActivity<BaseViewModel>() {
     val mFragment3 by lazy { Fragment3.newInstance() }
     val mFragment4 by lazy { Fragment4.newInstance() }
 
-    val mFragments = ArrayList<Fragment>()
+    val mFragments = ArrayList<androidx.fragment.app.Fragment>()
 
     val itemsId = SparseIntArray(3)
 
@@ -68,7 +68,7 @@ class MainActivity : BaseActivity<BaseViewModel>() {
         mViewPager.adapter = mFragmentAdapter
         mViewPager.offscreenPageLimit = mFragments.size
 
-        mViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        mViewPager.addOnPageChangeListener(object : androidx.viewpager.widget.ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(p0: Int) {
             }
 

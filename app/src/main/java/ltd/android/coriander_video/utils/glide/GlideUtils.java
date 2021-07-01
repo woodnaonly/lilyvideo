@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.DrawableRes;
+import androidx.annotation.DrawableRes;
 import android.widget.ImageView;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;

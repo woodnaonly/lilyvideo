@@ -1,7 +1,7 @@
 package ltd.android.coriander_video.fragment
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.Interpolator
@@ -163,7 +163,12 @@ class Fragment4 : BaseFragment<BaseViewModel>() {
             if (response.success) {
                 val data = response.data
                 tv_my_favor_num.text = "目前已有喜欢${data.size}部"
-                recyclerView_favor.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+                recyclerView_favor.layoutManager =
+                    androidx.recyclerview.widget.LinearLayoutManager(
+                        activity,
+                        androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
                 recyclerView_favor.setHasFixedSize(true)
                 recyclerView_favor.adapter =
                     Fragment4FavAdapter(data)
@@ -190,7 +195,12 @@ class Fragment4 : BaseFragment<BaseViewModel>() {
         }
         val count = mBox.count()
         tv_history_num.text = "目前历史观看过${count}部"
-        recyclerView_history.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView_history.layoutManager =
+            androidx.recyclerview.widget.LinearLayoutManager(
+                activity,
+                androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL,
+                false
+            )
         recyclerView_history.setHasFixedSize(true)
         recyclerView_history.adapter =
             Fragment4HistoryAdapter(list)

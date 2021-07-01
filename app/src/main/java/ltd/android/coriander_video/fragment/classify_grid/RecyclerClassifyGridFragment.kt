@@ -1,7 +1,7 @@
 package ltd.android.coriander_video.fragment.classify_grid
 
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_classify_grid_fragment.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -31,7 +31,7 @@ class RecyclerClassifyGridFragment : BaseFragment<BaseViewModel>() {
 
     private val mDataList = ArrayList<MovieDTO>()
     private val mAdapter = ClassifyAdapter(mDataList)
-    private lateinit var mGridLayoutManager: GridLayoutManager
+    private lateinit var mGridLayoutManager: androidx.recyclerview.widget.GridLayoutManager
 
     companion object {
         private const val dataName = "data"
@@ -52,7 +52,8 @@ class RecyclerClassifyGridFragment : BaseFragment<BaseViewModel>() {
 
     override fun initView() {
         super.initView()
-        mGridLayoutManager = GridLayoutManager(context, 2)
+        mGridLayoutManager =
+            androidx.recyclerview.widget.GridLayoutManager(context, 2)
 
         mRecyclerView.adapter = mAdapter
 

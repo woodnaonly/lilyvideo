@@ -1,7 +1,7 @@
 package ltd.android.coriander_video.fragment.history
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.View
 import io.objectbox.Box
@@ -78,7 +78,8 @@ class HistoryFragment : BaseFragment<BaseViewModel>() {
         }
         val adapter = HistoryAdapter(list)
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.layoutManager =
+            androidx.recyclerview.widget.LinearLayoutManager(context)
 
         if (list.isEmpty()) {
             search_empty_view.visibility = View.VISIBLE

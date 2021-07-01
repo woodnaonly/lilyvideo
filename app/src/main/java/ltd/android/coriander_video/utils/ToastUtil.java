@@ -2,7 +2,7 @@ package ltd.android.coriander_video.utils;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 import android.text.TextUtils;
 import android.widget.Toast;
 import ltd.android.coriander_video.app.App;

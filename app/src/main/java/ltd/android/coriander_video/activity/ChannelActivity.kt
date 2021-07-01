@@ -2,7 +2,7 @@ package ltd.android.coriander_video.activity
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_channel_more.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.base.BaseActivity
@@ -26,7 +26,8 @@ class ChannelActivity : BaseActivity<BaseViewModel>() {
 
     val data = ArrayList<ArrayList<ColumnNavDTO.Nav>>()
     val mAdapter = ChannelAdapter(data)
-    private val mLinearLayoutManager = LinearLayoutManager(this)
+    private val mLinearLayoutManager =
+        androidx.recyclerview.widget.LinearLayoutManager(this)
     override fun layoutId(): Int {
         return R.layout.activity_channel_more
     }

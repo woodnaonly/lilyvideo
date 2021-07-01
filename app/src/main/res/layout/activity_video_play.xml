@@ -31,7 +31,7 @@
         </RelativeLayout>
         <!--广告-->
         <include layout="@layout/layout_xuanfukuang"/>
-        <android.support.v4.widget.NestedScrollView android:id="@+id/easy_common" android:visibility="visible"
+        <androidx.core.widget.NestedScrollView android:id="@+id/easy_common" android:visibility="visible"
                                                     android:layout_width="fill_parent"
                                                     android:layout_height="wrap_content">
             <LinearLayout android:orientation="vertical" android:id="@+id/full_detail" android:visibility="visible"
@@ -140,7 +140,7 @@
                               android:layout_width="wrap_content" android:layout_height="wrap_content"
                               android:layout_marginLeft="10.0dip" android:layout_marginTop="@dimen/dp_32"
                               android:text="猜你喜欢"/>
-                    <android.support.v7.widget.RecyclerView android:id="@+id/recyclerView"
+                    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerView"
                                                             android:layout_width="fill_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginLeft="10.0dip"
@@ -164,12 +164,12 @@
                          android:visibility="gone"
                 />
             </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
+        </androidx.core.widget.NestedScrollView>
     </LinearLayout>
     <include android:id="@+id/back_root_view" android:visibility="gone" layout="@layout/activity_myback"/>
     <View android:id="@+id/temp" android:layout_width="fill_parent" android:layout_height="240.0dip"
           android:layout_marginBottom="8.0dip"/>
-    <android.support.v4.widget.NestedScrollView android:id="@+id/full_common" android:background="@color/white"
+    <androidx.core.widget.NestedScrollView android:id="@+id/full_common" android:background="@color/white"
                                                 android:visibility="gone" android:layout_width="fill_parent"
                                                 android:layout_height="fill_parent" android:layout_below="@id/temp">
         <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
@@ -194,7 +194,7 @@
                 <TextView android:textColor="@color/color_969696" android:layout_width="wrap_content"
                           android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10"
                           android:text="@string/actor"/>
-                <android.support.v7.widget.RecyclerView android:id="@+id/detail_recyclerView"
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/detail_recyclerView"
                                                         android:layout_width="fill_parent"
                                                         android:layout_height="wrap_content"
                                                         android:layout_marginLeft="10.0dip"
@@ -251,5 +251,5 @@
                           android:lineSpacingMultiplier="1.5"/>
             </LinearLayout>
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

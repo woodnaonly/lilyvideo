@@ -1,8 +1,8 @@
 package ltd.android.coriander_video.fragment
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.view.ViewPager
+import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.fragment1.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.adapter.view_pager_adapter.CommPagerAdapter
@@ -21,7 +21,7 @@ class Fragment1 : BaseFragment<HomeViewModel>() {
     override fun providerVMClass(): Class<HomeViewModel> = HomeViewModel::class.java
 
 
-    private val fragments = ArrayList<Fragment>()
+    private val fragments = ArrayList<androidx.fragment.app.Fragment>()
     private var pagerAdapter: CommPagerAdapter? = null
 
 
@@ -60,7 +60,7 @@ class Fragment1 : BaseFragment<HomeViewModel>() {
         viewPager!!.adapter = pagerAdapter
         mXTabLayout!!.setupWithViewPager(viewPager)
 //        mXTabLayout!!.getTabAt(1)!!.select()
-        viewPager!!.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        viewPager!!.addOnPageChangeListener(object : androidx.viewpager.widget.ViewPager.OnPageChangeListener {
             override fun onPageScrolled(
                 position: Int,
                 positionOffset: Float,

@@ -1,7 +1,7 @@
 package ltd.android.coriander_video.adapter.channel_activity
 
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import ltd.android.coriander_video.R
@@ -18,9 +18,12 @@ class ChannelAdapter(val DataList: ArrayList<ArrayList<ColumnNavDTO.Nav>>) :
     ) {
 
     override fun convert(helper: BaseViewHolder, item: ArrayList<ColumnNavDTO.Nav>) {
-        val recyclerView = helper.getView<RecyclerView>(R.id.mRecyclerView)
+        val recyclerView = helper.getView<androidx.recyclerview.widget.RecyclerView>(R.id.mRecyclerView)
         val gridLayoutManager =
-            GridLayoutManager(recyclerView.context, 4)
+            androidx.recyclerview.widget.GridLayoutManager(
+                recyclerView.context,
+                4
+            )
         recyclerView.layoutManager = gridLayoutManager
 
         recyclerView.adapter =

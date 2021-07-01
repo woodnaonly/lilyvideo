@@ -1,9 +1,9 @@
 package ltd.android.coriander_video.fragment
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.ViewPager
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.fragment2.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.fragment.base.BaseFragment
@@ -18,7 +18,7 @@ import java.util.*
  * @author by 黄梦 on 2019/2/28.
  */
 class Fragment2 : BaseFragment<BaseViewModel>() {
-    private val mFragmentList = ArrayList<Fragment>()
+    private val mFragmentList = ArrayList<androidx.fragment.app.Fragment>()
     private val mTitleList = ArrayList<String>()
 
     override fun layoutId(): Int {
@@ -42,7 +42,7 @@ class Fragment2 : BaseFragment<BaseViewModel>() {
         this.mFragmentList.add(LabelSelectFragment())
         mViewPagerIndicator_Fix.setTabTitle(mTitleList)
         mViewPagerIndicator_Fix.setViewPager(mIndexViewPager)
-        mIndexViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        mIndexViewPager.addOnPageChangeListener(object : androidx.viewpager.widget.ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(p0: Int) {
             }
 
@@ -54,8 +54,8 @@ class Fragment2 : BaseFragment<BaseViewModel>() {
 
         })
         this.mIndexViewPager.setScanScroll(true)
-        this.mIndexViewPager.adapter = object : FragmentPagerAdapter(childFragmentManager) {
-            override fun getItem(p0: Int): Fragment {
+        this.mIndexViewPager.adapter = object : androidx.fragment.app.FragmentPagerAdapter(childFragmentManager) {
+            override fun getItem(p0: Int): androidx.fragment.app.Fragment {
                 return mFragmentList.get(p0)
             }
 

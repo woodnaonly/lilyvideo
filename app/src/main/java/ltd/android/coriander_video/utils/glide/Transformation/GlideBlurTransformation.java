@@ -13,7 +13,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import jp.wasabeef.glide.transformations.BitmapTransformation;
 import jp.wasabeef.glide.transformations.internal.FastBlur;

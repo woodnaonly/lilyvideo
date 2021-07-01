@@ -18,7 +18,7 @@ package com.zhihu.matisse.internal.entity;
 
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
-import android.support.annotation.StyleRes;
+import androidx.annotation.StyleRes;
 
 import com.yalantis.ucrop.UCrop;
 import com.zhihu.matisse.MimeType;

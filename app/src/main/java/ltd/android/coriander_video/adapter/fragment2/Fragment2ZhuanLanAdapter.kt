@@ -1,9 +1,9 @@
 package ltd.android.coriander_video.adapter.fragment2
 
 import android.content.Context
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
@@ -50,10 +50,14 @@ class Fragment2ZhuanLanAdapter : BaseMultiItemQuickAdapter<Fragment2EntityBase, 
                 val entity = item as Fragment2MustSeeNavEntity
                 val data = entity.data
                 helper.setText(R.id.content_name, data.modName)
-                val recyclerView = helper.getView<RecyclerView>(R.id.mRecyclerView)
+                val recyclerView = helper.getView<androidx.recyclerview.widget.RecyclerView>(R.id.mRecyclerView)
                 val linearLayoutManager =
-                    LinearLayoutManager(recyclerView.context, LinearLayoutManager.HORIZONTAL, false)
-                recyclerView.layoutManager = linearLayoutManager as RecyclerView.LayoutManager?
+                    androidx.recyclerview.widget.LinearLayoutManager(
+                        recyclerView.context,
+                        androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
+                recyclerView.layoutManager = linearLayoutManager as androidx.recyclerview.widget.RecyclerView.LayoutManager?
                 recyclerView.adapter =
                     Fragment2MustSeeNavAdapter(data.subclass)
                 recyclerView.setHasFixedSize(true)
@@ -65,10 +69,13 @@ class Fragment2ZhuanLanAdapter : BaseMultiItemQuickAdapter<Fragment2EntityBase, 
                 val data = entity.data
                 helper.setText(R.id.content_name, data.modName)
 
-                val recyclerView = helper.getView<RecyclerView>(R.id.mRecyclerView)
+                val recyclerView = helper.getView<androidx.recyclerview.widget.RecyclerView>(R.id.mRecyclerView)
                 val linearLayoutManager =
-                    GridLayoutManager(recyclerView.context, 4)
-                recyclerView.layoutManager = linearLayoutManager as RecyclerView.LayoutManager?
+                    androidx.recyclerview.widget.GridLayoutManager(
+                        recyclerView.context,
+                        4
+                    )
+                recyclerView.layoutManager = linearLayoutManager as androidx.recyclerview.widget.RecyclerView.LayoutManager?
 
                 recyclerView.adapter =
                     Fragment2HotNavAdapter(data.subclass)
@@ -89,10 +96,14 @@ class Fragment2ZhuanLanAdapter : BaseMultiItemQuickAdapter<Fragment2EntityBase, 
                 helper.setText(R.id.tv_name, data.nameCn)
                 helper.setText(R.id.tv_description, data.briefIntroduction)
                 helper.setText(R.id.iv_num, "${data.videosCount}部电影")
-                val recyclerView = helper.getView<RecyclerView>(R.id.mRecyclerView)
+                val recyclerView = helper.getView<androidx.recyclerview.widget.RecyclerView>(R.id.mRecyclerView)
                 val linearLayoutManager =
-                    LinearLayoutManager(recyclerView.context, LinearLayoutManager.HORIZONTAL, false)
-                recyclerView.layoutManager = linearLayoutManager as RecyclerView.LayoutManager?
+                    androidx.recyclerview.widget.LinearLayoutManager(
+                        recyclerView.context,
+                        androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
+                recyclerView.layoutManager = linearLayoutManager as androidx.recyclerview.widget.RecyclerView.LayoutManager?
                 recyclerView.adapter =
                     Fragment2HotStarAdapter(data.movies)
                 recyclerView.setHasFixedSize(true)

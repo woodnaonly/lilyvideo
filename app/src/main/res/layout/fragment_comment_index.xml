@@ -20,7 +20,7 @@
                 app:srlDrawableProgressSize="20dp"
                 app:srlDrawableMarginRight="20dp"
                 app:srlDrawableProgress="@drawable/ic_progress_puzzle"/>
-        <android.support.v7.widget.RecyclerView android:id="@+id/recyclerview_comment_index"
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerview_comment_index"
                                                 android:background="@color/white" android:layout_width="fill_parent"
                                                 android:layout_height="fill_parent" android:overScrollMode="never"
                                                 android:nestedScrollingEnabled="false"/>

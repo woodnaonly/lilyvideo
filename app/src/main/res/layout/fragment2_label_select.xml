@@ -4,43 +4,43 @@
               android:background="#fff9f9f9"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent">
-    <android.support.design.widget.CoordinatorLayout android:id="@+id/cl_search" android:layout_width="fill_parent"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/cl_search" android:layout_width="fill_parent"
                                                      android:layout_height="0.0dip" android:layout_weight="1.0">
-        <android.support.design.widget.AppBarLayout android:background="@color/transparent"
+        <com.google.android.material.appbar.AppBarLayout android:background="@color/transparent"
                                                     android:layout_width="fill_parent"
                                                     android:layout_height="wrap_content" app:elevation="0.0dip">
-            <android.support.v7.widget.RecyclerView android:id="@+id/rv_top" android:background="@color/white"
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_top" android:background="@color/white"
                                                     android:paddingTop="@dimen/dp_10"
                                                     android:paddingBottom="@dimen/dp_10"
                                                     android:layout_width="fill_parent"
                                                     android:layout_height="wrap_content"/>
-        </android.support.design.widget.AppBarLayout>
-        <android.support.v7.widget.RecyclerView android:id="@+id/mRecyclerViewRvChild" android:background="@color/white"
+        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/mRecyclerViewRvChild" android:background="@color/white"
                                                 android:paddingLeft="@dimen/dp_10" android:paddingRight="@dimen/dp_10"
                                                 android:layout_width="fill_parent" android:layout_height="fill_parent"
                                                 app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
         <View android:layout_gravity="bottom" android:background="@drawable/bg_gradient"
               android:layout_width="fill_parent" android:layout_height="@dimen/dp_50"/>
-    </android.support.design.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <TextView android:textSize="@dimen/text_content" android:textColor="@color/white" android:gravity="center"
               android:id="@+id/tv_confirm" android:background="@drawable/shape_button_bg" android:padding="@dimen/dp_10"
               android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content"
               android:layout_marginLeft="@dimen/dp_80" android:layout_marginTop="@dimen/dp_20"
               android:layout_marginRight="@dimen/dp_80" android:layout_marginBottom="@dimen/dp_100" android:text="确定"/>
-    <android.support.design.widget.CoordinatorLayout android:id="@+id/cl_result" android:visibility="gone"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/cl_result" android:visibility="gone"
                                                      android:layout_width="fill_parent"
                                                      android:layout_height="fill_parent">
-        <android.support.design.widget.AppBarLayout android:id="@+id/app_bar_layout"
+        <com.google.android.material.appbar.AppBarLayout android:id="@+id/app_bar_layout"
                                                     android:background="@color/transparent"
                                                     android:layout_width="fill_parent"
                                                     android:layout_height="wrap_content" app:elevation="0.0dip">
-            <android.support.v7.widget.RecyclerView android:id="@+id/rv_top2" android:background="@color/white"
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_top2" android:background="@color/white"
                                                     android:paddingTop="@dimen/dp_10"
                                                     android:paddingBottom="@dimen/dp_10"
                                                     android:layout_width="fill_parent"
                                                     android:layout_height="wrap_content"
                                                     app:layout_scrollFlags="enterAlways|scroll"/>
-        </android.support.design.widget.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
         <LinearLayout android:orientation="vertical" android:id="@+id/ll_result" android:background="@color/white"
                       android:paddingLeft="@dimen/dp_10" android:paddingRight="@dimen/dp_10"
                       android:layout_width="fill_parent" android:layout_height="fill_parent"
@@ -63,5 +63,5 @@
         <TextView android:textSize="@dimen/text_content" android:textColor="@color/black" android:gravity="center"
                   android:id="@+id/tv_choose_label" android:background="#deffffff" android:padding="@dimen/dp_10"
                   android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
-    </android.support.design.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </LinearLayout>

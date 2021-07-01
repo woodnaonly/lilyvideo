@@ -1,123 +1,341 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/color_bg_theme">
+    android:id="@+id/ll"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_black"
+    android:orientation="vertical">
 
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0.0dip"
+        app:cardElevation="@dimen/dp_5">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbarlayout"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            app:layout_behavior=".utils.AppbarZoomBehavior">
+            android:background="@color/color_313233"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5">
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/transparent"
-                app:contentScrim="@color/color_bg_theme"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                android:layout_centerVertical="true"
+                android:padding="@dimen/dp_10"
+                android:src="@drawable/ic_back_brown" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="账户管理"
+                android:textColor="#ffd4b587"
+                android:textSize="@dimen/text_title" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:id="@+id/ivBg"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-                    <include layout="@layout/personal_home_header"/>
-                </RelativeLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    app:layout_collapseMode="pin">
+            <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_10"
+                app:cardCornerRadius="0.0dip"
+                app:cardElevation="@dimen/dp_5">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/ll_modify_head"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/color_313233"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/dp_10">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
                         <ImageView
-                            android:id="@+id/ivReturn"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@mipmap/return_white"
-                            android:background="@drawable/shape_circle_halfwhite"
-                            android:padding="8dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_centerVertical="true"/>
+                            android:layout_width="@dimen/dp_47"
+                            android:layout_height="@dimen/dp_47"
+                            android:src="@drawable/ic_head_l" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/civ_head"
+                            android:layout_width="@dimen/dp_47"
+                            android:layout_height="@dimen/dp_47" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:gravity="center|right"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:id="@+id/view_head"
+                            android:layout_width="@dimen/dp_7"
+                            android:layout_height="@dimen/dp_7"
+                            android:layout_marginRight="@dimen/dimen_5"
+                            android:background="@drawable/shape_red_point"
+                            android:visibility="visible" />
 
                         <TextView
-                            android:id="@+id/tvTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:text="小橘子衣橱"
-                            android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:visibility="gone"
-                            android:layout_centerInParent="true"/>
+                            android:gravity="right"
+                            android:text="修改头像"
+                            android:textColor="@color/text_999999" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:src="@drawable/ic_arrow_right_brown" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="@dimen/dimen_10"
+                app:cardCornerRadius="0.0dip"
+                app:cardElevation="@dimen/dp_5">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_modify_nickname"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/dp_60"
+                        android:background="@color/color_313233"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dp_10">
 
                         <TextView
-                            android:id="@+id/tvFocus"
-                            android:layout_width="60dp"
-                            android:layout_height="30dp"
-                            android:background="@drawable/shape_round_red"
-                            android:text="关注"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:layout_centerVertical="true"
-                            android:layout_toLeftOf="@id/iv_more"
-                            android:layout_marginRight="10dp"
-                            android:visibility="gone"
-                            android:gravity="center"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="昵称"
+                            android:textColor="@color/white" />
 
-                        <com.bytedance.tiktok.view.IconFontTextView
-                            android:id="@+id/iv_more"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:text="@string/icon_more"
-                            android:textSize="16sp"
-                            android:textColor="@color/white"
-                            android:layout_alignParentRight="true"
-                            android:gravity="center"
-                            android:layout_marginRight="10dp"
-                            android:layout_centerVertical="true"
-                            android:background="@drawable/shape_circle_halfwhite"/>
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:gravity="center|right"
+                            android:orientation="horizontal">
 
-                    </RelativeLayout>
-                </androidx.appcompat.widget.Toolbar>
+                            <View
+                                android:id="@+id/view_nickname"
+                                android:layout_width="@dimen/dp_7"
+                                android:layout_height="@dimen/dp_7"
+                                android:layout_marginRight="@dimen/dimen_5"
+                                android:background="@drawable/shape_red_point"
+                                android:visibility="visible" />
 
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
+                            <TextView
+                                android:id="@+id/tv_modify_nick_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="未设定"
+                                android:textColor="@color/text_999999" />
+                        </LinearLayout>
 
-            <com.androidkun.xtablayout.XTabLayout
-                android:id="@+id/tabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                app:xTabIndicatorColor="#FF9F00"
-                app:xTabSelectedTextColor="@color/white"
-                app:xTabTextColor="#CCCCCC"
-                app:xTabIndicatorWidth="90dp"
-                app:xTabTextBold="true"
-                app:xTabTextSize="15sp"/>
-        </com.google.android.material.appbar.AppBarLayout>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:src="@drawable/ic_arrow_right_brown" />
+                    </LinearLayout>
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip"
+                        android:background="@drawable/shape_line" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_modify_sex"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/dp_60"
+                        android:background="@color/color_313233"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dp_10">
 
-</RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="性别"
+                            android:textColor="@color/white" />
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:gravity="center|right"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:id="@+id/view_sex"
+                                android:layout_width="@dimen/dp_7"
+                                android:layout_height="@dimen/dp_7"
+                                android:layout_marginRight="@dimen/dimen_5"
+                                android:background="@drawable/shape_red_point"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/tv_modify_sex"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="性别"
+                                android:textColor="@color/text_999999" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_sex"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:src="@drawable/ic_arrow_right_brown" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip"
+                        android:background="@drawable/shape_line" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_modify_phone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/dp_60"
+                        android:background="@color/color_313233"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dp_10">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="手机号"
+                            android:textColor="@color/white" />
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:gravity="center|right"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:id="@+id/view_phone"
+                                android:layout_width="@dimen/dp_7"
+                                android:layout_height="@dimen/dp_7"
+                                android:layout_marginRight="@dimen/dimen_5"
+                                android:background="@drawable/shape_red_point"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/tv_modify_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="可用手机号登陆或找回密码"
+                                android:textColor="@color/text_999999" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:src="@drawable/ic_arrow_right_brown" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:background="@drawable/shape_line" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_modify_pwd"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/dp_60"
+                        android:background="@color/color_313233"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dp_10">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="修改密码"
+                            android:textColor="@color/white" />
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:gravity="center|right"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:id="@+id/view_pwd"
+                                android:layout_width="@dimen/dp_7"
+                                android:layout_height="@dimen/dp_7"
+                                android:layout_marginRight="@dimen/dimen_5"
+                                android:background="@drawable/shape_red_point"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/tv_modify_pwd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="绑定手机号后可修改密码"
+                                android:textColor="@color/text_999999" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:src="@drawable/ic_arrow_right_brown" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/bt_logout"
+                android:layout_width="@dimen/dp_215"
+                android:layout_height="@dimen/dimen_44"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_24"
+                android:background="@drawable/login_loginbutton"
+                android:gravity="center"
+                android:text="退出"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

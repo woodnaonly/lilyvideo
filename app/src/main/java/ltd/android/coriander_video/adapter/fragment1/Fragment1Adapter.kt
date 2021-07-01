@@ -1,8 +1,8 @@
 package ltd.android.coriander_video.adapter.fragment1
 
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
@@ -57,10 +57,13 @@ class Fragment1Adapter : BaseMultiItemQuickAdapter<Fragment1EntityBase, BaseView
             Fragment1EntityBase.movie_class -> {
                 val entity = item as Fragment1MoiveClassEntity
                 val data = entity.data
-                val recyclerView = helper.getView<RecyclerView>(R.id.mRecyclerView)
+                val recyclerView = helper.getView<androidx.recyclerview.widget.RecyclerView>(R.id.mRecyclerView)
                 val linearLayoutManager =
-                    GridLayoutManager(recyclerView.context, 4)
-                recyclerView.layoutManager = linearLayoutManager as RecyclerView.LayoutManager?
+                    androidx.recyclerview.widget.GridLayoutManager(
+                        recyclerView.context,
+                        4
+                    )
+                recyclerView.layoutManager = linearLayoutManager as androidx.recyclerview.widget.RecyclerView.LayoutManager?
                 recyclerView.adapter =
                     Fragment1MovieClassAdapter(data)
                 recyclerView.setHasFixedSize(true)
@@ -70,16 +73,19 @@ class Fragment1Adapter : BaseMultiItemQuickAdapter<Fragment1EntityBase, BaseView
             Fragment1EntityBase.new_moive -> {
                 val entity = item as Fragment1NewMoiveEntity
                 val data = entity.data
-                val recyclerView = helper.getView<RecyclerView>(R.id.recyclerView)
+                val recyclerView = helper.getView<androidx.recyclerview.widget.RecyclerView>(R.id.recyclerView)
                 val linearLayoutManager =
-                    GridLayoutManager(recyclerView.context, 2)
+                    androidx.recyclerview.widget.GridLayoutManager(
+                        recyclerView.context,
+                        2
+                    )
                 helper.setText(R.id.content_name, "最新片源")
                 val more_type = helper.getView<View>(R.id.more_type)
                 more_type.setOnClickListener {
                     ClassifyActivity.start(it.context, 2, 0)
                 }
 
-                recyclerView.layoutManager = linearLayoutManager as RecyclerView.LayoutManager?
+                recyclerView.layoutManager = linearLayoutManager as androidx.recyclerview.widget.RecyclerView.LayoutManager?
                 recyclerView.adapter =
                     Fragment1NewMoiveAdapter(data)
                 recyclerView.setHasFixedSize(true)
@@ -89,12 +95,15 @@ class Fragment1Adapter : BaseMultiItemQuickAdapter<Fragment1EntityBase, BaseView
             Fragment1EntityBase.hot_moive -> {
                 val entity = item as Fragment1HotMoiveEntity
                 val data = entity.data
-                val recyclerView = helper.getView<RecyclerView>(R.id.recyclerView)
+                val recyclerView = helper.getView<androidx.recyclerview.widget.RecyclerView>(R.id.recyclerView)
                 val linearLayoutManager =
-                    GridLayoutManager(recyclerView.context, 2)
+                    androidx.recyclerview.widget.GridLayoutManager(
+                        recyclerView.context,
+                        2
+                    )
                 helper.setText(R.id.content_name, "重播热榜")
                 val fragment1HotMoiveAdapter = Fragment1HotMoiveAdapter(data)
-                recyclerView.layoutManager = linearLayoutManager as RecyclerView.LayoutManager?
+                recyclerView.layoutManager = linearLayoutManager as androidx.recyclerview.widget.RecyclerView.LayoutManager?
                 recyclerView.adapter =
                     fragment1HotMoiveAdapter
                 recyclerView.setHasFixedSize(true)
@@ -114,10 +123,14 @@ class Fragment1Adapter : BaseMultiItemQuickAdapter<Fragment1EntityBase, BaseView
             Fragment1EntityBase.guess_like -> {
                 val entity = item as Fragment1GuessLikeEntity
                 val data = entity.data
-                val recyclerView = helper.getView<RecyclerView>(R.id.guess_data_recyclerView)
+                val recyclerView = helper.getView<androidx.recyclerview.widget.RecyclerView>(R.id.guess_data_recyclerView)
                 val linearLayoutManager =
-                    LinearLayoutManager(recyclerView.context, LinearLayoutManager.HORIZONTAL, false)
-                recyclerView.layoutManager = linearLayoutManager as RecyclerView.LayoutManager?
+                    androidx.recyclerview.widget.LinearLayoutManager(
+                        recyclerView.context,
+                        androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
+                recyclerView.layoutManager = linearLayoutManager as androidx.recyclerview.widget.RecyclerView.LayoutManager?
                 recyclerView.adapter =
                     Fragment1GuessLikeAdapter(data)
                 recyclerView.setHasFixedSize(true)
@@ -127,12 +140,15 @@ class Fragment1Adapter : BaseMultiItemQuickAdapter<Fragment1EntityBase, BaseView
             Fragment1EntityBase.home_columns -> {
                 val entity = item as Fragment1ColumnsMoiveEntity
                 val data = entity.data
-                val recyclerView = helper.getView<RecyclerView>(R.id.recyclerView)
+                val recyclerView = helper.getView<androidx.recyclerview.widget.RecyclerView>(R.id.recyclerView)
                 val linearLayoutManager =
-                    GridLayoutManager(recyclerView.context, 3)
+                    androidx.recyclerview.widget.GridLayoutManager(
+                        recyclerView.context,
+                        3
+                    )
                 helper.setText(R.id.content_name, data.name)
 
-                recyclerView.layoutManager = linearLayoutManager as RecyclerView.LayoutManager?
+                recyclerView.layoutManager = linearLayoutManager as androidx.recyclerview.widget.RecyclerView.LayoutManager?
                 recyclerView.adapter =
                     Fragment1ColumnAdapter(data)
                 recyclerView.setHasFixedSize(true)

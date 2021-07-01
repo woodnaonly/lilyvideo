@@ -1,9 +1,9 @@
 package ltd.android.coriander_video.activity
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
@@ -23,7 +23,8 @@ class SearchActivity : BaseActivity<SearchViewModel>() {
 
     private val mMovieList = ArrayList<MovieDTO>()
     private val mAdapter = SearchAdapter(mMovieList)
-    private val mLinearLayoutManager = LinearLayoutManager(this)
+    private val mLinearLayoutManager =
+        androidx.recyclerview.widget.LinearLayoutManager(this)
     private var page = 1
     private var keyword: String? = null
 

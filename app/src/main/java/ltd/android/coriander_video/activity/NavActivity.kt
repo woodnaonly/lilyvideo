@@ -3,7 +3,7 @@ package ltd.android.coriander_video.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import android.view.Window
 import android.view.WindowManager
 import android.widget.RelativeLayout
@@ -36,7 +36,8 @@ class NavActivity : BaseActivity<BaseViewModel>() {
 
     private val mDataList = ArrayList<MovieDTO>()
     private val mAdapter = NavActivityAdapter(mDataList)
-    private val mGridLayoutManager = GridLayoutManager(this, 3)
+    private val mGridLayoutManager =
+        androidx.recyclerview.widget.GridLayoutManager(this, 3)
 
     override fun layoutId(): Int {
         return R.layout.activity_nav

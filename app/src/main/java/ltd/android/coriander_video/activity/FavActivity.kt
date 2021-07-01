@@ -2,7 +2,7 @@ package ltd.android.coriander_video.activity
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_favo.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -41,7 +41,12 @@ class FavActivity : BaseActivity<BaseViewModel>() {
             }
             if (response.success) {
                 val data = response.data
-                favor_list_r.layoutManager = LinearLayoutManager(this@FavActivity, LinearLayoutManager.VERTICAL, false)
+                favor_list_r.layoutManager =
+                    androidx.recyclerview.widget.LinearLayoutManager(
+                        this@FavActivity,
+                        androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+                        false
+                    )
                 favor_list_r.setHasFixedSize(true)
                 favor_list_r.adapter =
                     FavAdapter(data)

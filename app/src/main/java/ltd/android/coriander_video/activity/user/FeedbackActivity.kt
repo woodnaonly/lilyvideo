@@ -3,8 +3,8 @@ package ltd.android.coriander_video.activity.user
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentPagerAdapter
 import kotlinx.android.synthetic.main.activity_feedback.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.base.BaseActivity
@@ -16,7 +16,7 @@ import java.util.*
 
 class FeedbackActivity : BaseActivity<BaseViewModel>() {
 
-    private val mFragmentList = ArrayList<Fragment>()
+    private val mFragmentList = ArrayList<androidx.fragment.app.Fragment>()
     private val mTitleList = ArrayList<String>()
 
     companion object {
@@ -47,8 +47,8 @@ class FeedbackActivity : BaseActivity<BaseViewModel>() {
         id_indication.setTextNoColorSelected(Color.parseColor("#646464"));
 
         viewPager.offscreenPageLimit = mFragmentList.size
-        this.viewPager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
-            override fun getItem(position: Int): Fragment {
+        this.viewPager.adapter = object : androidx.fragment.app.FragmentPagerAdapter(supportFragmentManager) {
+            override fun getItem(position: Int): androidx.fragment.app.Fragment {
                 return mFragmentList[position]
             }
 

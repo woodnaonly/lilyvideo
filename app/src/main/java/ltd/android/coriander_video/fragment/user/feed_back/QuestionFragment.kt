@@ -1,7 +1,7 @@
 package ltd.android.coriander_video.fragment.user.feed_back
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.common_layout_recyclerview.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
@@ -43,7 +43,8 @@ class QuestionFragment : BaseFragment<BaseViewModel>() {
             if (respone.success) {
                 val questionAdapter = QuestionAdapter(respone.data)
                 recyclerView.adapter = questionAdapter
-                recyclerView.layoutManager = LinearLayoutManager(context)
+                recyclerView.layoutManager =
+                    androidx.recyclerview.widget.LinearLayoutManager(context)
             }
 
 

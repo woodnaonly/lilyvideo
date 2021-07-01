@@ -1,17 +1,17 @@
 package ltd.android.coriander_video.adapter.view_pager_adapter
 
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import java.util.*
 
 /**
  * @author by 黄梦 on 2019/2/28.
  */
-class FragmentAdapter(fm: FragmentManager, private val data: List<Fragment>) : FragmentPagerAdapter(fm) {
+class FragmentAdapter(fm: androidx.fragment.app.FragmentManager, private val data: List<androidx.fragment.app.Fragment>) : androidx.fragment.app.FragmentPagerAdapter(fm) {
 
 
-    override fun getItem(i: Int): Fragment {
+    override fun getItem(i: Int): androidx.fragment.app.Fragment {
         return data[i]
     }
 
