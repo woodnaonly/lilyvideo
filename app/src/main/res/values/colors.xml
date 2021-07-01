@@ -113,6 +113,7 @@
     <color name="gray_light_lv7">#E5E5E5</color>
     <color name="gray_light_lv8">#EBEBEB</color>
     <color name="gray_light_lv9">#F3F3F3</color>
-
+    <color name="color_link">#FFDDA4</color>
     <color name="gray_translucent">#80888888</color>
+    <color name="color_FF0041">#ff2c54</color>
 </resources>

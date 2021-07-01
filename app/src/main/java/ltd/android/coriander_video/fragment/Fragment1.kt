@@ -1,24 +1,13 @@
 package ltd.android.coriander_video.fragment
 
-import android.arch.lifecycle.Observer
-import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.common_layout_recyclerview.*
+import android.support.v4.app.Fragment
+import android.support.v4.view.ViewPager
 import kotlinx.android.synthetic.main.fragment1.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import ltd.android.coriander_video.R
-import ltd.android.coriander_video.activity.HistoryActivity
-import ltd.android.coriander_video.activity.ScanActivity
-import ltd.android.coriander_video.activity.SearchActivity
-import ltd.android.coriander_video.adapter.fragment1.Fragment1Adapter
-import ltd.android.coriander_video.adapter.fragment1.Fragment1HotMoiveAdapter
-import ltd.android.coriander_video.adapter.fragment1.entity.*
-import ltd.android.coriander_video.adapter.fragment1.entity.base.Fragment1EntityBase
+import ltd.android.coriander_video.adapter.view_pager_adapter.CommPagerAdapter
 import ltd.android.coriander_video.fragment.base.BaseFragment
-import ltd.android.coriander_video.net.http.api.HomeAPi
+import ltd.android.coriander_video.fragment.fragment1.ChildrenFragment1
 import ltd.android.coriander_video.view_model.HomeViewModel
 import java.util.*
 
@@ -31,9 +20,10 @@ class Fragment1 : BaseFragment<HomeViewModel>() {
 
     override fun providerVMClass(): Class<HomeViewModel> = HomeViewModel::class.java
 
-    private val mListEntity = ArrayList<Fragment1EntityBase>()
-    private val mAdapter = Fragment1Adapter(mListEntity)
-    private val mLinearLayoutManager = LinearLayoutManager(context)
+
+    private val fragments = ArrayList<Fragment>()
+    private var pagerAdapter: CommPagerAdapter? = null
+
 
     override fun layoutId(): Int {
         return R.layout.fragment1;
@@ -50,83 +40,45 @@ class Fragment1 : BaseFragment<HomeViewModel>() {
 
     override fun initView() {
         super.initView()
-        recyclerView.adapter = mAdapter
-        recyclerView.layoutManager = mLinearLayoutManager
-        recyclerView.setBackgroundResource(R.color.color_252627)
-
-        refreshLayout.setOnRefreshListener {
-            mViewModel?.getAD({}, {
-                refreshLayout.finishRefresh()
-                refreshLayout.finishLoadMoreWithNoMoreData()
-            })
-        }
-        refreshLayout.autoRefresh()
-        refreshLayout.isEnableLoadMore = false
-
-        main_scan.setOnClickListener {
-            startActivity(Intent(activity, ScanActivity::class.java))
-        }
-        main_search.setOnClickListener {
-            SearchActivity.start(activity)
-        }
-
-        mian_search_text.setOnClickListener {
-            main_search.performClick()
-        }
-
-        main_history.setOnClickListener {
-            HistoryActivity.start(activity)
-        }
-        mAdapter.mChangeContentListener = object : Fragment1Adapter.ChangeContentListener {
-            override fun onClick(fragment1HotMoiveAdapter: Fragment1HotMoiveAdapter) {
-                launch {
-                    val baseResponse =
-                        withContext(Dispatchers.IO) {
-                            val map = mapOf(
-                                "page" to Random().nextInt(4)
-                            )
-                            HomeAPi.instance.gethotMovAsync(map)
-                        }.await()
-                    if (baseResponse.success) {
-                        fragment1HotMoiveAdapter.setNewData(baseResponse.data)
-                    }
-                }
-            }
-        }
-
+        setFragments()
     }
+
+    private fun setFragments() {
+//        currentLocationFragment = CurrentLocationFragment()
+//        recommendFragment = RecommendFragment()
+        fragments.add(ChildrenFragment1())
+        fragments.add(ChildrenFragment1())
+        fragments.add(ChildrenFragment1())
+        fragments.add(ChildrenFragment1())
+//        fragments.add(recommendFragment!!)
+        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("同城"))
+        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("关注"))
+        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("热门"))
+        mXTabLayout!!.addTab(mXTabLayout!!.newTab().setText("推荐"))
+        pagerAdapter =
+            CommPagerAdapter(childFragmentManager, fragments, arrayOf("海淀", "推荐", "关注", "推荐"))
+        viewPager!!.adapter = pagerAdapter
+        mXTabLayout!!.setupWithViewPager(viewPager)
+//        mXTabLayout!!.getTabAt(1)!!.select()
+        viewPager!!.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
+
+            override fun onPageSelected(position: Int) {
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {}
+        })
+    }
+
 
     override fun startObserve() {
         super.startObserve()
-//        mViewModel?.apply {
-//            mHomeRespone.observe(this@Fragment1, Observer {
-//                it?.let {
-//                    it.adList
-//                }
-//            })
-//        }
-
-
-        val mHomeRespone = mViewModel?.mHomeRespone
-        mHomeRespone?.observe(this@Fragment1, Observer {
-            it?.let {
-                mListEntity.clear()
-                mListEntity.add(Fragment1BannerEntity(it.adList))
-                mListEntity.add(Fragment1MoiveClassEntity(it.movieClassList))
-                mListEntity.add(Fragment1NewMoiveEntity(it.newmovList))
-                mListEntity.add(Fragment1DivideLineEntity())
-                mListEntity.add(Fragment1HotMoiveEntity(it.hotMovList))
-                mListEntity.add(Fragment1DivideLineEntity())
-                mListEntity.add(Fragment1GuessLikeEntity(it.guessLikeList))
-                it.columnsList.forEach {
-                    mListEntity.add(Fragment1DivideLineEntity())
-                    mListEntity.add(Fragment1ColumnsMoiveEntity(it))
-                }
-
-//                refreshLayout.finishLoadMoreWithNoMoreData()
-            }
-
-        })
+//
 
     }
 }

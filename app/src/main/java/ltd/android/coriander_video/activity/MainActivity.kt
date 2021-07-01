@@ -36,10 +36,10 @@ class MainActivity : BaseActivity<BaseViewModel>() {
 
     lateinit var mFragmentAdapter: FragmentAdapter
 
-//    val mFragment1 by lazy { Fragment1.newInstance() }
-//    val mFragment2 by lazy { Fragment2.newInstance() }
-//    val mFragment3 by lazy { Fragment3.newInstance() }
-//    val mFragment4 by lazy { Fragment4.newInstance() }
+    val mFragment1 by lazy { Fragment1.newInstance() }
+    val mFragment2 by lazy { Fragment2.newInstance() }
+    val mFragment3 by lazy { Fragment3.newInstance() }
+    val mFragment4 by lazy { Fragment4.newInstance() }
 
     val mFragments = ArrayList<Fragment>()
 
@@ -58,7 +58,7 @@ class MainActivity : BaseActivity<BaseViewModel>() {
         itemsId.put(R.id.i_tab4, 3)
 
 
-//        mFragments.add(mFragment1)
+        mFragments.add(mFragment1)
 //        mFragments.add(mFragment2)
 //        mFragments.add(mFragment3)
 //        mFragments.add(mFragment4)

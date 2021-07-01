@@ -132,8 +132,8 @@ class StartActivity : BaseActivity<BaseViewModel>() {
 
 
             if (BuildConfig.DEBUG) {
-//                gotoMainActivity()
-                LoginActivity.start(this@StartActivity)
+                gotoMainActivity()
+//                LoginActivity.start(this@StartActivity)
 
             }
         }
