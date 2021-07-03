@@ -10,63 +10,88 @@
       "properties": [
         {
           "id": "1:2599046751361046551",
-          "name": "dislikeCnt"
+          "name": "dislikeCnt",
+          "type": 5,
+          "flags": 2
         },
         {
           "id": "2:486729794985996983",
-          "name": "createDate"
+          "name": "createDate",
+          "type": 9
         },
         {
           "id": "3:571812188356621214",
-          "name": "lastTime"
+          "name": "lastTime",
+          "type": 6,
+          "flags": 4
         },
         {
           "id": "4:9203242747142913951",
-          "name": "id"
+          "name": "id",
+          "type": 6,
+          "flags": 131
         },
         {
           "id": "5:55117898761678758",
-          "name": "movName"
+          "name": "movName",
+          "type": 9
         },
         {
           "id": "6:356156662570541054",
-          "name": "movDesc"
+          "name": "movDesc",
+          "type": 9
         },
         {
           "id": "7:8501144070452386958",
-          "name": "movScore"
+          "name": "movScore",
+          "type": 7,
+          "flags": 2
         },
         {
           "id": "8:1725934036876639477",
-          "name": "playCount"
+          "name": "playCount",
+          "type": 5,
+          "flags": 2
         },
         {
           "id": "9:8996693138869320103",
-          "name": "loveCnt"
+          "name": "loveCnt",
+          "type": 5,
+          "flags": 2
         },
         {
           "id": "10:8238128124850860625",
-          "name": "cover"
+          "name": "cover",
+          "type": 9
         },
         {
           "id": "11:643404758351306751",
-          "name": "movCls"
+          "name": "movCls",
+          "type": 5,
+          "flags": 2
         },
         {
           "id": "12:7836768135364555284",
-          "name": "file"
+          "name": "file",
+          "type": 9
         },
         {
           "id": "13:2648919658607117626",
-          "name": "loveStatus"
+          "name": "loveStatus",
+          "type": 5,
+          "flags": 2
         },
         {
           "id": "14:4534815966364711669",
-          "name": "isFav"
+          "name": "isFav",
+          "type": 5,
+          "flags": 2
         },
         {
           "id": "15:2653975081055176601",
-          "name": "UserId"
+          "name": "UserId",
+          "type": 6,
+          "flags": 4
         }
       ],
       "relations": []
@@ -76,8 +101,8 @@
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
-  "modelVersion": 4,
-  "modelVersionParserMinimum": 4,
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
   "retiredEntityUids": [],
   "retiredIndexUids": [],
   "retiredPropertyUids": [],

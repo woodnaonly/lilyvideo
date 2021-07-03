@@ -154,4 +154,6 @@ dependencies {
 
     implementation "io.objectbox:objectbox-kotlin:$objectboxVersion"
 
+    implementation 'com.github.donkingliang:LabelsView:1.6.5'
+
 }

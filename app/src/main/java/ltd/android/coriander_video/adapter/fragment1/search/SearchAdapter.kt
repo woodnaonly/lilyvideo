@@ -1,4 +1,4 @@
-package ltd.android.coriander_video.adapter.fragment2.label_select
+package ltd.android.coriander_video.adapter.fragment1.search
 
 import android.view.LayoutInflater
 import android.view.View

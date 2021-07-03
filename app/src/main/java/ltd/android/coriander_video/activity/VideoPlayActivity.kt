@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -19,7 +18,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.base.BaseActivity
-import ltd.android.coriander_video.adapter.fragment2.label_select.SearchAdapter
+import ltd.android.coriander_video.adapter.fragment1.search.SearchAdapter
 import ltd.android.coriander_video.dto.MovieDTO
 import ltd.android.coriander_video.net.http.api.AdAPi
 import ltd.android.coriander_video.net.http.api.FavAPi
