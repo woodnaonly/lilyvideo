@@ -16,7 +16,7 @@ class CommPagerAdapter(
     fm: androidx.fragment.app.FragmentManager?,
     private val items: ArrayList<out androidx.fragment.app.Fragment>,
     private val mTitles: Array<String>
-) : androidx.fragment.app.FragmentStatePagerAdapter(fm) {
+) : androidx.fragment.app.FragmentStatePagerAdapter(fm!!) {
     override fun getCount(): Int {
         return if (items.size == 0) 0 else items.size
     }

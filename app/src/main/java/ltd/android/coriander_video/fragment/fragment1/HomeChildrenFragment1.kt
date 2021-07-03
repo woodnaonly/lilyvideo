@@ -12,6 +12,7 @@ import com.bytedance.tiktok.view.ControllerView
 import kotlinx.android.synthetic.main.fragment1_children1.*
 import kotlinx.android.synthetic.main.item_fragment1_children.*
 import ltd.android.coriander_video.R
+import ltd.android.coriander_video.activity.user.UpInfoActivity
 import ltd.android.coriander_video.adapter.fragment1.Fragment1ChildrenAdapter
 import ltd.android.coriander_video.entity.VideoBean
 import ltd.android.coriander_video.fragment.base.BaseFragment
@@ -200,6 +201,8 @@ class HomeChildrenFragment1 : BaseFragment<HomeChildrenModel>() {
         controllerView.setListener(object : OnVideoControllerListener {
             override fun onHeadClick() {
 //                RxBus.getDefault().post(MainPageChangeEvent(1))
+                UpInfoActivity.start(context,mListEntity[curPlayPos].userBean)
+
             }
 
             override fun onLikeClick() {

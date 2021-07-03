@@ -1,11 +1,13 @@
 package ltd.android.coriander_video.entity
 
+import java.io.Serializable
+
 /**
  * create by libo
  * create on 2020-06-03
  * description 视频实体类
  */
-class VideoBean {
+class VideoBean : Serializable {
     var videoId = 0
 
     /** 视频播放资源  */
@@ -41,12 +43,13 @@ class VideoBean {
     /** 转发数  */
     var shareCount = 0
 
-    class UserBean {
+    class UserBean : Serializable {
         var uid = 0
         var nickName: String? = null
             get() = if (field == null) "" else field
         var head = 0
         var headUrl = ""
+
         /** 座右铭  */
         var sign: String? = null
             get() = if (field == null) "" else field
