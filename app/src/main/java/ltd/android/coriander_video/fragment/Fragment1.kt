@@ -58,7 +58,7 @@ class Fragment1 : BaseFragment<HomeViewModel>() {
             CommPagerAdapter(childFragmentManager, fragments, arrayOf("同城", "推荐", "关注", "推荐"))
         viewPager!!.adapter = pagerAdapter
         mXTabLayout!!.setupWithViewPager(viewPager)
-//        mXTabLayout!!.getTabAt(1)!!.select()
+        mXTabLayout!!.getTabAt(1)!!.select()
         viewPager!!.addOnPageChangeListener(object :
             androidx.viewpager.widget.ViewPager.OnPageChangeListener {
             override fun onPageScrolled(

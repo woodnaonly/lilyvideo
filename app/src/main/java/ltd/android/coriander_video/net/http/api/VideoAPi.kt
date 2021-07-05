@@ -12,7 +12,7 @@ object VideoAPi {
 
     interface Service {
 
-        @GET("https://gitee.com/woodnaonly/hello-world/raw/master/%E5%A4%96%E5%8C%85/%E6%8A%96%E9%9F%B3.json")
+        @GET("https://tb.lxlx.fun/api/1.json")
         suspend fun getHomeTest(@QueryMap map: Map<String, String>): List<VideoBean>
 
         companion object {

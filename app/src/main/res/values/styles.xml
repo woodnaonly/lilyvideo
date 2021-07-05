@@ -40,4 +40,19 @@
         <item name="tabIndicatorColor">#ffffffff</item>
         <item name="tabIndicatorHeight">0.0dip</item>
     </style>
+
+    <!--透明背景dialog主题-->
+    <style name="stlyle_dialog_transparent_bg" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--底部弹框dialog动画主题-->
+    <style name="style_anim_bottom_in">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
 </resources>

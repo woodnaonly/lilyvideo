@@ -1,6 +1,5 @@
 package ltd.android.coriander_video.fragment.fragment1
 
-import androidx.lifecycle.Observer
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
@@ -8,12 +7,14 @@ import android.os.CountDownTimer
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.lifecycle.Observer
 import com.bytedance.tiktok.view.ControllerView
 import kotlinx.android.synthetic.main.fragment1_children1.*
 import kotlinx.android.synthetic.main.item_fragment1_children.*
 import ltd.android.coriander_video.R
 import ltd.android.coriander_video.activity.user.UpInfoActivity
 import ltd.android.coriander_video.adapter.fragment1.Fragment1ChildrenAdapter
+import ltd.android.coriander_video.dialog.CommentDialog
 import ltd.android.coriander_video.entity.VideoBean
 import ltd.android.coriander_video.fragment.base.BaseFragment
 import ltd.android.coriander_video.utils.ToastUtil
@@ -131,6 +132,10 @@ class HomeChildrenFragment1 : BaseFragment<HomeChildrenModel>() {
      * 自动播放视频
      */
     private fun autoPlayVideo(position: Int, ivCover: ImageView) {
+        if (true) {
+            return
+        }
+
         mFullScreenVideoView.setVideoURI(Uri.parse(mListEntity[position].videoURL))
         mFullScreenVideoView.start()
         mFullScreenVideoView.setOnPreparedListener { mp: MediaPlayer ->
@@ -201,7 +206,7 @@ class HomeChildrenFragment1 : BaseFragment<HomeChildrenModel>() {
         controllerView.setListener(object : OnVideoControllerListener {
             override fun onHeadClick() {
 //                RxBus.getDefault().post(MainPageChangeEvent(1))
-                UpInfoActivity.start(context,mListEntity[curPlayPos].userBean)
+                UpInfoActivity.start(context, mListEntity[curPlayPos].userBean)
 
             }
 
@@ -210,6 +215,9 @@ class HomeChildrenFragment1 : BaseFragment<HomeChildrenModel>() {
             }
 
             override fun onCommentClick() {
+                val commentDialog = CommentDialog(context)
+                commentDialog.show()
+
                 ToastUtil.getInstance().showToast("点击评论")
 //                val commentDialog = CommentDialog()
 //                commentDialog.show(childFragmentManager, "")

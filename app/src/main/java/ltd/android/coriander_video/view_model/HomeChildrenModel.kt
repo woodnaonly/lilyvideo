@@ -34,7 +34,7 @@ class HomeChildrenModel : BaseViewModel() {
 
             },
             {
-                Log.i("tt", "${it.message}")
+                Log.i("tt111", "${it.message}")
             }, {
                 finally()
             }, true

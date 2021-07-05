@@ -118,4 +118,24 @@
     <color name="color_FF0041">#ff2c54</color>
     <color name="color_bg_theme">#ff2c54</color>
     <color name="color_tag">#ff2c54</color>
+
+    <color name="teal">#008080</color>
+    <color name="text_22">#222222</color>
+    <color name="text_33">#333333</color>
+    <color name="text_33_50">#7f333333</color>
+    <color name="text_66">#666666</color>
+    <color name="text_99">#999999</color>
+    <color name="text_9f">#999999</color>
+    <color name="text_aa">#aaaaaa</color>
+    <color name="text_blue">#529bff</color>
+    <color name="text_button_change">#202122</color>
+    <color name="text_cc">#cccccc</color>
+    <color name="text_dd">#dddddd</color>
+    <color name="text_green">#27c848</color>
+    <color name="text_orange">#ff7d1a</color>
+    <color name="text_red">#ff0000</color>
+    <color name="text_title">#202122</color>
+    <color name="text_title_30">#4c283e56</color>
+
+    <color name="underline">#e5e5e5</color>
 </resources>
